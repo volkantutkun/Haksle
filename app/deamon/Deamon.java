@@ -51,7 +51,6 @@ import deamon.Deamon.Supervisor;
  
 public class Deamon {
  
- 
     public static final Object TICK = "TICK";
     public final ActorSystem system;
     public final ActorRef root;
@@ -60,312 +59,260 @@ public class Deamon {
    
     public Deamon()
     {
+    	Config config = ConfigFactory.parseString("akka.loglevel = DEBUG \n" + "akka.actor.debug.lifecycle = on");
+    	system = ActorSystem.create("HukkSystem", config);
                
-                Config config = ConfigFactory.parseString("akka.loglevel = DEBUG \n" + "akka.actor.debug.lifecycle = on");
-                system = ActorSystem.create("HukkSystem", config);
-               
-                root = system.actorOf(new Props(Root.class), "root");
-               
-  
+    	root = system.actorOf(new Props(Root.class), "root");
     }
    
     public static class Root extends UntypedActor
     {
-                  private SupervisorStrategy strategy = new OneForOneStrategy(10, Duration.create("1 minute"),
-                    new Function<Throwable, Directive>()
-                               {
+    	private SupervisorStrategy strategy = new OneForOneStrategy(10, Duration.create("1 minute"), new Function<Throwable, Directive>()
+    	{
+		    public Directive apply(Throwable t)
+		    {
+		    	if (t instanceof ArithmeticException)
+		    		return resume();
+		    	else if (t instanceof NullPointerException)
+		    		return restart();
+		    	else
+		    		return escalate();
+		    }
+    	});
  
-                                 public Directive apply(Throwable t)
-                                 {
-                                                 if (t instanceof ArithmeticException)
-                                                                 return resume();
-                                                 else if (t instanceof NullPointerException)
-                                                                 return restart();
-                                                 else
-                                                                 return escalate();
-                                 }
-                     });
- 
-                  @Override
-                  public SupervisorStrategy supervisorStrategy() {
-                    return strategy;
-                  }
+    	@Override
+    	public SupervisorStrategy supervisorStrategy() {
+    		return strategy;
+    	}
  
                   
-                  @SuppressWarnings("unchecked")
-                  public void onReceive(Object o) {
-                    if (o instanceof ArrayList<?>) {
-                               
-                      getSender().tell(getContext().actorOf((Props)((ArrayList<Object>) o).get(0), (String)((ArrayList<Object>) o).get(1)), getSelf());
-                    } else {
-                      unhandled(o);
-                    }
-                  }
+    	@SuppressWarnings("unchecked")
+    	public void onReceive(Object o) {
+    		if (o instanceof ArrayList<?>) {
+    			getSender().tell(getContext().actorOf((Props)((ArrayList<Object>) o).get(0), (String)((ArrayList<Object>) o).get(1)), getSelf());
+    		} else {
+    			unhandled(o);
+    		}
+    	}
     }
    
     public static class Supervisor extends UntypedActor
     {
-                  private SupervisorStrategy strategy = new OneForOneStrategy(10, Duration.create("1 minute"),
-                    new Function<Throwable, Directive>()
-                               {
+    	private SupervisorStrategy strategy = new OneForOneStrategy(10, Duration.create("1 minute"), new Function<Throwable, Directive>(){
+    		public Directive apply(Throwable t)
+    		{
+    			if (t instanceof ArithmeticException)
+    				return resume();
+    			else if (t instanceof NullPointerException)
+    				return restart();
+    			else
+    				return escalate();
+    		}
+    	});
  
-                                 public Directive apply(Throwable t)
-                                 {
-                                                 if (t instanceof ArithmeticException)
-                                                                 return resume();
-                                                 else if (t instanceof NullPointerException)
-                                                                 return restart();
-                                                 else
-                                                                 return escalate();
-                                 }
-                     });
- 
-                  @Override
-                  public SupervisorStrategy supervisorStrategy() {
-                    return strategy;
-                  }
+    	@Override
+    	public SupervisorStrategy supervisorStrategy() {
+    		return strategy;
+    	}
                  
-                  @SuppressWarnings("unchecked")
-                  public void onReceive(Object o) {
-                    if (o instanceof ArrayList<?>) {
-                               
-                      getSender().tell(getContext().actorOf((Props)((ArrayList<Object>) o).get(0), (String)((ArrayList<Object>) o).get(1)), getSelf());
-                    } else {
-                      unhandled(o);
-                    }
-                  }
+    	@SuppressWarnings("unchecked")
+    	public void onReceive(Object o) {
+    		if (o instanceof ArrayList<?>) {          
+    			getSender().tell(getContext().actorOf((Props)((ArrayList<Object>) o).get(0), (String)((ArrayList<Object>) o).get(1)), getSelf());
+    		} else {
+    			unhandled(o);
+    		}
+    	}
     }
    
-    
     public static class Hukk implements Serializable
     {
-                   
-                    public final String name;
-                    public final String link;
-                    public final long price;
-                    public final String user;
+    	public final String name;
+    	public final String link;
+    	public final long price;
+    	public final String user;
                       
-                    public Hukk(String name, String link, long price, String user)
-                    {
-                                this.name=name; this.link=link; this.price=price; this.user=user;
-                    }
-                  
+    	public Hukk(String name, String link, long price, String user)
+    	{
+    		this.name=name; this.link=link; this.price=price; this.user=user;
+    	}            
     }
- 
  
     public static class HukkActor extends UntypedActor
     {
-                int state = 0;
-                LoggingAdapter log = Logging.getLogger(getContext().system(), this);
- 
-                String name;
-                String link;
-                   long price;
-                   String user;
-                   Map<Long,HashSet<String>> priceMap = new HashMap<Long, HashSet<String>>();
-                   Map<String,Long> userMap = new HashMap<String,Long>();
-                   Long oldPrice;
+    	int state = 0;
+    	LoggingAdapter log = Logging.getLogger(getContext().system(), this);
+
+    	String name;
+    	String link;
+    	long price;
+    	String user;
+    	Map<Long,HashSet<String>> priceMap = new HashMap<Long, HashSet<String>>();
+    	Map<String,Long> userMap = new HashMap<String,Long>();
+    	Long oldPrice;
                
-                @Override
+    	@Override
         public void preStart() {
-                                getContext().system().scheduler()
-                        .schedule(Duration.create(1, "second"), Duration.create(10, "second"),
-                          getSelf(), TICK, getContext().dispatcher());
-                }
-               
-               
-                    @Override
-                    public void onReceive(Object message) throws Exception
-                    {
-                                if (message instanceof Hukk)
-                        {
-                                              
-                                               name = ((Hukk) message).name;
-                                               link = ((Hukk) message).link;
-                                    price = ((Hukk) message).price;
-                                    user = ((Hukk) message).user;
+    		getContext().system().scheduler().schedule(Duration.create(1, "second"), Duration.create(10, "second"),getSelf(), TICK, getContext().dispatcher());
+    	}
+    	
+    	@Override
+    	public void onReceive(Object message) throws Exception
+    	{
+    		if (message instanceof Hukk)
+    		{
+    			name = ((Hukk) message).name;
+    			link = ((Hukk) message).link;
+    			price = ((Hukk) message).price;
+    			user = ((Hukk) message).user;
                                     
-                                    log.info("Worker log for " + name);
-                                               log.info("Attributes: " + link + ", " + price + ", " + user);
+    			log.info("Worker log for " + name);
+    			log.info("Attributes: " + link + ", " + price + ", " + user);
                                               
-                                                if (userMap.containsKey(user))
-                                               {
+    			if (userMap.containsKey(user))
+    			{
                                                               
-                                                               log.info("Will iterate for " + name + ", " + user);
-                                                               //update old price list
-                                                               oldPrice = userMap.get(user);
-                                                               if (priceMap.containsKey(oldPrice))
-                                                               {
-                                                                               log.info("Updating old entry for this user");
-                                                                               HashSet<String> newList = new HashSet<String>();
-                                                                               newList = priceMap.get(oldPrice);
-                                                                               newList.remove(user);
-                                                                               priceMap.put(oldPrice, newList);
-                                                               }
-                                                               else
-                                                               {
-                                                                                log.info("Unexpected error - priceMap doesn't have old price!");
-                                                                                new NullPointerException(); //TODO: self restart
-                                                               }
-                                               }
+    				log.info("Will iterate for " + name + ", " + user);
+    				//update old price list
+    				oldPrice = userMap.get(user);
+    				if (priceMap.containsKey(oldPrice))
+    				{
+    					log.info("Updating old entry for this user");
+    					HashSet<String> newList = new HashSet<String>();
+    					newList = priceMap.get(oldPrice);
+    					newList.remove(user);
+    					priceMap.put(oldPrice, newList);
+    				}
+    				else
+    				{
+    					log.info("Unexpected error - priceMap doesn't have old price!");
+    					new NullPointerException(); //TODO: self restart
+    				}
+    			}
                                                               
-                                               if (priceMap.containsKey(price))
-                                               {
-                                                               log.info("Existing entry will be updated with this user");
-                                                               HashSet<String> newList = new HashSet<String>();
-                                                               newList = priceMap.get(price);
-                                                               newList.add(user);
-                                                               priceMap.put(price, newList);
-                                               }
-                                               else
-                                               {
-                                                                log.info("First entry for this price");
-                                                                HashSet<String> newList = new HashSet<String>();
-                                                                newList.add(user);
-                                                                priceMap.put(price, newList);
-                                               }
+    			if (priceMap.containsKey(price))
+    			{
+    				log.info("Existing entry will be updated with this user");
+    				HashSet<String> newList = new HashSet<String>();
+    				newList = priceMap.get(price);
+    				newList.add(user);
+    				priceMap.put(price, newList);
+    			}
+    			else
+    			{
+    				log.info("First entry for this price");
+    				HashSet<String> newList = new HashSet<String>();
+    				newList.add(user);
+    				priceMap.put(price, newList);
+    			}
                                               
-                                               userMap.put(user,price);
-                                }
+    		}
                                
-                                else if (message.equals(TICK))
-                                {
-                                               log.info("TICK kicked for " + name);
-                                               Iterator iterator = userMap.entrySet().iterator();
-                                               while (iterator.hasNext())
-                                               {
-                                                               Map.Entry mapEntry = (Map.Entry) iterator.next();
-                                                               log.info("User: " + mapEntry.getKey()
-                                                                               + ", waits for the price: " + mapEntry.getValue());
-                                               }
-                                              
-                                }
-                                else if (message instanceof Exception)
-                                {
-                                      throw (Exception) message;
-                                }
-                                else if (message instanceof Integer)
-                                {
-                                      state = (Integer) message;
-                                }
-                                else if (message.equals("get"))
-                                {
-                                      getSender().tell(state, getSelf());
-                                }
-                                else
-                                {
-                                      unhandled(message);
-                                }
-                               
-                               
-                               
-                    
-                    }
-    
+    		else if (message.equals(TICK))
+    		{
+    			log.info("TICK kicked for " + name);
+    			Iterator iterator = userMap.entrySet().iterator();
+    			while (iterator.hasNext())
+    			{
+    				Map.Entry mapEntry = (Map.Entry) iterator.next();
+    				log.info("User: " + mapEntry.getKey() + ", waits for the price: " + mapEntry.getValue());
+    			}
+    		}
+    		else if (message instanceof Exception)
+    		{
+    			throw (Exception) message;
+    		}
+    		else if (message instanceof Integer)
+    		{
+    			state = (Integer) message;
+    		}
+    		else if (message.equals("get"))
+    		{
+    			getSender().tell(state, getSelf());
+    		}
+    		else
+    		{
+    			unhandled(message);
+    		}
+    	}
     }
    
     public ActorRef getOrCreateSupervisor(String name)
     {
-                Duration timeout = Duration.create("5 seconds");
-               
-                ActorRef actor_candidate = system.actorFor("/user/root/"+name);
-                               ActorRef actor = null;
+    	Duration timeout = Duration.create("5 seconds");
+    	ActorRef actor_candidate = system.actorFor("/user/root/"+name);
+    	ActorRef actor = null;
+    	ArrayList<Object> actorProp = new ArrayList<Object>();
                               
-                               ArrayList<Object> actorProp = new ArrayList<Object>();
+    	actorProp.add(new Props(Supervisor.class));
+    	actorProp.add(name);
                               
-                               actorProp.add(new Props(Supervisor.class));
-                               actorProp.add(name);
-                              
-                if (actor_candidate.isTerminated())
-                {
-                               try {
+    	if (actor_candidate.isTerminated())
+    	{
+    		try {
                                               
-                                               actor = (ActorRef) Await.result(ask(root, actorProp, 5000), timeout);                                      
-                                               System.out.println(actor.toString() + " created.");
-                                               return actor;
-                                              
-                               } catch (Exception e) {
-                                                               // TODO Auto-generated catch block
-                                                               e.printStackTrace();
-                                               }
-                }
-                else
-                {
-                                System.out.println(name + " already exists.");               
-                                
-                }
- 
-                return actor_candidate;
+    			actor = (ActorRef) Await.result(ask(root, actorProp, 5000), timeout);                                      
+    			System.out.println(actor.toString() + " created.");
+    			return actor;
+    			
+    		} catch (Exception e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+    	}
+    	else
+    	{
+    		System.out.println(name + " already exists.");
+    	}
+    	return actor_candidate;
     }
    
     public ActorRef getOrCreateWorker(String node, String name, ActorRef parent)
     {
-                Duration timeout = Duration.create("5 seconds");
-               
-                ActorRef actor_candidate = system.actorFor("/user/root/"+node+"/"+name);
-                               ActorRef actor = null;
-                              
-                               ArrayList<Object> actorProp = new ArrayList<Object>();
-                              
-                               actorProp.add(new Props(HukkActor.class));
-                               actorProp.add(name);
-                              
-                if (actor_candidate.isTerminated())
-                {
-                               try {
-                                              
-                                               actor = (ActorRef) Await.result(ask(parent, actorProp, 5000), timeout);                                                
-                                               System.out.println(actor.toString() + " created.");
-                                               return actor;
-                                              
-                               } catch (Exception e) {
-                                                               // TODO Auto-generated catch block
-                                                               e.printStackTrace();
-                                               }
-                }
-                else
-                {
-                                System.out.println(name + " already exists.");               
-                                
-                }
- 
-                return actor_candidate;
+    	Duration timeout = Duration.create("5 seconds");
+    	ActorRef actor_candidate = system.actorFor("/user/root/"+node+"/"+name);
+    	ActorRef actor = null;
+    	ArrayList<Object> actorProp = new ArrayList<Object>();
+    	actorProp.add(new Props(HukkActor.class));
+    	actorProp.add(name);
+    	
+    	if (actor_candidate.isTerminated())
+    	{
+    		try {
+    			actor = (ActorRef) Await.result(ask(parent, actorProp, 5000), timeout);                                                
+    			System.out.println(actor.toString() + " created.");
+    			return actor;
+    		} catch (Exception e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+    	}
+    	else
+    	{
+    		System.out.println(name + " already exists.");                                  
+    	}
+    	return actor_candidate;
     }
-   
-    
- 
+
     public void greet(final String name, final String link, final long price, final String user)
     {
-               
+       String supChar = "Node1";
+       if(ALPHABET_N_Z.contains(name.substring(0, 1)))
+    	   supChar = "Node2";
  
-                               String supChar = "Node1";
-                               if(ALPHABET_N_Z.contains(name.substring(0, 1)))
-                                               supChar = "Node2";
- 
-                               ActorRef supervisor= getOrCreateSupervisor(supChar);                            
-                               ActorRef worker= getOrCreateWorker(supChar, name, supervisor);
- 
-                               worker.tell(new Hukk(name,link,price,user), worker);
- 
-                               
- 
+       ActorRef supervisor= getOrCreateSupervisor(supChar);                            
+       ActorRef worker= getOrCreateWorker(supChar, name, supervisor);
+       worker.tell(new Hukk(name,link,price,user), worker);
     }
-   
-   
- 
+
     public static void main(String [] args)
     {
-              
-                 Deamon deamon = new Deamon();
- 
-                 deamon.greet("CharlieParkerEbook","link1",50,"Hakan");
-                 deamon.greet("CharlieParkerEbook","link1",40,"Hakan");
-                 deamon.greet("CharlieParkerEbook","link1",40,"Ural");
-                 deamon.greet("SlipknotCD","link2",30,"Ural");
-                 deamon.greet("ScalaEbook","link3",50,"Sabri");
- 
-                 
- 
+    	Deamon deamon = new Deamon();
+    	deamon.greet("CharlieParkerEbook","link1",50,"Hakan");
+    	deamon.greet("CharlieParkerEbook","link1",40,"Hakan");
+    	deamon.greet("CharlieParkerEbook","link1",40,"Ural");
+    	deamon.greet("SlipknotCD","link2",30,"Ural");
+    	deamon.greet("ScalaEbook","link3",50,"Sabri");
     }
  
 }

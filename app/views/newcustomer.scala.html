@@ -1,0 +1,83 @@
+@(customerForm: Form[Customer])
+
+@import helper._
+
+@main("New Customer") {
+
+	<h2>Create New Customer</h2>
+    
+    @form(routes.Application.addCustomer()) {
+    <table border=1>
+    	<tr>
+    		<td>
+    			<strong>EMAIL:</strong> 
+    		</td>
+    		<td>
+    			<input type="email" name="email">
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			<strong>Password::</strong> 
+    		</td>
+    		<td>
+    			<input type="password" name="password" size="30%">
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			<strong>First Name:</strong> 
+    		</td>
+    		<td>
+    			<input type="text" name="firstname" size="30%">
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			<strong>Last Name:</strong> 
+    		</td>
+    		<td>
+    			<input type="text" name="lastname" size="30%">
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			<strong>Birth Date:</strong> 
+    		</td>
+    		<td>
+    			<input type="date" name="birthdate">
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			<strong>Gender:</strong> 
+    		</td>
+    		<td>
+    			<input type="radio" name="gender" value="male">Male
+				<input type="radio" name="gender" value="female">Female
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			<strong>Text Alert:</strong> 
+    		</td>
+    		<td>
+    			<input type="number" name="alerttext" min="0" max="1">
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			<strong>Email Alert:</strong> 
+    		</td>
+    		<td>
+    			<input type="number" name="alertmail" min="0" max="1">
+    		</td>
+    	</tr>
+    	
+    </table>
+    
+        
+    <input type="submit" value="EKLE">
+        
+    }
+}

@@ -4,7 +4,7 @@ package parsers;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import models.Product;
+import models.TestProduct;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -13,8 +13,8 @@ import org.jsoup.select.Elements;
 
 public class PrHepsiBurada{
 	
-	public static Product getContentPrice(String receivedURL){
-		Product parsedProduct = new Product();
+	public static TestProduct getContentPrice(String receivedURL){
+		TestProduct parsedProduct = new TestProduct();
 		parsedProduct.url = receivedURL;
 		
 		Document doc;

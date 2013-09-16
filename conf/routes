@@ -5,10 +5,10 @@
 # Home page
 GET     /                           controllers.Application.index()
 
-# Tasks          
-GET     /products					controllers.Application.products()
-POST    /products					controllers.Application.newProduct()
-POST    /products/:id/delete		controllers.Application.deleteProduct(id: Long)
+GET     /newcustomer				controllers.Application.newcustomer()
+POST    /newcustomer				controllers.Application.addCustomer()
+GET     /customerlogin				controllers.Application.customerlogin()
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

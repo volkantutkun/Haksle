@@ -1,47 +1,51 @@
 package controllers;
 
-import models.Product;
+import models.Customer;
+import models.TestProduct;
 import parsers.PrGittiGidiyor;
 import parsers.PrHepsiBurada;
 import parsers.PrMorhipo;
-import play.*;
 import play.data.Form;
 import play.mvc.*;
-import views.html.*;
 
 public class Application extends Controller {
 	
-	static Form<Product> productForm = Form.form(Product.class);
+	static Form<Customer> customerForm = Form.form(Customer.class);
   
 	public static Result index() {
-    	return redirect(routes.Application.products());
+    	return ok(views.html.index.render());
     }
     
-    public static Result products() {
-    	return ok(views.html.index.render(Product.all(), productForm));
+    public static Result newcustomer() {
+    	return ok(views.html.newcustomer.render(customerForm));
+     }
+    
+    public static Result customerlogin() {
+    	return redirect(routes.Application.newcustomer());
      }
       
-    public static Result newProduct() {
-    	Form<Product> filledForm = productForm.bindFromRequest();
+    public static Result addCustomer() {
+    	Form<Customer> filledForm = customerForm.bindFromRequest();
+
     	  if(filledForm.hasErrors()) {
+    		  System.out.println("ERROR");
     	    return badRequest(
-    	      views.html.index.render(Product.all(), filledForm)
+    	    		views.html.newcustomer.render(filledForm)
     	    );
     	  } else {
-    		  Product newProduct = filledForm.get();
-    		  newProduct = parseURL(newProduct.url);
-    		  Product.create(newProduct);
-    	    return redirect(routes.Application.products());  
+    		  Customer newCustomer = filledForm.get();
+    		  Customer.create(newCustomer);
+    	    return redirect(routes.Application.index());  
     	  }
      }
       
     public static Result deleteProduct(Long id) {
-    	Product.delete(id);
-    	  return redirect(routes.Application.products());
+    	TestProduct.delete(id);
+    	  return redirect(routes.Application.newcustomer());
      }
     
-    private static Product parseURL(String receivedURL){
-    	Product parsedProduct = null;
+    private static TestProduct parseURL(String receivedURL){
+    	TestProduct parsedProduct = null;
 		if(receivedURL.contains("hepsiburada"))	parsedProduct = PrHepsiBurada.getContentPrice(receivedURL);
 		else if(receivedURL.contains("gittigidiyor"))parsedProduct = PrGittiGidiyor.getContentPrice(receivedURL);
 		else if(receivedURL.contains("morhipo"))parsedProduct = PrMorhipo.getContentPrice(receivedURL);

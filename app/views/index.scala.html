@@ -1,61 +1,15 @@
-@(products: List[Product], productForm: Form[Product])
-
 @import helper._
 
-@main("Product list") {
-
-	<h2>Parse price of new product from URL</h2>
-    
-    @form(routes.Application.newProduct()) {
-    
-    <strong>URL:</strong> <input type="text" name="url" size="100%">
-        
-        <input type="submit" value="PARSE">
-        
-    }
-    
-    <br>
-    <br>
-    
-    Supported Web Sites are:
-    <ul>
-    	<li><a href="http://www.hepsiburada.com" target="_blank">Hepsiburada</a></li>
-    	<li><a href="http://www.gittigidiyor.com" target="_blank">Gittigidiyor</a></li>
-    	<li><a href="http://www.morhipo.com" target="_blank">Morhipo</a></li>
-    </ul>
-    
-    <br>
-    
-    <h2>TOTAL: @products.size() product(s)</h2>
-    
-    <table border="1">
-   		<tr>
-			<td></td>
-			<td><strong>Title</strong></td>
-			<td><strong>Price</strong></td>
-			<td><strong>URL</strong></td>
-		</tr>
-        @for(product <- products) {
-        <tr>
-        	<td>
-                @form(routes.Application.deleteProduct(product.id)) {
-                    <input type="submit" value="Delete">
-                }
-            </td>
-        	<td>
-                 @product.name
-            </td>
-            
-        	<td>
-                @product.price
-            </td>
-         	
-            <td>
-                @product.url
-            </td>
- 		</tr>
-       }
-    
+@main("Welcome Haksle") {
+	<table border="1">
+		<tr>
+   			<td>
+			<h2><a href="/newcustomer" target="_self">NEW USER</a></h2>
+    		</td>
+    		<td>
+			<h2><a href="/customerlogin" target="_self">USER LOGIN</a></h2>
+    		</td>
+    	</tr>
     </table>
     
 }

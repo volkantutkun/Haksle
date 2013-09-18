@@ -1,6 +1,5 @@
 package models;
 
-import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Entity;

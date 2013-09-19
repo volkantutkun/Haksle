@@ -1,4 +1,4 @@
-@(products: List[Product], productForm: Form[Product], messageStr: String)
+@(products: List[Product], productForm: Form[Product], email: String, messageStr: String)
 
 @import helper._
 
@@ -28,6 +28,7 @@
     @form(routes.Application.addProduct()) {
     
     <strong>URL:</strong> <input type="text" name="source" size="100%">
+    <input type="hidden" name="email" value="@messageStr">
         
     <input type="submit" value="ADD">
         
@@ -48,6 +49,7 @@
         <tr>
         	<td>
                 @form(routes.Application.deleteProduct(product.pid)) {
+                	<input type="hidden" name="email" value="@messageStr">
                     <input type="submit" value="Delete">
                 }
             </td>

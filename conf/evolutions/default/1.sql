@@ -16,7 +16,7 @@ create table customer (
 ;
 
 create table product (
-  pid                       bigint auto_increment not null,
+  pid                       integer auto_increment not null,
   title                     varchar(255),
   site                      varchar(255),
   source                    varchar(255),
@@ -25,7 +25,7 @@ create table product (
   attr2                     varchar(255),
   attr2value                varchar(255),
   attr3                     varchar(255),
-  attr4value                varchar(255),
+  attr3value                varchar(255),
   picture                   varchar(255),
   constraint pk_product primary key (pid))
 ;

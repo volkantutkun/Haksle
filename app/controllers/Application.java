@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.Map;
+
 import com.avaje.ebean.Ebean;
 
 import models.Customer;
@@ -28,8 +30,8 @@ public class Application extends Controller {
     	return ok(views.html.customerlogin.render(""));
      }
     
-    public static Result haksle() {
-    	return ok(views.html.haksle.render(Product.all(), productForm, ""));
+    public static Result haksle(String email) {
+    	return ok(views.html.haksle.render(Product.allbymail(email), productForm, "", email));
     }
     
     
@@ -64,7 +66,7 @@ public class Application extends Controller {
     			  if(!searchCust.password.equals(receivedCust.password)){
     				  return ok(views.html.customerlogin.render("Wrong password!"));
     			  }else
-    				  return redirect(routes.Application.haksle()); 
+    				  return redirect(routes.Application.haksle(receivedCust.email)); 
     		  }    	     
     	  }
      }
@@ -74,21 +76,31 @@ public class Application extends Controller {
 
     	  if(filledProdForm.hasErrors()) {
     		  System.out.println("ERROR");
-    	    return badRequest(views.html.haksle.render(Product.all(), productForm, "Bad Request"));
+    		  Map<String,String> tempMap = filledProdForm.data();
+    		  String emailStr = tempMap.get("email");
+    		  
+    	    return badRequest(views.html.haksle.render(Product.allbymail(emailStr), productForm, "Bad Request", emailStr));
     	  } else {
-    		  Product newProduct = filledProdForm.get();
-    		  System.out.println(filledProdForm.toString());
-    		  System.out.println("----" + newProduct.source);
-    		  newProduct = parseURL(newProduct.source);
+    		  Map<String,String> tempMap = filledProdForm.data();
+    		  String sourceStr = tempMap.get("source");
+    		  String emailStr = tempMap.get("email");
+    		  
+    		  Product newProduct = parseURL(sourceStr);
+    		  newProduct.attr3 = "email";
+    		  newProduct.attr3value = emailStr;
     		  Product.create(newProduct);
     		  
-    		  return ok(views.html.haksle.render(Product.all(), productForm, "New Product is added."));
+    		  return ok(views.html.haksle.render(Product.allbymail(emailStr), productForm, "New Product is added.", emailStr));
     	  }
     }
       
-    public static Result deleteProduct(Long id) {
+    public static Result deleteProduct(int id) {
+    	Form<Product> filledProdForm = productForm.bindFromRequest();
+    	Map<String,String> tempMap = filledProdForm.data();
+		String emailStr = tempMap.get("email");
+		  
     	Product.delete(id);
-    	return ok(views.html.haksle.render(Product.all(), productForm, "Product is deleted."));
+    	return ok(views.html.haksle.render(Product.allbymail(emailStr), productForm, "Product is deleted.", emailStr));
      }
     
     

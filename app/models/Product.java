@@ -11,7 +11,7 @@ import play.db.ebean.Model;
 @Entity
 public class Product extends Model{
 	@Id
-	public Long pid;
+	public int pid;
 	
 	public String title;
 	
@@ -29,22 +29,26 @@ public class Product extends Model{
 	
 	public String attr3;
 	
-	public String attr4value;
+	public String attr3value;
 	
 	public String picture;
 
 	
-	public static Finder<Long,Product> find = new Finder( Long.class, Product.class );
+	public static Finder<Integer,Product> find = new Finder( Integer.class, Product.class );
 	    
   	public static List<Product> all() {
 	  return find.all();
 	}
-
+  	
+  	public static List<Product> allbymail(String email) {
+  	  return (List<Product>) find.where().eq("attr3value", email).findList();
+  	}
+ 
 	public static void create(Product product) {
 		product.save();
 	}
 
-	public static void delete(Long pid) {
+	public static void delete(Integer pid) {
 	  find.ref(pid).delete();
 	}
 }

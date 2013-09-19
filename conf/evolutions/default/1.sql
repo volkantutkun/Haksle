@@ -16,11 +16,18 @@ create table customer (
 ;
 
 create table product (
-  id                        bigint auto_increment not null,
-  url                       varchar(255),
-  name                      varchar(255),
-  price                     varchar(255),
-  constraint pk_product primary key (id))
+  pid                       bigint auto_increment not null,
+  title                     varchar(255),
+  site                      varchar(255),
+  source                    varchar(255),
+  attr1                     varchar(255),
+  attr1value                varchar(255),
+  attr2                     varchar(255),
+  attr2value                varchar(255),
+  attr3                     varchar(255),
+  attr4value                varchar(255),
+  picture                   varchar(255),
+  constraint pk_product primary key (pid))
 ;
 
 create table test_product (

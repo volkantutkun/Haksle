@@ -4,7 +4,7 @@ package parsers;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import models.TestProduct;
+import models.Product;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -13,9 +13,12 @@ import org.jsoup.select.Elements;
 
 public class PrMorhipo{
 	
-	public static TestProduct getContentPrice(String receivedURL){
-		TestProduct parsedProduct = new TestProduct();
-		parsedProduct.url = receivedURL;
+	public static Product getContentPrice(String receivedURL){
+		Product parsedProduct = new Product();
+		
+		parsedProduct.site = "Morhipo";
+		parsedProduct.source = receivedURL;
+		parsedProduct.picture = null;
 		
 		Document doc;
 		String prodPrice = "NOTFOUND";
@@ -38,7 +41,10 @@ public class PrMorhipo{
 			
 			if( prodPrice != null && !"".equals(prodPrice))	prodPrice = trimPrice(prodPrice);
 			
-			parsedProduct.price = prodPrice;
+			parsedProduct.attr1 = "INITALPRICE";
+			parsedProduct.attr1value = prodPrice;
+			parsedProduct.attr2 = "CURRENTPRICE";
+			parsedProduct.attr2value = prodPrice;
 			
 			
 			Elements title = doc.select("title");
@@ -47,7 +53,9 @@ public class PrMorhipo{
 			
 			if( prodName != null && !"".equals(prodName))	prodName = trimName(prodName);
 			
-			parsedProduct.name = prodName;
+			parsedProduct.title = prodName;
+			
+			
 			
 		} catch (MalformedURLException e) {
 			System.out.println("ERROR: MalformedURLException type at Morhipo parser!");

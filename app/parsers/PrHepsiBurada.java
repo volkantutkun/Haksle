@@ -4,7 +4,7 @@ package parsers;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import models.TestProduct;
+import models.Product;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -13,9 +13,12 @@ import org.jsoup.select.Elements;
 
 public class PrHepsiBurada{
 	
-	public static TestProduct getContentPrice(String receivedURL){
-		TestProduct parsedProduct = new TestProduct();
-		parsedProduct.url = receivedURL;
+	public static Product getContentPrice(String receivedURL){
+		Product parsedProduct = new Product();
+		
+		parsedProduct.site = "HepsiBurada";
+		parsedProduct.source = receivedURL;
+		parsedProduct.picture = null;
 		
 		Document doc;
 		String prodPrice = "NOTFOUND";
@@ -41,8 +44,13 @@ public class PrHepsiBurada{
 			
 			if( prodPrice != null && !"".equals(prodPrice))	prodPrice = trimPrice(prodPrice);
 			
-			parsedProduct.price = prodPrice;
-			parsedProduct.name = prodName;
+			parsedProduct.title = prodName;
+			
+			parsedProduct.attr1 = "INITALPRICE";
+			parsedProduct.attr1value = prodPrice;
+			parsedProduct.attr2 = "CURRENTPRICE";
+			parsedProduct.attr2value = prodPrice;
+			
 			
 		} catch (MalformedURLException e) {
 			System.out.println("ERROR: MalformedURLException type at HepsiBurada parser!");

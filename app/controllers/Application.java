@@ -3,7 +3,7 @@ package controllers;
 import com.avaje.ebean.Ebean;
 
 import models.Customer;
-import models.TestProduct;
+import models.Product;
 import parsers.PrGittiGidiyor;
 import parsers.PrHepsiBurada;
 import parsers.PrMorhipo;
@@ -13,6 +13,8 @@ import play.mvc.*;
 public class Application extends Controller {
 	
 	static Form<Customer> customerForm = Form.form(Customer.class);
+	
+	static Form<Product> productForm = Form.form(Product.class);
   
 	public static Result index() {
     	return ok(views.html.index.render(""));
@@ -27,21 +29,21 @@ public class Application extends Controller {
      }
     
     public static Result haksle() {
-    	return ok(views.html.haksle.render(""));
+    	return ok(views.html.haksle.render(Product.all(), productForm, ""));
     }
-      
+    
     
     public static Result addCustomer() {
     	Form<Customer> filledForm = customerForm.bindFromRequest();
 
     	  if(filledForm.hasErrors()) {
     		  System.out.println("ERROR");
-    	    return badRequest(views.html.newcustomer.render(""));
+    	    return badRequest(views.html.newcustomer.render("Bad Request"));
     	  } else {
     		  Customer newCustomer = filledForm.get();
     		  Customer.create(newCustomer);
     		  
-    		  return ok(views.html.index.render("Yeni kullanıcı eklendi."));
+    		  return ok(views.html.index.render("New user is added."));
     	  }
     }
     
@@ -50,32 +52,48 @@ public class Application extends Controller {
 
     	  if(filledForm.hasErrors()) {
     		  System.out.println("ERROR");
-    	    return badRequest(views.html.customerlogin.render(""));
+    	    return badRequest(views.html.customerlogin.render("Bad Request"));
     	  } else {
     		  Customer receivedCust = filledForm.get();
     		  
     		  if( Customer.find.byId(receivedCust.email) == null){
-    			  return ok(views.html.customerlogin.render("Kullanıcı bulunamadı!")); 
+    			  return ok(views.html.customerlogin.render("No user found with give username!")); 
     		  }else{
     			  Customer searchCust = Customer.find.byId(receivedCust.email);
 
     			  if(!searchCust.password.equals(receivedCust.password)){
-    				  return ok(views.html.customerlogin.render("Hatalı Pasword!"));
+    				  return ok(views.html.customerlogin.render("Wrong password!"));
     			  }else
     				  return redirect(routes.Application.haksle()); 
     		  }    	     
     	  }
      }
     
-    
+    public static Result addProduct() {
+    	Form<Product> filledProdForm = productForm.bindFromRequest();
+
+    	  if(filledProdForm.hasErrors()) {
+    		  System.out.println("ERROR");
+    	    return badRequest(views.html.haksle.render(Product.all(), productForm, "Bad Request"));
+    	  } else {
+    		  Product newProduct = filledProdForm.get();
+    		  System.out.println(filledProdForm.toString());
+    		  System.out.println("----" + newProduct.source);
+    		  newProduct = parseURL(newProduct.source);
+    		  Product.create(newProduct);
+    		  
+    		  return ok(views.html.haksle.render(Product.all(), productForm, "New Product is added."));
+    	  }
+    }
       
     public static Result deleteProduct(Long id) {
-    	TestProduct.delete(id);
-    	return redirect(routes.Application.newcustomer());
+    	Product.delete(id);
+    	return ok(views.html.haksle.render(Product.all(), productForm, "Product is deleted."));
      }
     
-    private static TestProduct parseURL(String receivedURL){
-    	TestProduct parsedProduct = null;
+    
+    private static Product parseURL(String receivedURL){
+    	Product parsedProduct = null;
 		if(receivedURL.contains("hepsiburada"))	parsedProduct = PrHepsiBurada.getContentPrice(receivedURL);
 		else if(receivedURL.contains("gittigidiyor"))parsedProduct = PrGittiGidiyor.getContentPrice(receivedURL);
 		else if(receivedURL.contains("morhipo"))parsedProduct = PrMorhipo.getContentPrice(receivedURL);

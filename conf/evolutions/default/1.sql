@@ -30,12 +30,12 @@ create table product (
   constraint pk_product primary key (pid))
 ;
 
-create table test_product (
-  id                        bigint auto_increment not null,
-  url                       varchar(255),
-  name                      varchar(255),
-  price                     varchar(255),
-  constraint pk_test_product primary key (id))
+create table product_list (
+  listid                    integer auto_increment not null,
+  listname                  varchar(255),
+  email                     varchar(255),
+  pid                       integer,
+  constraint pk_product_list primary key (listid))
 ;
 
 
@@ -49,7 +49,7 @@ drop table customer;
 
 drop table product;
 
-drop table test_product;
+drop table product_list;
 
 SET FOREIGN_KEY_CHECKS=1;
 

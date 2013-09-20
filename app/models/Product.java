@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -37,11 +38,27 @@ public class Product extends Model{
 	public static Finder<Integer,Product> find = new Finder( Integer.class, Product.class );
 	    
   	public static List<Product> all() {
-	  return find.all();
+  		return find.all();
 	}
   	
   	public static List<Product> allbymail(String email) {
-  	  return (List<Product>) find.where().eq("attr3value", email).findList();
+  		return (List<Product>) find.where().eq("attr3value", email).findList();
+  	}
+  	
+  	public static List<Product> allbyurl(String url) {
+  		return (List<Product>) find.where().eq("source", url).findList();
+    }
+  	
+  	public static List<Product> allbypid(int pid) {
+  		return (List<Product>) find.where().eq("pid", pid).findList();
+    }
+  	
+  	public static List<Product> allbypidlist(List<Integer> pidList) {
+  		List<Product> tempList = new ArrayList<Product>();
+  		for(int i=0; i<pidList.size(); i++){
+  			tempList.add(allbypid(pidList.get(i)).get(0));
+  		}
+  		return tempList;
   	}
  
 	public static void create(Product product) {

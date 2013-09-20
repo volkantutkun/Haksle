@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.List;
 import java.util.Map;
 
 import com.avaje.ebean.Ebean;
@@ -31,8 +32,8 @@ public class Application extends Controller {
     	return ok(views.html.customerlogin.render(""));
      }
     
-    public static Result haksle(String email) {
-    	return ok(views.html.haksle.render(Product.allbymail(email), ProductList.allbymail(email), productForm, email, ""));
+    public static Result haksle(String emailStr) {
+    	return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, ""));
     }
     
     
@@ -80,18 +81,39 @@ public class Application extends Controller {
     		  Map<String,String> tempMap = filledProdForm.data();
     		  String emailStr = tempMap.get("email");
     		  
-    	    return badRequest(views.html.haksle.render(Product.allbymail(emailStr), productForm, emailStr, "Bad Request"));
+    	    return badRequest(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "Bad Request"));
     	  } else {
     		  Map<String,String> tempMap = filledProdForm.data();
     		  String sourceStr = tempMap.get("source");
     		  String emailStr = tempMap.get("email");
     		  
-    		  Product newProduct = parseURL(sourceStr);
-    		  newProduct.attr3 = "email";
-    		  newProduct.attr3value = emailStr;
-    		  Product.create(newProduct);
+    		  String listnameStr = tempMap.get("listname");
+    		  if("newlist".equals(listnameStr))	listnameStr = tempMap.get("newlistname");
     		  
-    		  return ok(views.html.haksle.render(Product.allbymail(emailStr), productForm, emailStr, "New Product is added."));
+    		  int pid = 0;
+    		  
+    		  List<Product> tempList = Product.allbyurl(sourceStr);
+    		  if(tempList.size() > 0){
+    			  Product prodExist = tempList.get(0);
+    			  pid = prodExist.pid;
+    		  }else{
+    			  Product newProduct = parseURL(sourceStr);
+//        		  newProduct.attr3 = "email";
+//        		  newProduct.attr3value = emailStr;
+        		  Product.create(newProduct);
+        		  
+        		  tempList = Product.allbyurl(sourceStr);
+        		  Product prodExist = tempList.get(0);
+    			  pid = prodExist.pid;
+    		  }
+    		  
+    		  ProductList newListItem = new ProductList();
+    		  newListItem.email = emailStr;
+    		  newListItem.listname = listnameStr;
+    		  newListItem.pid = pid;
+    		  newListItem.create(newListItem);
+    		  
+    		  return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "New Product is added."));
     	  }
     }
       
@@ -101,7 +123,7 @@ public class Application extends Controller {
 		String emailStr = tempMap.get("email");
 		  
     	Product.delete(id);
-    	return ok(views.html.haksle.render(Product.allbymail(emailStr), productForm, emailStr, "Product is deleted."));
+    	return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "Product is deleted."));
      }
     
     

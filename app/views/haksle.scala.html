@@ -1,4 +1,4 @@
-@(products: List[Product], listitems: List[String], productForm: Form[Product], emailStr: String, messageStr: String)
+@(products: List[Product], listitems: List[ProductList], productForm: Form[Product], emailStr: String, messageStr: String)
 
 @import helper._
 
@@ -30,11 +30,14 @@
     <strong>URL:</strong> <input type="text" name="source" size="100%">
     <br>
     <strong>LIST:</strong> 
-    <select name=list>
-     @for(item <- listitems) {
-  		<option value="item">item</option>
-  	}
+    <select name=listname>
+     	@for(item <- listitems) {
+  			<option value="@item.listname">@item.listname</option>
+  		}
+  			<option value="newlist">New List</option>
 	</select>
+	
+	<input type="text" name="newlistname" size="15%">
 	
     <input type="hidden" name="email" value="@emailStr">
         

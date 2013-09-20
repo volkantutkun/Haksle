@@ -6,6 +6,7 @@ import com.avaje.ebean.Ebean;
 
 import models.Customer;
 import models.Product;
+import models.ProductList;
 import parsers.PrGittiGidiyor;
 import parsers.PrHepsiBurada;
 import parsers.PrMorhipo;
@@ -31,7 +32,7 @@ public class Application extends Controller {
      }
     
     public static Result haksle(String email) {
-    	return ok(views.html.haksle.render(Product.allbymail(email), productForm, "", email));
+    	return ok(views.html.haksle.render(Product.allbymail(email), ProductList.allbymail(email), productForm, email, ""));
     }
     
     
@@ -79,7 +80,7 @@ public class Application extends Controller {
     		  Map<String,String> tempMap = filledProdForm.data();
     		  String emailStr = tempMap.get("email");
     		  
-    	    return badRequest(views.html.haksle.render(Product.allbymail(emailStr), productForm, "Bad Request", emailStr));
+    	    return badRequest(views.html.haksle.render(Product.allbymail(emailStr), productForm, emailStr, "Bad Request"));
     	  } else {
     		  Map<String,String> tempMap = filledProdForm.data();
     		  String sourceStr = tempMap.get("source");
@@ -90,7 +91,7 @@ public class Application extends Controller {
     		  newProduct.attr3value = emailStr;
     		  Product.create(newProduct);
     		  
-    		  return ok(views.html.haksle.render(Product.allbymail(emailStr), productForm, "New Product is added.", emailStr));
+    		  return ok(views.html.haksle.render(Product.allbymail(emailStr), productForm, emailStr, "New Product is added."));
     	  }
     }
       
@@ -100,7 +101,7 @@ public class Application extends Controller {
 		String emailStr = tempMap.get("email");
 		  
     	Product.delete(id);
-    	return ok(views.html.haksle.render(Product.allbymail(emailStr), productForm, "Product is deleted.", emailStr));
+    	return ok(views.html.haksle.render(Product.allbymail(emailStr), productForm, emailStr, "Product is deleted."));
      }
     
     

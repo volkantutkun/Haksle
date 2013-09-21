@@ -1,7 +1,9 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -32,9 +34,13 @@ public class ProductList extends Model{
 	  return find.all();
 	}
   	
-  	public static List<ProductList> selectlistbymail(String emailStr) {
-//  	  return (List<ProductList>) find.setDistinct(true).where().eq("email", email).findList();
-  	  
+  	public static List<ProductList> selectbypid(int pid) {
+  		List<ProductList> tempList = find.where().eq("pid", pid).findList(); 
+	  
+  		return tempList;
+	}
+  	
+  	public static List<ProductList> selectlistbymail(String emailStr) { 	  
   	  String sql = "select listid, listname, email, pid from product_list group by listname";  
   
   	  RawSql rawSql = RawSqlBuilder.parse(sql).create();  
@@ -47,10 +53,8 @@ public class ProductList extends Model{
   	  return resultList;
   	}
   	
-  	public static List<Integer> selectpidsbymail(String emailStr) {
-//	  return (List<ProductList>) find.setDistinct(true).where().eq("email", email).findList();
-	  
-  		List<Integer> tempList = new ArrayList<Integer>();
+  	public static Map<Integer,String> selectpidsbymail(String emailStr) {
+  		Map<Integer,String> tempMap = new HashMap<Integer,String>();
   		
   		String sql = "select listid, listname, email, pid from product_list";  
 
@@ -61,9 +65,9 @@ public class ProductList extends Model{
 
   		List<ProductList> resultList = query.findList(); 
   		for(int i=0; i<resultList.size(); i++)
-  			tempList.add(resultList.get(i).pid);
+  			tempMap.put(resultList.get(i).pid,resultList.get(i).listname);
 	  
-  		return tempList;
+  		return tempMap;
 	}
  
 	public static void create(ProductList prodList) {
@@ -72,6 +76,14 @@ public class ProductList extends Model{
 
 	public static void delete(Integer listid) {
 	  find.ref(listid).delete();
+	}
+	
+	public static void deleteByPid(Integer pid, String emailStr) {
+		List<ProductList> tempList = find.where().eq("pid", pid).conjunction().eq("email", emailStr).findList();
+		
+		for(int i=0; i<tempList.size(); i++){
+			find.ref(tempList.get(i).listid).delete();
+		}
 	}
 }
 

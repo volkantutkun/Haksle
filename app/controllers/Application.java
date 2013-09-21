@@ -117,12 +117,14 @@ public class Application extends Controller {
     	  }
     }
       
-    public static Result deleteProduct(int id) {
+    public static Result deleteProduct(int id, String email) {
     	Form<Product> filledProdForm = productForm.bindFromRequest();
     	Map<String,String> tempMap = filledProdForm.data();
 		String emailStr = tempMap.get("email");
-		  
-    	Product.delete(id);
+		   	
+    	ProductList.deleteByPid(id, email);
+    	if(ProductList.selectbypid(id).size() == 0)
+    		Product.delete(id);
     	return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "Product is deleted."));
      }
     

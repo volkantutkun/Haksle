@@ -1,7 +1,9 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -53,11 +55,35 @@ public class Product extends Model{
   		return (List<Product>) find.where().eq("pid", pid).findList();
     }
   	
-  	public static List<Product> allbypidlist(List<Integer> pidList) {
-  		List<Product> tempList = new ArrayList<Product>();
-  		for(int i=0; i<pidList.size(); i++){
-  			tempList.add(allbypid(pidList.get(i)).get(0));
+  	public static List<ProductWithListInfo> allbypidlist(Map<Integer,String> receivedMap) {
+  		List<ProductWithListInfo> tempList = new ArrayList<ProductWithListInfo>();
+  		
+  		Iterator iter = receivedMap.entrySet().iterator();
+  		
+  		while (iter.hasNext()) {
+  			Map.Entry mEntry = (Map.Entry) iter.next();
+  			
+  			ProductWithListInfo tempProdWList = new ProductWithListInfo();
+  			
+  			Product tempProd = allbypid((Integer)mEntry.getKey()).get(0);
+
+  			tempProdWList.pid = tempProd.pid;
+  			tempProdWList.title = tempProd.title;
+  			tempProdWList.site = tempProd.site;
+  			tempProdWList.source = tempProd.source;
+  			tempProdWList.attr1 = tempProd.attr1;
+  			tempProdWList.attr1value = tempProd.attr1value;
+  			tempProdWList.attr2 = tempProd.attr2;
+  			tempProdWList.attr2value = tempProd.attr2value;
+  			tempProdWList.attr3 = tempProd.attr3;
+  			tempProdWList.attr3value = tempProd.attr3value;
+  			tempProdWList.picture = tempProd.picture;
+  			
+  			tempProdWList.listname = (String)mEntry.getValue();
+  			
+  			tempList.add(tempProdWList);
   		}
+
   		return tempList;
   	}
  
@@ -69,4 +95,3 @@ public class Product extends Model{
 	  find.ref(pid).delete();
 	}
 }
-

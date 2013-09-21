@@ -12,7 +12,7 @@ POST    /customerlogin				controllers.Application.checkCustomer()
 
 GET     /haksle						controllers.Application.haksle(email: String)
 POST    /haksle						controllers.Application.addProduct()
-POST    /haksle/:id/delete			controllers.Application.deleteProduct(id: Integer)
+POST    /haksle/:id/delete			controllers.Application.deleteProduct(id: Integer, email: String)
 
 
 # Map static resources from the /public folder to the /assets URL path

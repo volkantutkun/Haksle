@@ -6,48 +6,27 @@ import akka.actor.OneForOneStrategy;
 import akka.actor.SupervisorStrategy;
 import akka.actor.UntypedActor;
 import akka.actor.Props;
-import akka.actor.UntypedActorFactory;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.Function;
-import akka.japi.Option;
 import scala.concurrent.Await;
 import scala.concurrent.duration.Duration;
-import akka.serialization.SerializationExtension;
-import akka.serialization.Serialization;
 import java.io.Serializable;
-import java.lang.management.ManagementFactory;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import static akka.pattern.Patterns.ask;
-import java.util.concurrent.TimeUnit;
-import akka.actor.ActorRef;
-import akka.actor.ActorSystem;
-import akka.actor.SupervisorStrategy;
 import static akka.actor.SupervisorStrategy.resume;
 import static akka.actor.SupervisorStrategy.restart;
-import static akka.actor.SupervisorStrategy.stop;
 import static akka.actor.SupervisorStrategy.escalate;
 import akka.actor.SupervisorStrategy.Directive;
-import akka.actor.OneForOneStrategy;
-import akka.actor.Props;
-import akka.actor.Terminated;
-import akka.actor.UntypedActor;
-import scala.concurrent.Await;
-import static akka.pattern.Patterns.ask;
-import scala.concurrent.duration.Duration;
- 
  
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
- 
-import deamon.Deamon.Supervisor;
- 
+
  
 public class Deamon {
  
@@ -125,7 +104,8 @@ public class Deamon {
     	}
     }
    
-    public static class Hukk implements Serializable
+    @SuppressWarnings("serial")
+	public static class Hukk implements Serializable
     {
     	public final String name;
     	public final String link;
@@ -159,6 +139,7 @@ public class Deamon {
     	@Override
     	public void onReceive(Object message) throws Exception
     	{
+
     		if (message instanceof Hukk)
     		{
     			name = ((Hukk) message).name;
@@ -182,12 +163,18 @@ public class Deamon {
     					newList = priceMap.get(oldPrice);
     					newList.remove(user);
     					priceMap.put(oldPrice, newList);
+    					userMap.put(user, price);
+    				
     				}
     				else
     				{
     					log.info("Unexpected error - priceMap doesn't have old price!");
     					new NullPointerException(); //TODO: self restart
     				}
+    			}
+    			else
+    			{
+    				userMap.put(user,price);
     			}
                                                               
     			if (priceMap.containsKey(price))
@@ -210,12 +197,13 @@ public class Deamon {
                                
     		else if (message.equals(TICK))
     		{
-    			log.info("TICK kicked for " + name);
-    			Iterator iterator = userMap.entrySet().iterator();
+    			//log.info("TICK kicked for " + name);
+    			Iterator<Entry<String, Long>> iterator = userMap.entrySet().iterator();
     			while (iterator.hasNext())
     			{
-    				Map.Entry mapEntry = (Map.Entry) iterator.next();
-    				log.info("User: " + mapEntry.getKey() + ", waits for the price: " + mapEntry.getValue());
+    				@SuppressWarnings("rawtypes")
+					Map.Entry mapEntry = (Map.Entry) iterator.next();
+    				log.info("User: " + mapEntry.getKey() + ", waits for "+name+" for the price: " + mapEntry.getValue());
     			}
     		}
     		else if (message instanceof Exception)
@@ -313,6 +301,7 @@ public class Deamon {
     	deamon.greet("CharlieParkerEbook","link1",40,"Ural");
     	deamon.greet("SlipknotCD","link2",30,"Ural");
     	deamon.greet("ScalaEbook","link3",50,"Sabri");
+    	
     }
  
 }

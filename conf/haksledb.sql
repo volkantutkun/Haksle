@@ -25,6 +25,7 @@ CREATE  TABLE `haksle`.`customer` (
   `title` VARCHAR(113) NOT NULL ,
   `site` VARCHAR(50) NOT NULL ,
   `source` VARCHAR(313) NOT NULL ,
+  `category` VARCHAR(313) NOT NULL ,
   `attr1` VARCHAR(45) NULL ,
   `attr1value` VARCHAR(45) NULL ,
   `attr2` VARCHAR(45) NULL ,
@@ -47,11 +48,6 @@ CREATE  TABLE `haksle`.`customer` (
   CONSTRAINT `email`
     FOREIGN KEY (`email` )
     REFERENCES `haksle`.`customer` (`email` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `pid`
-    FOREIGN KEY (`pid` )
-    REFERENCES `haksle`.`product` (`pid` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
  

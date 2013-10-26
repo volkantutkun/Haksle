@@ -12,12 +12,22 @@ import akka.japi.Function;
 import scala.concurrent.Await;
 import scala.concurrent.duration.Duration;
 import java.io.Serializable;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import parsers.PrGittiGidiyor;
+import parsers.PrHepsiBurada;
+import parsers.PrMorhipo;
+import play.Logger;
+
+import models.Product;
 import static akka.pattern.Patterns.ask;
 import static akka.actor.SupervisorStrategy.resume;
 import static akka.actor.SupervisorStrategy.restart;
@@ -109,14 +119,25 @@ public class Deamon {
     {
     	public final String name;
     	public final String link;
-    	public final long price;
+    	public final double price;
     	public final String user;
+    	public final String workerPath;
                       
-    	public Hukk(String name, String link, long price, String user)
+    	public Hukk(String name, String link, double price2, String user, String workerPath)
     	{
-    		this.name=name; this.link=link; this.price=price; this.user=user;
+    		this.name=name; this.link=link; this.price=price2; this.user=user; this.workerPath=workerPath;
     	}            
     }
+    
+    private static Product parseURL(String receivedURL){
+    	Product parsedProduct = null;
+		if(receivedURL.contains("hepsiburada"))	parsedProduct = PrHepsiBurada.getContentPrice(receivedURL);
+		else if(receivedURL.contains("gittigidiyor"))parsedProduct = PrGittiGidiyor.getContentPrice(receivedURL);
+		else if(receivedURL.contains("morhipo"))parsedProduct = PrMorhipo.getContentPrice(receivedURL);
+		else parsedProduct = null;
+		
+		return parsedProduct;
+	}
  
     public static class HukkActor extends UntypedActor
     {
@@ -125,15 +146,16 @@ public class Deamon {
 
     	String name;
     	String link;
-    	long price;
+    	double price;
     	String user;
-    	Map<Long,HashSet<String>> priceMap = new HashMap<Long, HashSet<String>>();
-    	Map<String,Long> userMap = new HashMap<String,Long>();
-    	Long oldPrice;
+    	String workerPath;
+    	Map<Double,HashSet<String>> priceMap = new HashMap<Double, HashSet<String>>();
+    	Map<String,Double> userMap = new HashMap<String,Double>();
+    	Double oldPrice;
                
     	@Override
         public void preStart() {
-    		getContext().system().scheduler().schedule(Duration.create(1, "second"), Duration.create(10, "second"),getSelf(), TICK, getContext().dispatcher());
+    		getContext().system().scheduler().schedule(Duration.create(1, "second"), Duration.create(30, "second"),getSelf(), TICK, getContext().dispatcher());
     	}
     	
     	@Override
@@ -146,6 +168,7 @@ public class Deamon {
     			link = ((Hukk) message).link;
     			price = ((Hukk) message).price;
     			user = ((Hukk) message).user;
+    			workerPath = ((Hukk) message).workerPath;
                                     
     			log.info("Worker log for " + name);
     			log.info("Attributes: " + link + ", " + price + ", " + user);
@@ -169,7 +192,7 @@ public class Deamon {
     				else
     				{
     					log.info("Unexpected error - priceMap doesn't have old price!");
-    					new NullPointerException(); //TODO: self restart
+    					new NullPointerException();
     				}
     			}
     			else
@@ -197,14 +220,31 @@ public class Deamon {
                                
     		else if (message.equals(TICK))
     		{
-    			//log.info("TICK kicked for " + name);
-    			Iterator<Entry<String, Long>> iterator = userMap.entrySet().iterator();
+    			  			
+    			log.info("TICK kicked for " + name);
+    			
+    			Product product = parseURL(link);
+    			
+    			Iterator<Entry<String, Double>> iterator = userMap.entrySet().iterator();
     			while (iterator.hasNext())
     			{
     				@SuppressWarnings("rawtypes")
 					Map.Entry mapEntry = (Map.Entry) iterator.next();
-    				log.info("User: " + mapEntry.getKey() + ", waits for "+name+" for the price: " + mapEntry.getValue());
+    				String user= (String) mapEntry.getKey(); 
+    				double desiredPrice = (double) mapEntry.getValue();
+    				
+    				Double currPrice = Double.parseDouble(product.attr2value);
+    				if (currPrice <= desiredPrice)
+    				{
+    					//Logger.info(user + "'s desired price reached for :" + name);
+    					userMap.remove(user);
+    				}
+    				//else
+    					//Logger.info("User: " + user + ", waits for "+name+" for the price: " + price);
     			}
+    			
+    			
+    			
     		}
     		else if (message instanceof Exception)
     		{
@@ -244,7 +284,6 @@ public class Deamon {
     			return actor;
     			
     		} catch (Exception e) {
-    			// TODO Auto-generated catch block
     			e.printStackTrace();
     		}
     	}
@@ -271,7 +310,6 @@ public class Deamon {
     			System.out.println(actor.toString() + " created.");
     			return actor;
     		} catch (Exception e) {
-    			// TODO Auto-generated catch block
     			e.printStackTrace();
     		}
     	}
@@ -282,26 +320,16 @@ public class Deamon {
     	return actor_candidate;
     }
 
-    public void greet(final String name, final String link, final long price, final String user)
+    public void watchItem(final String name, final String link, final double price, final String user)
     {
-       String supChar = "Node1";
-       if(ALPHABET_N_Z.contains(name.substring(0, 1)))
+        String supChar = "Node1";
+        if(ALPHABET_N_Z.contains(name.substring(0, 1)))
     	   supChar = "Node2";
  
-       ActorRef supervisor= getOrCreateSupervisor(supChar);                            
-       ActorRef worker= getOrCreateWorker(supChar, name, supervisor);
-       worker.tell(new Hukk(name,link,price,user), worker);
+        ActorRef supervisor= getOrCreateSupervisor(supChar);                            
+        ActorRef worker= getOrCreateWorker(supChar, name, supervisor);
+        worker.tell(new Hukk(name,link,price,user,worker.path().toString()), worker);
     }
 
-    public static void main(String [] args)
-    {
-    	Deamon deamon = new Deamon();
-    	deamon.greet("CharlieParkerEbook","link1",50,"Hakan");
-    	deamon.greet("CharlieParkerEbook","link1",40,"Hakan");
-    	deamon.greet("CharlieParkerEbook","link1",40,"Ural");
-    	deamon.greet("SlipknotCD","link2",30,"Ural");
-    	deamon.greet("ScalaEbook","link3",50,"Sabri");
-    	
-    }
  
 }

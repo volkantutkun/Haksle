@@ -59,6 +59,7 @@ public class PrGittiGidiyor{
 			}
 			
 			parsedProduct.title = prodName;
+		
 			
 		} catch (MalformedURLException e) {
 			System.out.println("ERROR: MalformedURLException type at GittiGidiyor parser!");
@@ -69,6 +70,8 @@ public class PrGittiGidiyor{
 			e.printStackTrace();
 			return null;
 		}	
+		
+		
 		
 		return parsedProduct;
 	}

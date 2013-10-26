@@ -39,7 +39,7 @@ public class Product extends Model{
 	
 	public static Finder<Integer,Product> find = new Finder( Integer.class, Product.class );
 	    
-  	public static List<Product> all() {
+  	public List<Product> all() {
   		return find.all();
 	}
   	

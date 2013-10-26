@@ -111,7 +111,6 @@ public class Application extends Controller {
     		  newListItem.email = emailStr;
     		  newListItem.listname = listnameStr;
     		  newListItem.pid = pid;
-    		  newListItem.listid = 1;
     		  newListItem.create(newListItem);
     		  
     		  return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "New Product is added."));

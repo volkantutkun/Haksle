@@ -51,7 +51,6 @@ public class PrHepsiBurada{
 			parsedProduct.attr2 = "CURRENTPRICE";
 			parsedProduct.attr2value = prodPrice;
 			
-			parsedProduct.pid=1;
 			
 			
 		} catch (MalformedURLException e) {

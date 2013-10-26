@@ -31,15 +31,15 @@ CREATE  TABLE `haksle`.`customer` (
   `attr3` VARCHAR(50),
   `attr3value` VARCHAR(50),
   `source` VARCHAR(313) NOT NULL ,
-  `pid` INT NOT NULL ,
+  `pid` INT NOT NULL AUTO_INCREMENT,
   `picture` LONGBLOB NULL ,
   PRIMARY KEY (`pid`) );
   
   
-  CREATE  TABLE `haksle`.`productlist` (
+  CREATE  TABLE `haksle`.`product_list` (
   `email` VARCHAR(50) NOT NULL ,
   `listname` VARCHAR(45) NOT NULL ,
-  `listid` INT NOT NULL ,
+  `listid` INT NOT NULL AUTO_INCREMENT,
   `pid` INT NULL ,
   PRIMARY KEY (`listid`) ,
   INDEX `email_idx` (`email` ASC) ,

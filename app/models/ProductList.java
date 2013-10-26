@@ -1,9 +1,9 @@
 package models;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,7 +13,6 @@ import com.avaje.ebean.Query;
 import com.avaje.ebean.RawSql;
 import com.avaje.ebean.RawSqlBuilder;
 
-import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 
 @Entity
@@ -22,11 +21,14 @@ public class ProductList extends Model{
 	public int listid;
 	
 	public String listname;
-	
+		
+
+    public Customer customer;
 	public String email;
 	
 	public int pid;
 
+	public int test;
 	
 	public static Finder<Integer,ProductList> find = new Finder( Integer.class, ProductList.class );
 	    

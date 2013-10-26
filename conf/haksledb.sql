@@ -25,14 +25,8 @@ CREATE  TABLE `haksle`.`customer` (
   `title` VARCHAR(113) NOT NULL ,
   `site` VARCHAR(50) NOT NULL ,
   `source` VARCHAR(313) NOT NULL ,
-  `category` VARCHAR(313) NOT NULL ,
-  `attr1` VARCHAR(45) NULL ,
-  `attr1value` VARCHAR(45) NULL ,
-  `attr2` VARCHAR(45) NULL ,
-  `attr2value` VARCHAR(45) NULL ,
+  `category` VARCHAR(313) NOT NULL ,  
   `pid` INT NOT NULL ,
-  `attr3` VARCHAR(45) NULL ,
-  `attr3value` VARCHAR(45) NULL ,
   `picture` LONGBLOB NULL ,
   PRIMARY KEY (`pid`) );
   

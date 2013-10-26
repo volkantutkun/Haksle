@@ -33,8 +33,9 @@ create table product (
 create table product_list (
   listid                    integer auto_increment not null,
   listname                  varchar(255),
-  email                     varchar(255),
+  email                     varchar(100),
   pid                       integer,
+  test                      integer,
   constraint pk_product_list primary key (listid))
 ;
 

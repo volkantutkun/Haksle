@@ -51,6 +51,8 @@ public class PrHepsiBurada{
 			parsedProduct.attr2 = "CURRENTPRICE";
 			parsedProduct.attr2value = prodPrice;
 			
+			parsedProduct.pid=1;
+			
 			
 		} catch (MalformedURLException e) {
 			System.out.println("ERROR: MalformedURLException type at HepsiBurada parser!");

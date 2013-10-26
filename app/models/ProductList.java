@@ -27,8 +27,6 @@ public class ProductList extends Model{
 	public String email;
 	
 	public int pid;
-
-	public int test;
 	
 	public static Finder<Integer,ProductList> find = new Finder( Integer.class, ProductList.class );
 	    

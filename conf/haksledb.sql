@@ -24,14 +24,19 @@ CREATE  TABLE `haksle`.`customer` (
   CREATE  TABLE `haksle`.`product` (
   `title` VARCHAR(113) NOT NULL ,
   `site` VARCHAR(50) NOT NULL ,
+  `attr1` VARCHAR(50) NOT NULL,
+  `attr1value` VARCHAR(50) NOT NULL,
+  `attr2` VARCHAR(50) NOT NULL,
+  `attr2value` VARCHAR(50) NOT NULL,
+  `attr3` VARCHAR(50),
+  `attr3value` VARCHAR(50),
   `source` VARCHAR(313) NOT NULL ,
-  `category` VARCHAR(313) NOT NULL ,  
   `pid` INT NOT NULL ,
   `picture` LONGBLOB NULL ,
   PRIMARY KEY (`pid`) );
   
   
-  CREATE  TABLE `haksle`.`list` (
+  CREATE  TABLE `haksle`.`productlist` (
   `email` VARCHAR(50) NOT NULL ,
   `listname` VARCHAR(45) NOT NULL ,
   `listid` INT NOT NULL ,

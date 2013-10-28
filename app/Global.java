@@ -1,11 +1,7 @@
 
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Timer;
 
 import models.Product;
 import deamon.Deamon;
@@ -13,40 +9,16 @@ import play.*;
 
 public class Global extends GlobalSettings 
 {
+	
+	int DEAMONLOAD = 1;
 
   @Override
   public void onStart(Application app) 
   {
     Logger.info("Application has started");
     
-    //Deamon:
-    
-    /*Deamon deamon = new Deamon();
-    Product product = new Product();
-    
-    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-	Date date = new Date();
-    Logger.info("Parsing started at: " + dateFormat.format(date));
-    
-    List<Product> productList = product.all();    
-    Iterator<Product> iterator = productList.iterator();
-	int i = 0;
-    while (iterator.hasNext()) 
-	{
-    	i++;
-		if (i>50)
-		{
-			 break;
-		}
-		
-		product = iterator.next();
-		String productIdentifier = product.site+":"+product.pid;
-		deamon.watchItem(productIdentifier, product.source, 50.0, "Hakan");
-	}
-	
-	Date date2 = new Date();
-	Logger.info("Parsing ended at: " + dateFormat.format(date2));
-     */
+    //extendedDeamon();
+    singularDeamon();
   }  
   
   @Override
@@ -54,6 +26,64 @@ public class Global extends GlobalSettings
   {
 	  Logger.info("Application shutdown...");
   }  
+  
+  public void singularDeamon()
+  {
+	    Deamon deamon = new Deamon();
+	    Product product = new Product();
+
+	    
+	    List<Product> productList = product.all();    
+	    Iterator<Product> iterator = productList.iterator();
+
+	    while (iterator.hasNext()) 
+		{		
+			product = iterator.next();
+			String productIdentifier = product.site+":"+product.pid;
+			deamon.watchItem(productIdentifier, product.source, 50.0, "Hakan");
+		}
+
+  }
+  
+  public void extendedDeamon()
+  {
+	  	Deamon deamon = new Deamon();
+	    Product product = new Product();
+
+	    List<Product> productList = product.all();    
+	    Iterator<Product> iterator = productList.iterator();
+	    
+	    int resultSize = productList.size();
+	    
+	    if (resultSize<=DEAMONLOAD)
+	    	DEAMONLOAD=resultSize;
+
+	    int counter = 1;
+	    while (iterator.hasNext()) 
+		{	
+	    	HashMap<String,String> items = new HashMap<String,String>();
+
+	    	while (counter<=DEAMONLOAD)
+	    	{
+	    		if(iterator.hasNext())
+	    		{
+	    			product = iterator.next();
+	    	
+	    			String productIdentifier=product.site+":"+product.pid;
+	    			//Logger.info(productIdentifier);
+	    			items.put(productIdentifier, product.source);
+	    		
+	    			counter++;
+	    		}
+	    		else
+	    			break;
+	    	}
+	    	deamon.watchItems(items);
+	    	counter = 1;
+
+		}
+
+  }
   
     
 }

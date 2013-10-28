@@ -34,6 +34,7 @@ public class ProductList extends Model{
 	  return find.all();
 	}
   	
+  	
   	public static List<ProductList> selectbypid(int pid) {
   		List<ProductList> tempList = find.where().eq("pid", pid).findList(); 
 	  

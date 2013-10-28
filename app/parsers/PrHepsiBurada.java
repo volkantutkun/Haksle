@@ -26,7 +26,7 @@ public class PrHepsiBurada{
 		
 		try {
 			// need http protocol
-			doc = Jsoup.connect(receivedURL).get();
+			doc = Jsoup.connect(receivedURL).timeout(10*1000).get();
 		 
 			Elements spanIds = doc.select("span[id]");
 				

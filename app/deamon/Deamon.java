@@ -12,10 +12,10 @@ import akka.japi.Function;
 import scala.concurrent.Await;
 import scala.concurrent.duration.Duration;
 import java.io.Serializable;
-import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -48,7 +48,7 @@ public class Deamon {
    
     public Deamon()
     {
-    	Config config = ConfigFactory.parseString("akka.loglevel = DEBUG \n" + "akka.actor.debug.lifecycle = on");
+    	Config config = ConfigFactory.parseString("akka.loglevel = INFO \n" + "akka.actor.debug.lifecycle = on");
     	system = ActorSystem.create("HukkSystem", config);
                
     	root = system.actorOf(new Props(Root.class), "root");
@@ -129,6 +129,20 @@ public class Deamon {
     	}            
     }
     
+    @SuppressWarnings("serial")
+	public static class HukkExtended implements Serializable
+    {
+    	public final String itemsCode;
+    	public final HashMap<String,String> items;
+    	public final String workerPath;
+
+    	
+    	public HukkExtended(String itemsCode, HashMap<String,String> items, String workerPath)
+    	{
+    		this.itemsCode=itemsCode; this.items=items; this.workerPath=workerPath;
+    	}            
+    }
+    
     private static Product parseURL(String receivedURL){
     	Product parsedProduct = null;
 		if(receivedURL.contains("hepsiburada"))	parsedProduct = PrHepsiBurada.getContentPrice(receivedURL);
@@ -155,7 +169,7 @@ public class Deamon {
                
     	@Override
         public void preStart() {
-    		getContext().system().scheduler().schedule(Duration.create(1, "second"), Duration.create(30, "second"),getSelf(), TICK, getContext().dispatcher());
+    		getContext().system().scheduler().schedule(Duration.create(1, "second"), Duration.create(120, "second"),getSelf(), TICK, getContext().dispatcher());
     	}
     	
     	@Override
@@ -264,6 +278,85 @@ public class Deamon {
     		}
     	}
     }
+    
+    public static class HukkActorExtended extends UntypedActor
+    {
+    	int state = 0;
+    	LoggingAdapter log = Logging.getLogger(getContext().system(), this);
+
+    	String itemsCode;
+    	HashMap<String,String> items;
+    	String workerPath;          
+    	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+ 
+    	@Override
+    	public void onReceive(Object message) throws Exception
+    	{
+
+    		if (message instanceof HukkExtended)
+    		{
+
+    			itemsCode = ((HukkExtended) message).itemsCode;
+    			items = ((HukkExtended) message).items;
+    			workerPath = ((HukkExtended) message).workerPath;
+                                    
+    			Date date = new Date();
+    		    Logger.info("Parsing started for " + workerPath + "at: " + dateFormat.format(date));
+    		    
+    		    
+    			//log.info("Worker log for " + itemsCode);
+    			
+    			Iterator<Entry<String, String>> it = items.entrySet().iterator();
+    	    	while (it.hasNext()) 
+    	    	{
+    	    			
+    	    	        Map.Entry<String,String> pairs = (Map.Entry<String,String>)it.next();
+    	    	        String name = pairs.getKey();
+    	    	        String link = pairs.getValue();
+    	    			Product product = parseURL(link);
+    	    			//Logger.info("Parsing " + name);
+    	    			if (product!=null)
+    	    			{
+    	    				Double currPrice = Double.parseDouble(product.attr2value);
+	        				if (currPrice <= 50)
+	        				{
+	        					Logger.info("Desired price reached for :" + name);
+	        				}
+    	    			}
+    	    			else
+    	    			{
+    	    				Logger.info("product null for: " + link);
+    	    			}
+    	    	}
+                            
+    		}
+
+    		else if (message instanceof Exception)
+    		{
+    			throw (Exception) message;
+    		}
+    		else if (message instanceof Integer)
+    		{
+    			state = (Integer) message;
+    		}
+    		else if (message.equals("get"))
+    		{
+    			getSender().tell(state, getSelf());
+    		}
+    		else
+    		{
+    			unhandled(message);
+    		}
+    	}
+    	
+    	@Override
+    	public void postStop() 
+    	{
+    		Logger.info(workerPath + " is stopped");
+    		Date date2 = new Date();
+  			Logger.info("Parsing ended for " + workerPath + " at: " + dateFormat.format(date2));
+    	}
+    }
    
     public ActorRef getOrCreateSupervisor(String name)
     {
@@ -280,7 +373,7 @@ public class Deamon {
     		try {
                                               
     			actor = (ActorRef) Await.result(ask(root, actorProp, 5000), timeout);                                      
-    			System.out.println(actor.toString() + " created.");
+    			//Logger.info(actor.toString() + " created.");
     			return actor;
     			
     		} catch (Exception e) {
@@ -289,33 +382,35 @@ public class Deamon {
     	}
     	else
     	{
-    		System.out.println(name + " already exists.");
+    		//Logger.info(name + " already exists.");
     	}
     	return actor_candidate;
     }
    
-    public ActorRef getOrCreateWorker(String node, String name, ActorRef parent)
+    @SuppressWarnings("unchecked")
+	public ActorRef getOrCreateWorker(String node, String name, ActorRef parent, @SuppressWarnings("rawtypes") Class ActorClass)
     {
     	Duration timeout = Duration.create("5 seconds");
     	ActorRef actor_candidate = system.actorFor("/user/root/"+node+"/"+name);
     	ActorRef actor = null;
     	ArrayList<Object> actorProp = new ArrayList<Object>();
-    	actorProp.add(new Props(HukkActor.class));
+    	actorProp.add(new Props(ActorClass));
     	actorProp.add(name);
     	
     	if (actor_candidate.isTerminated())
     	{
     		try {
     			actor = (ActorRef) Await.result(ask(parent, actorProp, 5000), timeout);                                                
-    			System.out.println(actor.toString() + " created.");
+    			//System.out.println(actor.toString() + " created.");
     			return actor;
     		} catch (Exception e) {
+    			Logger.info(name);
     			e.printStackTrace();
     		}
     	}
     	else
     	{
-    		System.out.println(name + " already exists.");                                  
+    		//System.out.println(name + " already exists.");                                  
     	}
     	return actor_candidate;
     }
@@ -327,8 +422,24 @@ public class Deamon {
     	   supChar = "Node2";
  
         ActorRef supervisor= getOrCreateSupervisor(supChar);                            
-        ActorRef worker= getOrCreateWorker(supChar, name, supervisor);
+        ActorRef worker= getOrCreateWorker(supChar, name, supervisor,HukkActor.class);
         worker.tell(new Hukk(name,link,price,user,worker.path().toString()), worker);
+    }
+    
+    public void watchItems(final HashMap<String,String> items)
+    {
+    	
+    	int itemsCode = items.hashCode();
+    	//Logger.info("Items bucket id: " + itemsCode);
+
+    	String itemsCodeStr=Integer.toString(itemsCode);
+    	String supChar = "Node1";
+    	 
+    	ActorRef supervisor= getOrCreateSupervisor(supChar);                            
+    	ActorRef worker= getOrCreateWorker(supChar, itemsCodeStr, supervisor,HukkActorExtended.class);
+    	worker.tell(new HukkExtended(itemsCodeStr, items, worker.path().toString()), worker);
+    	worker.tell(akka.actor.PoisonPill.getInstance(), worker);
+       
     }
 
  

@@ -8,6 +8,11 @@ import java.util.Map;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.avaje.ebean.Ebean;
+import com.avaje.ebean.Query;
+import com.avaje.ebean.RawSql;
+import com.avaje.ebean.RawSqlBuilder;
+
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 
@@ -41,6 +46,20 @@ public class Product extends Model{
 	    
   	public List<Product> all() {
   		return find.all();
+	}
+  	
+	public List<Product> all(int rowcount)
+	{
+		  String sql = "select site, pid, source from product limit "+rowcount;  
+		  
+	  	  RawSql rawSql = RawSqlBuilder.parse(sql).create();  
+	  
+	  	  Query<Product> query = Ebean.find(Product.class);  
+	  	  query.setRawSql(rawSql); 
+	  
+	  	  List<Product> resultList = query.findList();  
+	  	  
+	  	  return resultList;
 	}
   	
   	public static List<Product> allbymail(String email) {

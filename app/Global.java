@@ -10,7 +10,7 @@ import play.*;
 public class Global extends GlobalSettings 
 {
 	
-	int DEAMONLOAD = 1;
+	int DEAMONLOAD = 20;
 
   @Override
   public void onStart(Application app) 

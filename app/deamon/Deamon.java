@@ -122,9 +122,9 @@ public class Deamon {
     {
     	public final String site;
     	public final String preurl;
-    	public final List<String> items;
+    	public final List<Product> items;
 
-    	public HukkExtended(String site, String preurl, List<String> items)
+    	public HukkExtended(String site, String preurl, List<Product> items)
     	{
     		this.site=site;
     		this.preurl=preurl;
@@ -132,7 +132,7 @@ public class Deamon {
     	}            
     }
     
-    private static void parseURLs(String site, String preurl, List<String> receivedURLs)
+    private static void parseURLs(String site, String preurl, List<Product> receivedURLs)
     {
  
 		if(site.equals("Gittigidiyor"))	
@@ -141,7 +141,7 @@ public class Deamon {
 		//	parsedProduct = PrHepsiBurada.getContentPrices(receivedURLs);
 		//else if(site.equals("Morhipo"))
 		//	parsedProduct = PrMorhipo.getContentPrices(receivedURLs);
-
+	
 
 	}
  
@@ -154,7 +154,7 @@ public class Deamon {
 
     	String site;
     	String preurl;
-    	List<String> items;        
+    	List<Product> items;        
     	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
 		
@@ -168,7 +168,16 @@ public class Deamon {
     			preurl = ((HukkExtended) message).preurl; 
     			items = ((HukkExtended) message).items; 
     	    	parseURLs(site, preurl, items);
-                      
+
+    			/*Product parsedProduct = new Product();
+    			Iterator<Product> it = items.iterator();
+    	    	while (it.hasNext()) 
+    	    	{
+    	    		Product pr = it.next();
+    	    		parsedProduct = parseURL(pr.getPreUrl()+pr.getPostUrl());	
+    	    	}
+    	    	*/
+    			
     		}
 
     		else if (message instanceof Exception)
@@ -200,7 +209,7 @@ public class Deamon {
    
     public ActorRef getOrCreateSupervisor(String name)
     {
-    	Duration timeout = Duration.create("5 seconds");
+    	Duration timeout = Duration.create("10 seconds");
     	ActorRef actor_candidate = system.actorFor("/user/root/"+name);
     	ActorRef actor = null;
     	ArrayList<Object> actorProp = new ArrayList<Object>();
@@ -212,7 +221,7 @@ public class Deamon {
     	{
     		try {
                                               
-    			actor = (ActorRef) Await.result(ask(root, actorProp, 5000), timeout);                                      
+    			actor = (ActorRef) Await.result(ask(root, actorProp, 10000), timeout);                                      
     			Logger.info(actor.toString() + " created.");
     			return actor;
     			
@@ -230,7 +239,7 @@ public class Deamon {
     @SuppressWarnings("unchecked")
 	public ActorRef getOrCreateWorker(String node, String name, ActorRef parent, @SuppressWarnings("rawtypes") Class ActorClass)
     {
-    	Duration timeout = Duration.create("5 seconds");
+    	Duration timeout = Duration.create("10 seconds");
     	ActorRef actor_candidate = system.actorFor("/user/root/"+node+"/"+name);
     	ActorRef actor = null;
     	ArrayList<Object> actorProp = new ArrayList<Object>();
@@ -240,11 +249,11 @@ public class Deamon {
     	if (actor_candidate.isTerminated())
     	{
     		try {
-    			actor = (ActorRef) Await.result(ask(parent, actorProp, 5000), timeout);                                                
-    			System.out.println(actor.toString() + " created.");
+    			actor = (ActorRef) Await.result(ask(parent, actorProp, 10000), timeout);                                                
+    			Logger.info(actor.toString() + " created.");
     			return actor;
     		} catch (Exception e) {
-    			Logger.info(name);
+    			Logger.info(actor_candidate.toString() + " failed");
     			e.printStackTrace();
     		}
     	}
@@ -264,11 +273,11 @@ public class Deamon {
         worker.tell(new Hukk(name,link,price,user,worker.path().toString()), worker);
     }
     
-    public void watchItems(final String site, final String preurl, final List<String> items)
+    public void watchItems(final String site, final String preurl, final List<Product> items)
     {
     	
-
     	int itemsCode = items.hashCode();
+    	
     	Random generator = new Random(); 
     	int i = generator.nextInt(10) + 1;
     	itemsCode+=i;
@@ -284,10 +293,11 @@ public class Deamon {
     	ActorRef worker= getOrCreateWorker(supChar, itemsCodeStr, supervisor, HukkActorExtended.class);
     	if(worker!=null)
     	{
-
+    
     		worker.tell(new HukkExtended(site, preurl, items), worker);
     		worker.tell(akka.actor.PoisonPill.getInstance(), worker);
     	}
+    	
     }
     
     public void printItemsDetails(HashMap<String,String> items)

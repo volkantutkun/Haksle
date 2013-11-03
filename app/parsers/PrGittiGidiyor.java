@@ -23,25 +23,25 @@ import play.Logger;
 public class PrGittiGidiyor
 {	
 	
-	public static void getContentPrices(String preurl, List<String> receivedURLs)
+	public static void getContentPrices(String preurl, List<Product> receivedURLs)
 	{
-		List<Product> products = new ArrayList<Product>();
 
 		try {
 
 			Connection _conn = Jsoup.connect(preurl);
 
-			Iterator<String> it = receivedURLs.iterator();
+			Iterator<Product> it = receivedURLs.iterator();
 	    	while (it.hasNext()) 
 	    	{
-	    		Product parsedProduct = new Product();
+	    		Product parsedProduct = it.next();
 	    		String prodPrice = "NOTFOUND";
-	    		String prodName = "NOTFOUND";
 	    		
-	    		String posturl=it.next();
+	    		String posturl=parsedProduct.getPostUrl();
 	    		Document doc;
 	    		
-	    		_conn.url(preurl+posturl);
+	    		String url=preurl+posturl;
+	    		
+	    		_conn.url(url);
 	    		doc = _conn.timeout(10*1000).get();
 
     			Elements spanIds = doc.select("span[class]");
@@ -65,17 +65,16 @@ public class PrGittiGidiyor
     			
     			if( prodPrice != null && !"".equals(prodPrice))	
     			{
-
-    				//price kontrol
+    				int k;
+    				if (Double.parseDouble(trimPrice(prodPrice)) < Double.parseDouble(parsedProduct.attr2value))
+    					k = 1;//Logger.info("Dusuk");
+    				//else
+    					//Logger.info("Yuksek");
 
     			}
 
-
 	    	}
-	    			
-	    			
-	    			
-	    			
+	
 	    		} catch (MalformedURLException e) {
 	    			System.out.println("ERROR: MalformedURLException type at GittiGidiyor parser!");
 	    			e.printStackTrace();
@@ -86,7 +85,6 @@ public class PrGittiGidiyor
 
 	    		}	
 
-    		
     	}
 
 		

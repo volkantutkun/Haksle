@@ -11,7 +11,7 @@ public class DeamonController
 {
 
 
-	int DEAMONLOAD = 20;
+	int DEAMONLOAD = 10;
 	public void singularDeamon()
 	{
 		    Deamon deamon = new Deamon();
@@ -33,60 +33,56 @@ public class DeamonController
 	  public void extendedDeamon()
 	  {
 		  	Deamon deamon = new Deamon();
-		    Product product = new Product();
+		    Product products = new Product();
 
-		   // List<Product> siteList = product.all_sites();
-		   // Iterator<Product> siteIterator = siteList.iterator();
+		    List<String> siteList = products.all_sites();
+		    Iterator<String> siteIterator = siteList.iterator();
 		    
-		    //if (siteList.size() > 0)
-		   // {
-			//    while (siteIterator.hasNext()) 
-			//	{	
+		    if (siteList.size() > 0)
+		    {
+			    while (siteIterator.hasNext()) 
+				{	
 
-			  //  		String site = siteIterator.next().site;
-			    		String preurl = null;
-			    		String site = "Gittigidiyor";
-			    	 	List<Product> productList = product.all_4parserdeamon(site); 
+			    		String site = siteIterator.next();
 			    	 	
+			    		//List<Product> productList = products.all(400); 
+			    		List<Product> productList = products.all_4parserdeamon(site); 
+			    	 	
+			    		String preurl = productList.get(1).getPreUrl();
 					    Iterator<Product> urlIterator = productList.iterator();		    
 					    
 					    int resultSize = productList.size();
 					    
-					    	if (resultSize<=DEAMONLOAD)
-						    	DEAMONLOAD=resultSize;
+					    if (resultSize<=DEAMONLOAD)
+						    DEAMONLOAD=resultSize;
 	
-						    int counter = 1;
-						    while (urlIterator.hasNext()) 
-							{	
-						    	List<String> items = new ArrayList<String>();
+						int counter = 1;
+						while (urlIterator.hasNext()) 
+						{	
+						    	List<Product> items = new ArrayList<Product>();
 						    	
 						    	while (counter<=DEAMONLOAD)
 						    	{
 						    		if(urlIterator.hasNext())
 						    		{
-						    			Product product2 = urlIterator.next();
-						    			preurl = product2.getPreUrl();
-						    			items.add(product2.getPostUrl());
+						    			items.add(urlIterator.next());
 						    			counter++;
-	
 						    		}
 						    		else
 						    			break;
 						    	}
-			   		
-						    	
-						    	deamon.watchItems(site, preurl, items);
-						    	counter = 1;
-				
-							}
 
-				  
+						    	deamon.watchItems(site,preurl,items);
+						    	counter = 1;
+			
+						}
+
 				}
 		    
-		  //  }
-		   // else
-		    //{
-		    //	Logger.info("Product yok!");
-		   // }
-	 // }
+		    }
+		    else
+		    {
+		    	Logger.info("Product yok!");
+		    }
+	 }
 }

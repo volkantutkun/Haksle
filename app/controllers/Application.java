@@ -1,9 +1,14 @@
 package controllers;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import com.avaje.ebean.Ebean;
+
+import deamon.DeamonController;
 
 import models.Customer;
 import models.Product;
@@ -11,6 +16,7 @@ import models.ProductList;
 import parsers.PrGittiGidiyor;
 import parsers.PrHepsiBurada;
 import parsers.PrMorhipo;
+import play.Logger;
 import play.data.Form;
 import play.mvc.*;
 
@@ -138,5 +144,15 @@ public class Application extends Controller {
 		
 		return parsedProduct;
 	}
+    
+    public static Result parseEmAll()
+    {
+		Date date = new Date();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Logger.info("Parsing started at: " + dateFormat.format(date));
+    	DeamonController dc = new DeamonController();
+    	dc.extendedDeamon();
+    	return ok(views.html.index.render("Parsing ended"));
+    }
   
 }

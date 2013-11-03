@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Query;
@@ -26,7 +27,19 @@ public class Product extends Model{
 	public String site;
 	
 	public String source;
-	
+
+	@Transient 
+	public String preurl;
+	public String getPreUrl() {
+		   return calcPreUrl(source);
+	}
+		
+	@Transient 
+	public String posturl;
+	public String getPostUrl() {
+		   return calcPostUrl(source);
+	}
+
 	public String attr1;
 	
 	public String attr1value;
@@ -43,9 +56,38 @@ public class Product extends Model{
 
 	
 	public static Finder<Integer,Product> find = new Finder( Integer.class, Product.class );
-	    
-  	public List<Product> all() {
-  		return find.all();
+  
+	public static List<Product> all() {
+	  return find.all();
+	}   
+	
+	public String calcPreUrl(String source)
+	{
+
+		return source.substring(0,source.indexOf(".com/"))+".com";
+	}
+	public String calcPostUrl(String source)
+	{
+		return source.substring(source.indexOf("m/")+1);
+	}
+	
+  	public List<Product> all_sites() 
+  	{
+    	  String sql = "select ";  
+    	  
+      	  RawSql rawSql = RawSqlBuilder.parse(sql).create();  
+      
+      	  Query<Product> query = Ebean.find(Product.class);  
+      	  query.setRawSql(rawSql); 
+      
+      	  List<Product> resultList = query.findList();  
+      	  
+      	  return resultList;
+	}
+	
+  	public List<Product> all_4parserdeamon(String site) 
+  	{
+  		return (List<Product>) find.where().eq("site", site).findList();
 	}
   	
 	public List<Product> all(int rowcount)

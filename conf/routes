@@ -10,6 +10,8 @@ POST    /newcustomer				controllers.Application.addCustomer()
 GET     /customerlogin				controllers.Application.customerlogin()
 POST    /customerlogin				controllers.Application.checkCustomer()
 
+GET 	/parseEmAll					controllers.Application.parseEmAll()
+
 GET     /haksle						controllers.Application.haksle(email: String)
 POST    /haksle						controllers.Application.addProduct()
 POST    /haksle/:id/delete			controllers.Application.deleteProduct(id: Integer, email: String)

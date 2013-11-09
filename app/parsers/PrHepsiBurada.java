@@ -3,15 +3,81 @@ package parsers;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.Iterator;
+import java.util.List;
 
 import models.Product;
 
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class PrHepsiBurada{
+	
+	public static void getContentPrices(String preurl, List<Product> receivedProducts)
+	{
+
+		try {
+
+			Connection _conn = Jsoup.connect(preurl);
+
+			Iterator<Product> it = receivedProducts.iterator();
+	    	while (it.hasNext()) 
+	    	{
+	    		Product parsedProduct = it.next();
+	    		String prodPrice = "NOTFOUND";
+	    		
+	    		String posturl=parsedProduct.getPostUrl();
+	    		Document doc;
+	    		
+	    		String url=preurl+posturl;
+	    		
+	    		_conn.url(url);
+	    		doc = _conn.timeout(10*1000).get();
+
+    			Elements spanIds = doc.select("span[class]");
+    			Elements pIds = doc.select("p[class]");
+    				
+    			// TODO: product aktifligi kontrol
+
+    			
+    			for (Element spanId : spanIds) 
+    			{	
+    				if(spanId.attr("class").equals("price-css"))
+    				{
+    					prodPrice = spanId.text();
+    					break;
+    				}
+    			}
+    			
+    			if( prodPrice != null && !"".equals(prodPrice))	
+    			{
+    				Double newPrice = Double.parseDouble(trimPrice(prodPrice));
+    				Double oldPrince = Double.parseDouble(parsedProduct.attr2value);
+    				if (newPrice < oldPrince)
+    				{
+    					parsedProduct.attr2value=trimPrice(prodPrice);
+    					parsedProduct.save();
+    				}	
+
+    			}
+
+	    	}
+	
+	    		} catch (MalformedURLException e) {
+	    			System.out.println("ERROR: MalformedURLException type at GittiGidiyor parser!");
+	    			e.printStackTrace();
+
+	    		} catch (IOException e) {
+	    			System.out.println("ERROR: IOException type at GittiGidiyor parser!");
+	    			e.printStackTrace();
+
+	    		}	
+
+    	}
+
 	
 	public static Product getContentPrice(String receivedURL){
 		Product parsedProduct = new Product();
@@ -28,16 +94,17 @@ public class PrHepsiBurada{
 			// need http protocol
 			doc = Jsoup.connect(receivedURL).timeout(10*1000).get();
 		 
+			// TODO: product aktifligi kontrol
+			
+			
 			Elements spanIds = doc.select("span[id]");
 				
 			for (Element spanId : spanIds) {
 
 				if(spanId.attr("id").equals("ctl00_ContentPlaceHolder1_ProductControl1_MainControl1_ProductMain1_lblPriceWithTax")){
-//					System.out.println("Price is: " + spanId.text()));
 					prodPrice = spanId.text();
 				}
 				if(spanId.attr("id").equals("ctl00_ContentPlaceHolder1_ProductControl1_MainControl1_ProductMain1_lblProductName")){
-//					System.out.println("Price is: " + spanId.text());
 					prodName = spanId.text();
 				}
 			}
@@ -65,21 +132,6 @@ public class PrHepsiBurada{
 		
 		return parsedProduct;
 	}
-	
-	// HepsiBurada parsed price is at '69,89 TL' format
-//	private static double trimPrice(String priceStr){
-//		double price = -1;
-//		try{
-//			String priceStrUpd = (String) priceStr.subSequence(0, priceStr.length()-3);
-//			priceStrUpd = priceStrUpd.replace(",", ".");
-//		//	System.out.println(priceStrUpd);
-//			price = Double.parseDouble(priceStrUpd);
-//		}catch(Exception e){
-//			System.out.println("ERROR: Exception type at HepsiBurada parser!");
-//			e.printStackTrace();
-//		}
-//		return price;
-//	}
 	
 	private static String trimPrice(String priceStr){
 		String price = "NOTFOUND";

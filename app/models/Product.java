@@ -117,6 +117,20 @@ public class Product extends Model{
   	{
   		return (List<Product>) find.where().eq("site", site).findList();
 	}
+  	
+	public List<Product> all_4informerdeamon() 
+  	{
+		  String sql = "select title, attr1value, attr2value, pid  from product where attr1value <> attr2value";
+		  
+	  	  RawSql rawSql = RawSqlBuilder.parse(sql).create();  
+	  
+	  	  Query<Product> query = Ebean.find(Product.class);  
+	  	  query.setRawSql(rawSql); 
+	  
+	  	  List<Product> resultList = query.findList();  
+	  	  
+	  	  return resultList;
+	}
 
   	
   	public static List<Product> allbymail(String email) {

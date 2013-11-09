@@ -13,6 +13,7 @@ import com.avaje.ebean.Query;
 import com.avaje.ebean.RawSql;
 import com.avaje.ebean.RawSqlBuilder;
 
+import play.Logger;
 import play.db.ebean.Model;
 
 @Entity
@@ -27,6 +28,7 @@ public class ProductList extends Model{
 	public String email;
 	
 	public int pid;
+	public int desireddiscount;
 	
 	public static Finder<Integer,ProductList> find = new Finder( Integer.class, ProductList.class );
 	    
@@ -35,6 +37,12 @@ public class ProductList extends Model{
 	}
   	
   	
+  	public static List<ProductList> getInformableCustomers(int pid, double change) 
+  	{
+  		List<ProductList> tempList = find.where().eq("pid", pid).le("desireddiscount", change).findList();  
+  		return tempList;
+	}
+  	
   	public static List<ProductList> selectbypid(int pid) {
   		List<ProductList> tempList = find.where().eq("pid", pid).findList(); 
 	  
@@ -42,7 +50,7 @@ public class ProductList extends Model{
 	}
   	
   	public static List<ProductList> selectlistbymail(String emailStr) { 	  
-  	  String sql = "select listid, listname, email, pid from product_list group by listname";  
+  	  String sql = "select listid, listname, email, pid, desireddiscount from product_list group by listname";  
   
   	  RawSql rawSql = RawSqlBuilder.parse(sql).create();  
   
@@ -57,7 +65,7 @@ public class ProductList extends Model{
   	public static Map<Integer,String> selectpidsbymail(String emailStr) {
   		Map<Integer,String> tempMap = new HashMap<Integer,String>();
   		
-  		String sql = "select listid, listname, email, pid from product_list";  
+  		String sql = "select listid, listname, email, pid, desireddiscount from product_list";  
 
   		RawSql rawSql = RawSqlBuilder.parse(sql).create();  
 

@@ -11,6 +11,7 @@ GET     /customerlogin				controllers.Application.customerlogin()
 POST    /customerlogin				controllers.Application.checkCustomer()
 
 GET 	/parseEmAll					controllers.Application.parseEmAll()
+GET 	/informEmAll					controllers.Application.informEmAll()
 
 GET     /haksle						controllers.Application.haksle(email: String)
 POST    /haksle						controllers.Application.addProduct()

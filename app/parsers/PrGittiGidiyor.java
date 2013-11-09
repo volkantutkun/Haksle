@@ -23,14 +23,14 @@ import play.Logger;
 public class PrGittiGidiyor
 {	
 	
-	public static void getContentPrices(String preurl, List<Product> receivedURLs)
+	public static void getContentPrices(String preurl, List<Product> receivedProducts)
 	{
 
 		try {
 
 			Connection _conn = Jsoup.connect(preurl);
 
-			Iterator<Product> it = receivedURLs.iterator();
+			Iterator<Product> it = receivedProducts.iterator();
 	    	while (it.hasNext()) 
 	    	{
 	    		Product parsedProduct = it.next();
@@ -65,11 +65,13 @@ public class PrGittiGidiyor
     			
     			if( prodPrice != null && !"".equals(prodPrice))	
     			{
-    				int k;
-    				if (Double.parseDouble(trimPrice(prodPrice)) < Double.parseDouble(parsedProduct.attr2value))
-    					k = 1;//Logger.info("Dusuk");
-    				//else
-    					//Logger.info("Yuksek");
+    				Double newPrice = Double.parseDouble(trimPrice(prodPrice));
+    				Double oldPrince = Double.parseDouble(parsedProduct.attr2value);
+    				if (newPrice < oldPrince)
+    				{
+    					parsedProduct.attr2value=trimPrice(prodPrice);
+    					parsedProduct.save();
+    				}	
 
     			}
 

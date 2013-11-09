@@ -11,26 +11,10 @@ public class DeamonController
 {
 
 
-	int DEAMONLOAD = 10;
-	public void singularDeamon()
-	{
-		    Deamon deamon = new Deamon();
-		    Product product = new Product();
-
-		    
-		    List<Product> productList = product.all();    
-		    Iterator<Product> iterator = productList.iterator();
-
-		    while (iterator.hasNext()) 
-			{		
-				product = iterator.next();
-				String productIdentifier = product.site+":"+product.pid;
-				deamon.watchItem(productIdentifier, product.source, 50.0, "Hakan");
-			}
-
-	  }
-	  
-	  public void extendedDeamon()
+	  int PARSERDEAMONLOAD = 10;
+	  int INFORMERDEAMONLOAD = 10;
+  
+	  public void parserDeamon()
 	  {
 		  	Deamon deamon = new Deamon();
 		    Product products = new Product();
@@ -53,15 +37,15 @@ public class DeamonController
 					    
 					    int resultSize = productList.size();
 					    
-					    if (resultSize<=DEAMONLOAD)
-						    DEAMONLOAD=resultSize;
+					    if (resultSize<=PARSERDEAMONLOAD)
+					    	PARSERDEAMONLOAD=resultSize;
 	
 						int counter = 1;
 						while (urlIterator.hasNext()) 
 						{	
 						    	List<Product> items = new ArrayList<Product>();
 						    	
-						    	while (counter<=DEAMONLOAD)
+						    	while (counter<=PARSERDEAMONLOAD)
 						    	{
 						    		if(urlIterator.hasNext())
 						    		{
@@ -85,4 +69,72 @@ public class DeamonController
 		    	Logger.info("Product yok!");
 		    }
 	 }
+	  
+	  public void informerDeamon()
+	  {
+		  	Deamon deamon = new Deamon();
+		    Product products = new Product();
+
+		    List<Product> discountList = products.all_4informerdeamon();
+		    Iterator<Product> discountIterator = discountList.iterator();
+		    
+		    int resultSize = discountList.size();
+		    
+		    if (resultSize > 0)
+		    {
+		    	
+			    if (resultSize<=PARSERDEAMONLOAD)
+			    	PARSERDEAMONLOAD=resultSize;
+			    
+		    	int counter = 1;
+			    while (discountIterator.hasNext()) 
+				{	
+			    		
+			    	List<Product> items = new ArrayList<Product>();
+						    	
+			    	while (counter<=PARSERDEAMONLOAD)
+			    	{
+						if(discountIterator.hasNext())
+						{
+							items.add(discountIterator.next());
+						    counter++;
+						}
+						else
+						    break;
+			    	}
+
+			    	deamon.informCustomers(items);
+			    	counter = 1;	
+
+				}
+		    
+		    }
+		    else
+		    {
+		    	Logger.info("Product yok!");
+		    }
+	 }
+	  
+	  
+	  
+	  
+	  //**************Deprecated code here*************
+	  
+		public void singularDeamon()
+		{
+			    Deamon deamon = new Deamon();
+			    Product product = new Product();
+
+			    
+			    List<Product> productList = product.all();    
+			    Iterator<Product> iterator = productList.iterator();
+
+			    while (iterator.hasNext()) 
+				{		
+					product = iterator.next();
+					String productIdentifier = product.site+":"+product.pid;
+					deamon.watchItem(productIdentifier, product.source, 50.0, "Hakan");
+				}
+
+		  }
 }

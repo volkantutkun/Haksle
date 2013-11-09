@@ -92,6 +92,7 @@ public class Application extends Controller {
     		  Map<String,String> tempMap = filledProdForm.data();
     		  String sourceStr = tempMap.get("source");
     		  String emailStr = tempMap.get("email");
+    		  int desiredDiscount = Integer.parseInt(tempMap.get("desiredDiscount"));
     		  
     		  String listnameStr = tempMap.get("listname");
     		  if("newlist".equals(listnameStr))	listnameStr = tempMap.get("newlistname");
@@ -104,8 +105,6 @@ public class Application extends Controller {
     			  pid = prodExist.pid;
     		  }else{
     			  Product newProduct = parseURL(sourceStr);
-//        		  newProduct.attr3 = "email";
-//        		  newProduct.attr3value = emailStr;
         		  Product.create(newProduct);
         		  
         		  tempList = Product.allbyurl(sourceStr);
@@ -117,6 +116,7 @@ public class Application extends Controller {
     		  newListItem.email = emailStr;
     		  newListItem.listname = listnameStr;
     		  newListItem.pid = pid;
+    		  newListItem.desireddiscount = desiredDiscount;
     		  newListItem.create(newListItem);
     		  
     		  return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "New Product is added."));
@@ -151,8 +151,18 @@ public class Application extends Controller {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Logger.info("Parsing started at: " + dateFormat.format(date));
     	DeamonController dc = new DeamonController();
-    	dc.extendedDeamon();
+    	dc.parserDeamon();
     	return ok(views.html.index.render("Parsing ended"));
+    }
+    
+    public static Result informEmAll()
+    {
+		Date date = new Date();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Logger.info("Informing started at: " + dateFormat.format(date));
+    	DeamonController dc = new DeamonController();
+    	dc.informerDeamon();
+    	return ok(views.html.index.render("Informing ended"));
     }
   
 }

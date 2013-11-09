@@ -39,6 +39,13 @@
 	
 	<input type="text" name="newlistname" size="15%">
 	
+	<select name=desireddiscount>
+			<option value=Sepet>Sepet</option>
+  			<option value=10>%10</option>
+  			<option value=25>%25</option>
+  			<option value=50>%50</option>
+	</select>
+	
     <input type="hidden" name="email" value="@emailStr">
         
     <input type="submit" value="ADD">
@@ -51,7 +58,7 @@
     @for(item <- listitems) {
     <table border="1">
    		<tr>
-			<td colspan="5"><font color=blue><strong>@item.listname</strong></font></td>
+			<td colspan="6"><font color=blue><strong>@item.listname</strong></font></td>
 		</tr>
    		<tr>
 			<td></td>
@@ -59,6 +66,7 @@
 			<td align="center"><strong>InitialPrice</strong></td>
 			<td align="center"><strong>CurrentPrice</strong></td>
 			<td align="center"><strong>URL</strong></td>
+			<td align="center"><strong>DesiredDiscount</strong></td>
 		</tr>
         @for(product <- products) {
         	@if((product.listname).equals(item.listname)){
@@ -83,6 +91,9 @@
 		         	
 		            <td>
 		                @product.source
+		            </td>
+		            <td>
+		                @item.desireddiscount
 		            </td>
 		 		</tr>
 		 	}

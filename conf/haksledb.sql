@@ -41,6 +41,7 @@ CREATE  TABLE `haksle`.`customer` (
   `listname` VARCHAR(45) NOT NULL ,
   `listid` INT NOT NULL AUTO_INCREMENT,
   `pid` INT NULL ,
+  `desireddiscount` INT NULL ,
   PRIMARY KEY (`listid`) ,
   INDEX `email_idx` (`email` ASC) ,
   INDEX `pid_idx` (`pid` ASC) ,

@@ -30,6 +30,7 @@ import parsers.PrMorhipo;
 import play.Logger;
 
 import models.Product;
+import models.ProductList;
 import static akka.pattern.Patterns.ask;
 import static akka.actor.SupervisorStrategy.resume;
 import static akka.actor.SupervisorStrategy.restart;
@@ -132,15 +133,26 @@ public class Deamon {
     	}            
     }
     
-    private static void parseURLs(String site, String preurl, List<Product> receivedURLs)
+    @SuppressWarnings("serial")
+	public static class HukkInformer implements Serializable
+    {
+    	public final List<Product> items;
+
+    	public HukkInformer(List<Product> items)
+    	{
+    		this.items=items;
+    	}            
+    }
+    
+    private static void parseURLs(String site, String preurl, List<Product> receivedProducts)
     {
  
 		if(site.equals("Gittigidiyor"))	
-			PrGittiGidiyor.getContentPrices(preurl, receivedURLs);
-		//else if(site.equals("Hepsiburada"))
-		//	parsedProduct = PrHepsiBurada.getContentPrices(receivedURLs);
-		//else if(site.equals("Morhipo"))
-		//	parsedProduct = PrMorhipo.getContentPrices(receivedURLs);
+			PrGittiGidiyor.getContentPrices(preurl, receivedProducts);
+		else if(site.equals("Hepsiburada"))
+			PrHepsiBurada.getContentPrices(preurl, receivedProducts);
+		else if(site.equals("Morhipo"))
+			PrMorhipo.getContentPrices(preurl, receivedProducts);
 	
 
 	}
@@ -169,14 +181,6 @@ public class Deamon {
     			items = ((HukkExtended) message).items; 
     	    	parseURLs(site, preurl, items);
 
-    			/*Product parsedProduct = new Product();
-    			Iterator<Product> it = items.iterator();
-    	    	while (it.hasNext()) 
-    	    	{
-    	    		Product pr = it.next();
-    	    		parsedProduct = parseURL(pr.getPreUrl()+pr.getPostUrl());	
-    	    	}
-    	    	*/
     			
     		}
 
@@ -204,6 +208,75 @@ public class Deamon {
     		//Logger.info(workerPath + " is stopped");
     		Date date2 = new Date();
   			Logger.info("Parsing ended at: " + dateFormat.format(date2));
+    	}
+    }
+    
+    
+    public static class HukkActorInformer extends UntypedActor
+    {
+    	int state = 0;
+    	LoggingAdapter log = Logging.getLogger(getContext().system(), this);
+
+    	List<Product> items;        
+    	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		
+    	@Override
+    	public void onReceive(Object message) throws Exception
+    	{
+
+    		if (message instanceof HukkInformer)
+    		{
+    			
+    			items = ((HukkInformer) message).items; 
+    			Iterator<Product> it = items.iterator();
+    	    	while (it.hasNext()) 
+    	    	{
+    	    		Product pr = it.next();
+    	    		double iniVal = Double.parseDouble(pr.attr1value);
+    	    		double currVal = Double.parseDouble(pr.attr2value);
+    	    		int pid = pr.pid;
+    	    		
+    	    		double changeVal=((iniVal-currVal)/iniVal)*100;
+
+    	    		List<ProductList> list = ProductList.getInformableCustomers(pid, changeVal);
+    	    		
+    	    		Iterator<ProductList> itpl = list.iterator();
+        	    	while (itpl.hasNext()) 
+        	    	{
+        	    		ProductList pl = itpl.next();
+        	    		Logger.info("Email to: " + pl.email + " with price change: %" + changeVal + " where all he needed was: %" + pl.desireddiscount);
+        	    	}
+    	    		
+
+    	    	}
+    	    	
+    			
+    		}
+
+    		else if (message instanceof Exception)
+    		{
+    			throw (Exception) message;
+    		}
+    		else if (message instanceof Integer)
+    		{
+    			state = (Integer) message;
+    		}
+    		else if (message.equals("get"))
+    		{
+    			getSender().tell(state, getSelf());
+    		}
+    		else
+    		{
+    			unhandled(message);
+    		}
+    	}
+    	
+    	@Override
+    	public void postStop() 
+    	{
+    		//Logger.info(workerPath + " is stopped");
+    		Date date2 = new Date();
+  			Logger.info("Informing ended at: " + dateFormat.format(date2));
     	}
     }
    
@@ -264,14 +337,7 @@ public class Deamon {
     	return actor_candidate;
     }
 
-    public void watchItem(final String name, final String link, final double price, final String user)
-    {
-        String supChar = "Node1";
-        
-        ActorRef supervisor= getOrCreateSupervisor(supChar);                            
-        ActorRef worker= getOrCreateWorker(supChar, name, supervisor,HukkActor.class);
-        worker.tell(new Hukk(name,link,price,user,worker.path().toString()), worker);
-    }
+ 
     
     public void watchItems(final String site, final String preurl, final List<Product> items)
     {
@@ -300,31 +366,40 @@ public class Deamon {
     	
     }
     
-    public void printItemsDetails(HashMap<String,String> items)
+    public void informCustomers(final List<Product> items)
     {
-    	int itemsCode = items.hashCode();
-    	Logger.info("Items bucket id: " + itemsCode + " " + items.size());
     	
- 
-    		Iterator<Entry<String, String>> it = items.entrySet().iterator();
-	    	
-	    	while (it.hasNext()) 
-	    	{
-	    			
-	    	        Map.Entry<String,String> pairs = (Map.Entry<String,String>)it.next();
-	    	        String name = pairs.getKey();
-	    	        String link = pairs.getValue();
-	    	        System.out.println("uyyy : " + name + " " + link);
-	    		
-	    	}
-
+    	int itemsCode = items.hashCode();
+    	
+    	Random generator = new Random(); 
+    	int i = generator.nextInt(10) + 1;
+    	itemsCode+=i;
+    	String itemsCodeStr=Integer.toString(itemsCode);
+    	
+    	String supChar;
+    	if (itemsCode<0)
+    		supChar = "NodeInformer0";
+    	else
+    		supChar = "NodeInformer"+itemsCodeStr.substring(1,2);
+    	
+    	ActorRef supervisor= getOrCreateSupervisor(supChar);                            
+    	ActorRef worker= getOrCreateWorker(supChar, itemsCodeStr, supervisor, HukkActorInformer.class);
+    	if(worker!=null)
+    	{
+    
+    		worker.tell(new HukkInformer(items), worker);
+    		worker.tell(akka.actor.PoisonPill.getInstance(), worker);
+    	}
+    	
     }
     
+
     
     
     
     
-    //**************eski hukk deamon************
+    
+    //**************Deprecated code here************
     @SuppressWarnings("serial")
    	public static class Hukk implements Serializable
        {
@@ -472,6 +547,35 @@ public class Deamon {
        			unhandled(message);
        		}
        	}
+       }
+       
+       public void watchItem(final String name, final String link, final double price, final String user)
+       {
+           String supChar = "Node1";
+           
+           ActorRef supervisor= getOrCreateSupervisor(supChar);                            
+           ActorRef worker= getOrCreateWorker(supChar, name, supervisor,HukkActor.class);
+           worker.tell(new Hukk(name,link,price,user,worker.path().toString()), worker);
+       }
+       
+       public void printItemsDetails(HashMap<String,String> items)
+       {
+       	int itemsCode = items.hashCode();
+       	Logger.info("Items bucket id: " + itemsCode + " " + items.size());
+       	
+    
+       		Iterator<Entry<String, String>> it = items.entrySet().iterator();
+   	    	
+   	    	while (it.hasNext()) 
+   	    	{
+   	    			
+   	    	        Map.Entry<String,String> pairs = (Map.Entry<String,String>)it.next();
+   	    	        String name = pairs.getKey();
+   	    	        String link = pairs.getValue();
+   	    	        System.out.println("uyyy : " + name + " " + link);
+   	    		
+   	    	}
+
        }
  
 }

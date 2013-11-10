@@ -54,13 +54,12 @@ public class PrMorhipo{
     			if( prodPrice != null && !"".equals(prodPrice))	
     			{
     				Double newPrice = Double.parseDouble(trimPrice(prodPrice));
-    				Double oldPrince = Double.parseDouble(parsedProduct.attr2value);
+    				Double oldPrince = parsedProduct.currentprice;
     				if (newPrice < oldPrince)
     				{
-    					parsedProduct.attr2value=trimPrice(prodPrice);
+    					parsedProduct.currentprice=newPrice;
     					parsedProduct.save();
     				}	
-
     			}
 
 	    	}
@@ -106,12 +105,14 @@ public class PrMorhipo{
 				}
 			}
 			
-			if( prodPrice != null && !"".equals(prodPrice))	prodPrice = trimPrice(prodPrice);
+			if( prodPrice != null && !"".equals(prodPrice))	
+				prodPrice = trimPrice(prodPrice);
 			
-			parsedProduct.attr1 = "INITALPRICE";
-			parsedProduct.attr1value = prodPrice;
-			parsedProduct.attr2 = "CURRENTPRICE";
-			parsedProduct.attr2value = prodPrice;
+			parsedProduct.title = prodName;
+			
+			double price = Double.parseDouble(trimPrice(prodPrice));
+			parsedProduct.initialprice = price;
+			parsedProduct.currentprice = price;
 			
 			
 			Elements title = doc.select("title");
@@ -137,14 +138,17 @@ public class PrMorhipo{
 		return parsedProduct;
 	}
 	
-	private static String trimPrice(String priceStr){
+	private static String trimPrice(String priceStr)
+	{
 		String price = "NOTFOUND";
 		try{
 			price = (String) priceStr.subSequence(0, priceStr.length()-3);
-			price = price.replace(",", ".");
+			price = price.replace(",", "");
+			price = price.replace(".", "");
+			price = new StringBuilder(price).insert(price.length()-2, ".").toString();
 
 		}catch(Exception e){
-			System.out.println("ERROR: Exception type at Morhipo parser method trimPrice!");
+			System.out.println("ERROR: Exception type at Morhipo parser!");
 			e.printStackTrace();
 		}
 		return price;

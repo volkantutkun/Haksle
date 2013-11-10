@@ -66,10 +66,10 @@ public class PrGittiGidiyor
     			if( prodPrice != null && !"".equals(prodPrice))	
     			{
     				Double newPrice = Double.parseDouble(trimPrice(prodPrice));
-    				Double oldPrince = Double.parseDouble(parsedProduct.attr2value);
+    				Double oldPrince = parsedProduct.currentprice;
     				if (newPrice < oldPrince)
     				{
-    					parsedProduct.attr2value=trimPrice(prodPrice);
+    					parsedProduct.currentprice=newPrice;
     					parsedProduct.save();
     				}	
 
@@ -129,22 +129,20 @@ public class PrGittiGidiyor
 			
 
 			
-			if( prodPrice != null && !"".equals(prodPrice))	
+			if (prodPrice != null && !"".equals(prodPrice))	
 			{
 
-				prodPrice = trimPrice(prodPrice);
-				parsedProduct.attr1 = "INITALPRICE";
-				parsedProduct.attr1value = prodPrice;
-				parsedProduct.attr2 = "CURRENTPRICE";
-				parsedProduct.attr2value = prodPrice;
-				
+				Logger.info(trimPrice(prodPrice));
+				double price = Double.parseDouble(trimPrice(prodPrice));
+				parsedProduct.initialprice = price;
+				parsedProduct.currentprice = price;			
 				
 				Elements divIds = doc.select("div[class]");
 				
 				for (Element divId : divIds) {
 					
-					if(divId.attr("class").equals("h1-container")){
-//						System.out.println("Price is: " + divId.text());
+					if(divId.attr("class").equals("h1-container"))
+					{
 						prodName = divId.text();
 						break;
 					}
@@ -172,11 +170,14 @@ public class PrGittiGidiyor
 	}
 
 	
-	private static String trimPrice(String priceStr){
+	private static String trimPrice(String priceStr)
+	{
 		String price = "NOTFOUND";
 		try{
 			price = (String) priceStr.subSequence(0, priceStr.length()-3);
-			price = price.replace(",", ".");
+			price = price.replace(",", "");
+			price = price.replace(".", "");
+			price = new StringBuilder(price).insert(price.length()-2, ".").toString();
 
 		}catch(Exception e){
 			System.out.println("ERROR: Exception type at GittiGidiyor parser!");

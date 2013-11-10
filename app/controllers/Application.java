@@ -96,7 +96,16 @@ public class Application extends Controller {
     		  Map<String,String> tempMap = filledProdForm.data();
     		  String sourceStr = tempMap.get("source");
     		  String emailStr = tempMap.get("email");
-    		  int desiredDiscount = Integer.parseInt(tempMap.get("desiredDiscount"));
+    		  String desiredSel = tempMap.get("desireddiscount");
+    		  ProductList newListItem = new ProductList();
+    		  
+    		  // TODO: desireddiscount güncelleme case'i yazılacak
+    		  
+    		  if (desiredSel.equals("Sepet"))
+    			  newListItem.isinbasket = true;
+    		  else
+    			  newListItem.desireddiscount = Integer.parseInt(tempMap.get("desireddiscount"));;
+    		  
     		  
     		  String listnameStr = tempMap.get("listname");
     		  if("newlist".equals(listnameStr))	listnameStr = tempMap.get("newlistname");
@@ -116,11 +125,11 @@ public class Application extends Controller {
     			  pid = prodExist.pid;
     		  }
     		  
-    		  ProductList newListItem = new ProductList();
+    		  
     		  newListItem.email = emailStr;
     		  newListItem.listname = listnameStr;
     		  newListItem.pid = pid;
-    		  newListItem.desireddiscount = desiredDiscount;
+    		  
     		  newListItem.create(newListItem);
     		  
     		  return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "New Product is added."));

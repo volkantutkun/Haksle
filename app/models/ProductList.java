@@ -29,6 +29,7 @@ public class ProductList extends Model{
 	
 	public int pid;
 	public int desireddiscount;
+	public boolean isinbasket;
 	
 	public static Finder<Integer,ProductList> find = new Finder( Integer.class, ProductList.class );
 	    
@@ -61,6 +62,7 @@ public class ProductList extends Model{
   	  
   	  return resultList;
   	}
+  	
   	
   	public static Map<Integer,String> selectpidsbymail(String emailStr) {
   		Map<Integer,String> tempMap = new HashMap<Integer,String>();

@@ -66,7 +66,7 @@ public class DeamonController
 		    }
 		    else
 		    {
-		    	Logger.info("Product yok!");
+		    	Logger.info("Parse edilesi product yok!");
 		    }
 	 }
 	  
@@ -111,7 +111,7 @@ public class DeamonController
 		    }
 		    else
 		    {
-		    	Logger.info("Product yok!");
+		    	Logger.info("İndirimde product yok!");
 		    }
 	 }
 	  

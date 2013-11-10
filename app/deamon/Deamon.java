@@ -232,8 +232,8 @@ public class Deamon {
     	    	while (it.hasNext()) 
     	    	{
     	    		Product pr = it.next();
-    	    		double iniVal = Double.parseDouble(pr.attr1value);
-    	    		double currVal = Double.parseDouble(pr.attr2value);
+    	    		double iniVal = pr.initialprice;
+    	    		double currVal = pr.currentprice;
     	    		int pid = pr.pid;
     	    		
     	    		double changeVal=((iniVal-currVal)/iniVal)*100;
@@ -517,7 +517,7 @@ public class Deamon {
        				String user= (String) mapEntry.getKey(); 
        				double desiredPrice = (double) mapEntry.getValue();
        				
-       				Double currPrice = Double.parseDouble(product.attr2value);
+       				Double currPrice = product.currentprice;
        				if (currPrice <= desiredPrice)
        				{
        					//Logger.info(user + "'s desired price reached for :" + name);

@@ -23,13 +23,16 @@ import play.db.ebean.Model;
 @Entity
 public class Product extends Model{
 	@Id
-	public int pid;
-	
-	public String title;
-	
-	public String site;
-	
+	public int pid;	
+	public String title;	
+	public String site;	
 	public String source;
+	public double initialprice;	
+	public double currentprice;	
+	public boolean issoldout;	
+	public boolean isinbasket;
+	public String picture;
+
 
 	@Transient 
 	public String preurl;
@@ -42,20 +45,6 @@ public class Product extends Model{
 	public String getPostUrl() {
 		   return calcPostUrl(source);
 	}
-
-	public String attr1;
-	
-	public String attr1value;
-	
-	public String attr2;
-	
-	public String attr2value;
-	
-	public String attr3;
-	
-	public String attr3value;
-	
-	public String picture;
 
 	
 	public static Finder<Integer,Product> find = new Finder( Integer.class, Product.class );
@@ -120,7 +109,7 @@ public class Product extends Model{
   	
 	public List<Product> all_4informerdeamon() 
   	{
-		  String sql = "select title, attr1value, attr2value, pid  from product where attr1value <> attr2value";
+		  String sql = "select title, initialprice, currentprice, pid  from product where initialprice <> currentprice";
 		  
 	  	  RawSql rawSql = RawSqlBuilder.parse(sql).create();  
 	  
@@ -132,10 +121,6 @@ public class Product extends Model{
 	  	  return resultList;
 	}
 
-  	
-  	public static List<Product> allbymail(String email) {
-  		return (List<Product>) find.where().eq("attr3value", email).findList();
-  	}
   	
   	public static List<Product> allbyurl(String url) {
   		return (List<Product>) find.where().eq("source", url).findList();
@@ -161,12 +146,10 @@ public class Product extends Model{
   			tempProdWList.title = tempProd.title;
   			tempProdWList.site = tempProd.site;
   			tempProdWList.source = tempProd.source;
-  			tempProdWList.attr1 = tempProd.attr1;
-  			tempProdWList.attr1value = tempProd.attr1value;
-  			tempProdWList.attr2 = tempProd.attr2;
-  			tempProdWList.attr2value = tempProd.attr2value;
-  			tempProdWList.attr3 = tempProd.attr3;
-  			tempProdWList.attr3value = tempProd.attr3value;
+  			tempProdWList.initialprice = tempProd.initialprice;
+  			tempProdWList.currentprice = tempProd.currentprice;
+  			tempProdWList.issoldout = tempProd.issoldout;
+  			tempProdWList.isinbasket = tempProd.isinbasket;
   			tempProdWList.picture = tempProd.picture;
   			
   			tempProdWList.listname = (String)mEntry.getValue();

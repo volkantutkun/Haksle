@@ -29,6 +29,7 @@ CREATE  TABLE `haksle`.`customer` (
   `initialprice` DOUBLE DEFAULT 0,
   `currentprice` DOUBLE DEFAULT 0,
   `issoldout` TINYINT(1) DEFAULT 0,
+  `isinbasket` TINYINT(1) DEFAULT 0,
   `picture` LONGBLOB NULL ,
   PRIMARY KEY (`pid`) );
    
@@ -37,7 +38,7 @@ CREATE  TABLE `haksle`.`customer` (
   `listname` VARCHAR(45) NOT NULL ,
   `pid` INT NULL,
   `email` VARCHAR(50) NOT NULL ,
-  `desireddiscount` INT NULL,
+  `desireddiscount` INT DEFAULT 100,
   `isinbasket` TINYINT(1) DEFAULT 0,
   PRIMARY KEY (`listid`) ,
   INDEX `email_idx` (`email` ASC) ,

@@ -1,5 +1,5 @@
 Port: 3306
-Root password: 9128
+Root password: 123123
 
 Haksle User:
 Username: haksledbadmin

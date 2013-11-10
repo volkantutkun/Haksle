@@ -1,0 +1,41 @@
+@(messageStr: String)
+
+@import helper._
+@main("Top Kaps") {
+
+	<div class="kap_item">        
+    <div class="kap_pic">
+      <img class="img-responsive" src="http://static1.hukkster.com/img/thumbs/513106" onerror="this.src='http://www.hukkster.com/static/img/hukk_default_image.png'">
+    </div>
+    <div class='kap_info'>
+      <h3>On J.Crew</h3>
+        <div class="kap_price">
+          <p>
+            <del>$298.00</del>
+            <span class="kap_sale_price">$223.50</span>
+          </p>
+      </div>
+        <div class="percentage_drop">
+          <select class="target_percentage" name="target_percentage" >
+            <option value="5">goes on sale!</option>
+            <option value="25" >drops at least 25%!</option>
+            <option value="50" >drops at least 50%!</option>
+          </select>
+        </div>
+        <div class="list_container">
+        <ul class="lists">
+            <li class="item_tag">
+            <a class="remove" href="#">×</a>
+            <span class="item-text">kıyafet</span>
+            </li>
+        </ul>
+        </div>
+            <div class="kap_buy">
+                <a href="javascript:void(0);" onclick="hukksterEmbed.hukkIt(this,'');" alt="http://www.jcrew.com/womens_category/outerwear/woolpufferjackets/PRDOVR~49360/49360.jsp" class="btn btn-primary">Buy it</a>
+            </div>
+            <div class="kap_share">
+                <a href="/hukk/8p3HASAR4E" class="share_hukk">+SHARE</a>
+            </div>
+    </div>
+    </div>
+}

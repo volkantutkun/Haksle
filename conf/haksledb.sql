@@ -22,26 +22,23 @@ CREATE  TABLE `haksle`.`customer` (
   PRIMARY KEY (`email`) );
   
   CREATE  TABLE `haksle`.`product` (
+  `pid` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(113) NOT NULL ,
   `site` VARCHAR(50) NOT NULL ,
-  `attr1` VARCHAR(50) NOT NULL,
-  `attr1value` VARCHAR(50) NOT NULL,
-  `attr2` VARCHAR(50) NOT NULL,
-  `attr2value` VARCHAR(50) NOT NULL,
-  `attr3` VARCHAR(50),
-  `attr3value` VARCHAR(50),
   `source` VARCHAR(313) NOT NULL ,
-  `pid` INT NOT NULL AUTO_INCREMENT,
+  `initialprice` DOUBLE DEFAULT 0,
+  `currentprice` DOUBLE DEFAULT 0,
+  `issoldout` TINYINT(1) DEFAULT 0,
   `picture` LONGBLOB NULL ,
   PRIMARY KEY (`pid`) );
-  
-  
+   
   CREATE  TABLE `haksle`.`product_list` (
-  `email` VARCHAR(50) NOT NULL ,
-  `listname` VARCHAR(45) NOT NULL ,
   `listid` INT NOT NULL AUTO_INCREMENT,
-  `pid` INT NULL ,
-  `desireddiscount` INT NULL ,
+  `listname` VARCHAR(45) NOT NULL ,
+  `pid` INT NULL,
+  `email` VARCHAR(50) NOT NULL ,
+  `desireddiscount` INT NULL,
+  `isinbasket` TINYINT(1) DEFAULT 0,
   PRIMARY KEY (`listid`) ,
   INDEX `email_idx` (`email` ASC) ,
   INDEX `pid_idx` (`pid` ASC) ,

@@ -78,7 +78,7 @@ public class Application extends Controller {
     			  if(!searchCust.password.equals(receivedCust.password)){
     				  return ok(views.html.customerlogin.render("Wrong password!"));
     			  }else
-    				  return redirect(routes.Application.haksle(receivedCust.email)); 
+    				  return haksle(receivedCust.email); 
     		  }    	     
     	  }
      }

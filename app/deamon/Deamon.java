@@ -439,7 +439,7 @@ public class Deamon {
                   
        	@Override
            public void preStart() {
-       		getContext().system().scheduler().schedule(Duration.create(1, "second"), Duration.create(120, "second"),getSelf(), TICK, getContext().dispatcher());
+       		getContext().system().scheduler().schedule(Duration.create(1, "second"), Duration.create(120, "second"),getSelf(), TICK, getContext().dispatcher(),getSelf());
        	}
        	
        	@Override

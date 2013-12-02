@@ -70,7 +70,7 @@ public class Application extends Controller {
     	  } else {
     		  Customer receivedCust = filledForm.get();
     		  
-    		  if( Customer.find.byId(receivedCust.email) == null){
+    		  if(Customer.find.byId(receivedCust.email) == null){
     			  return ok(views.html.customerlogin.render("No user found with give username!")); 
     		  }else{
     			  Customer searchCust = Customer.find.byId(receivedCust.email);

@@ -46,11 +46,8 @@
   			<option value=50>%50</option>
   			<option value=Sepet>Sepet</option>
 	</select>
-	
-	
-	
+
     <input type="hidden" name="email" value="@emailStr">
-        
     <input type="submit" value="ADD">
         
     }
@@ -70,9 +67,9 @@
 			<td align="center"><strong>CurrentPrice</strong></td>
 			<td align="center"><strong>URL</strong></td>
 			<td align="center"><strong>DesiredDiscount</strong></td>
+			<td align="center"><strong>DesiredBasket</strong></td>
 		</tr>
         @for(product <- products) {
-        	@if((product.pid).equals(item.pid)){
 		        <tr>
 		        	<td>
 		                @form(routes.Application.deleteProduct(product.pid, emailStr)) {
@@ -93,10 +90,12 @@
 		                @product.source
 		            </td>
 		            <td>
-		                @item.desireddiscount
+		                @product.desireddiscount
+		            </td>
+		            <td>
+		                @product.desiredbasket
 		            </td>
 		 		</tr>
-		 	}
        }
     
     </table>

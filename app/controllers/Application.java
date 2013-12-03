@@ -95,6 +95,7 @@ public class Application extends Controller {
     	  } 
     	  else 
     	  {
+    		  String msg = "";
     		  Map<String,String> tempMap = filledProdForm.data();
     		  String sourceStr = tempMap.get("source");
     		  String emailStr = tempMap.get("email");
@@ -125,52 +126,65 @@ public class Application extends Controller {
     			  List<ProductList> tempPLList = ProductList.selectbypid(pid);
     			  ProductList prListObj = tempPLList.get(0);
     			  
-    			  if (isDiscount && desireddiscount != -1)
+    			  if (desireddiscount != -1)
     			  {
-	        		  if (prListObj.desireddiscount!=desireddiscount)
-	        			  prListObj.desireddiscount = desireddiscount;
-	        		  
-	        		  prListObj.isinbasket = false;
-	        			 
+    				  if (isDiscount)
+	    			  {
+		        		  if (prListObj.desireddiscount!=desireddiscount)
+		        			  prListObj.desireddiscount = desireddiscount;
+		        		  
+		        		  prListObj.isinbasket = false;
+		        			 
+	    			  }
+	    			  else if (!isDiscount)
+	    			  {
+	    				  if (prListObj.isinbasket!=isinbasket)
+		        			  prListObj.isinbasket = isinbasket;
+	    			  }
     			  }
-    			  else if (!isDiscount)
-    			  {
-    				  if (prListObj.isinbasket!=isinbasket)
-	        			  prListObj.isinbasket = isinbasket;
-    			  }
-    			  
+    			  else
+    				  Logger.info("desireddiscount çekmede hata!");
     			  prListObj.save();
+    			  
+    			  msg = "Ürün güncellendi.";
         		 
     		  }
     		  else
     		  {
     			  Product newProduct = parseURL(sourceStr);
-        		  Product.create(newProduct);
-        		  
-        		  tempList = Product.allbyurl(sourceStr);
-        		  Product prodExist = tempList.get(0);
-    			  pid = prodExist.pid;
-    			  
-    			  ProductList newListItem = new ProductList();        		  
-        		  if (desiredSel.equals("Sepet"))
-        			  newListItem.isinbasket = isinbasket;
-        		  else
-        			  newListItem.desireddiscount = desireddiscount;
-              		  
-        		  String listnameStr = tempMap.get("listname");
-        		  if("newlist".equals(listnameStr))	
-        			  listnameStr = tempMap.get("newlistname");
-        		  
-        		  newListItem.email = emailStr;
-        		  newListItem.listname = listnameStr;
-        		  newListItem.pid = pid;
-        		  
-        		  newListItem.create(newListItem);
+    			  if (newProduct != null)
+    			  {
+	        		  Product.create(newProduct);
+	        		  
+	        		  tempList = Product.allbyurl(sourceStr);
+	        		  Product prodExist = tempList.get(0);
+	    			  pid = prodExist.pid;
+	    			  
+	    			  ProductList newListItem = new ProductList();        		  
+	        		  if (desiredSel.equals("Sepet"))
+	        			  newListItem.isinbasket = isinbasket;
+	        		  else
+	        			  newListItem.desireddiscount = desireddiscount;
+	              		  
+	        		  String listnameStr = tempMap.get("listname");
+	        		  if("newlist".equals(listnameStr))	
+	        			  listnameStr = tempMap.get("newlistname");
+	        		  
+	        		  newListItem.email = emailStr;
+	        		  newListItem.listname = listnameStr;
+	        		  newListItem.pid = pid;
+	        		  
+	        		  newListItem.create(newListItem);
+	        		  
+	        		  msg = "Yeni ürün eklendi.";
+    			  }
+    			  else
+    				  msg = "Ürün satışta değil.";
         		  
     			  
     		  }
 	  
-    		  return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "New Product is added."));
+    		  return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, msg));
     	  }
     }
       
@@ -186,7 +200,8 @@ public class Application extends Controller {
      }
     
     
-    private static Product parseURL(String receivedURL){
+    private static Product parseURL(String receivedURL)
+    {
     	Product parsedProduct = null;
 		if(receivedURL.contains("hepsiburada"))	parsedProduct = PrHepsiBurada.getContentPrice(receivedURL);
 		else if(receivedURL.contains("gittigidiyor"))parsedProduct = PrGittiGidiyor.getContentPrice(receivedURL);

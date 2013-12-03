@@ -21,6 +21,7 @@ public class PrHepsiBurada{
 
 		try {
 
+			
 			Connection _conn = Jsoup.connect(preurl);
 
 			Iterator<Product> it = receivedProducts.iterator();

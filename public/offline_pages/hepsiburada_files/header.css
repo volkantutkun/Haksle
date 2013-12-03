@@ -1,0 +1,392 @@
+/* Opportunities v0.17 */
+
+.footermenulist h1{font-weight:normal;font-size:12px;text-decoration:none !important;}
+.footermenulistHBold{font-weight:bold !important;color:#666;text-decoration:none !important;}
+.firsatlarim-cont{width:550px;height:330px;position:relative;}
+.firsatlarim-cont .firsattop{background:url(//images.hepsiburada.net/hbv2/firsatlarim/firsat-top.png);width:550px;height:58px;position:relative;float:left;} 
+.firsatlarim-cont .firsatmid{background:#fff;width:548px;height:222px;position:relative;float:left;border-right:1px solid #c7c7c7;border-left:1px solid #c7c7c7;} 
+.firsatlarim-cont .firsatbot{background:url(//images.hepsiburada.net/hbv2/firsatlarim/firsat-botV3.png);width:550px;height:50px;position:relative;float:left;}
+.firsatlarim-cont .firsattop .firsatkapat{background:url(//images.hepsiburada.net/hbv2/firsatlarim/close.png);width:20px;height:19px;position:absolute;top:18px;right:9px;cursor:pointer;font-size:0px;line-height:0px;}
+.firsatlarim-cont .firsattop .firsatsizeozel{z-index:99;background:url("//images.hepsiburada.net/hbv2/firsatlarim/sizeozel.png");width:60px;height:60px;top:10px;left:0px;position:absolute;} 
+.firsatlarim-cont .firsattop .firsath1{color:#ff6600;font-size:24px;position:absolute;left:100px;top:15px;} 
+.firsatlarim-cont .firsatbot .firsatdiger{position:absolute;left:205px;top:15px;}
+.firsatlarim-cont .firsatbot .firsatdiger a{background:url(//images.hepsiburada.net/hbv2/Design2010/icn.png) no-repeat 100% 7px;color:#FF6600;font-size:16px;font-weight:bold;padding-right:16px;text-decoration:none;}
+.firsatlarim-cont .firsatmid .firsatul{list-style:none;margin:0;padding:0;} 
+.firsatlarim-cont .firsatmid .firsatul li{width:182px;height:222px;float:left;position:relative;background:url("//images.hepsiburada.net/hbv2/firsatlarim/dikeycizgi.png") right bottom no-repeat;list-style:none;margin:0;padding:0;}
+.firsatlarim-cont .firsatmid .firsatul li.last{background:none;}
+.firsatlarim-cont .firsatmid .firsatul li a{border:none;text-decoration:none;} 
+.firsatlarim-cont .firsatmid .firsatul li a.firsatimg{margin:0 auto;display:block;text-align:center;margin:5px 0;} 
+.firsatlarim-cont .firsatmid .firsatul li a.firsatimg img{border:none;} 
+.firsatlarim-cont .firsatmid .firsatul li a.firsatlink{color:#5e5e5e;display:block;text-align:center;font-size:11px;height:35px;font-weight:bold;}
+.firsatlarim-cont .firsatmid .firsatul li .kampanyabitis{font-size:12px;color:#333;display:block;text-align:center;clear:both;margin:5px 0;}
+.firsatlarim-cont .firsatmid .firsatul li .kampanyabitis .kampanyatarih{color:#ff6600;} 
+/*IE6 fix*/ 
+* html .firsattop{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='//images.hepsiburada.net/hbv2/firsatlarim/firsat-top.png', sizingMethod='scale');width:550px;height:58px;position:relative;float:left;} 
+* html .firsatbot{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='//images.hepsiburada.net/hbv2/firsatlarim/firsat-bot.png', sizingMethod='scale');width:550px;height:50px;position:relative;float:left;} 
+* html .firsatsizeozel{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='//images.hepsiburada.net/hbv2/firsatlarim/sizeozel.png', sizingMethod='scale');width:60px;height:60px;top:10px;left:0;position:absolute;}
+
+/* Opportunities v0.17 */
+
+/* headerSearch v0.72 */
+.ui-state-default,
+.ui-widget-content .ui-state-default{border:none;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/searchItem.png?v0.11) no-repeat -5px -5px;background-color:none !important;}
+.ui-selectmenu-status{margin-top:-1px;}
+.productMarks .ui-selectmenu-status{margin-top:-1px !important;}
+.ui-selectmenu{height:29px;}
+.productMarks .ui-selectmenu{height:29px !important;}
+.ui-selectmenu-menu-dropdown{z-index:2000 !important;margin-left:11px;}
+.ui-corner-top{-moz-border-radius-topleft:0;-moz-border-radius-topright:0;}
+.ui-selectmenu-status{line-height:23px;}
+.productMarks .ui-selectmenu-status{line-height:23px !important;}
+.ui-state-default .ui-icon, .ui-state-active .ui-icon{background:none;}
+.ui-state-default, .ui-widget-content .ui-state-default{color:#333;font-weight:normal;}
+.ui-selectmenu-menu li a{padding:0 1em;}
+.ui-widget{font-size:11px;}
+.ui-state-hover, .ui-state-active{color:#333 !important;}
+.ui-state-active, .ui-widget-content .ui-state-active{background:none !important;}
+.ui-selectmenu-status{text-align:center;padding:4px 8px 0 0 !important;}
+.productMarks .ui-selectmenu-status{text-align:center;padding:4px 8px 0 0 !important;}
+.ui-state-default, .ui-widget-content .ui-state-default{background:none !important;}
+.defaultImg{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/searchItem.png?v0.11) no-repeat -5px -5px;border:medium none;background-color:none !important;}
+/* headerSearch v0.72 */
+
+/* jquery.emenuV2 v0.03 */
+.emenu-root 																{margin:0;padding:0;width:auto;list-style:none;list-style-position:outside;display:inline;float:left;border-bottom:1px solid #d6d6d6;}
+.emenu-item , .emenu-item-active , .emenu-item-hover , .emenu-item-sa		{width:178px;height:18px;font-size:12px;background:url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubgDeg.jpg);color:#333333;display:block;font-weight:bold;padding:6px 0 2px 10px;cursor:normal;cursor:pointer;}
+.emenu-item-hover															{background:url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubgDeg.jpg) 0 -52px;}
+.emenu-item-active															{background:url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubgDeg.jpg) 0 -26px;}
+.emenu-item-sa																{background:url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubgDeg.jpg) 0 -78px;}
+.emenu-item-text , .emenu-item-text-hover 									{text-decoration:none;color:#333333;}
+.emenu-item-text-hover 														{color:#ff7e00}
+.Menulink 																	{text-decoration:none!important;color:#666666!important;background:none!important;background-image:none!important;width:auto!important;}
+.Menulink:hover 															{text-decoration:none!important;color:#ffa23e!important;background:none!important;background-image:none!important;width:auto!important;}
+/* jquery.emenuV2 v0.03 */
+
+/* customAutoComplate.css?v=0.11 */
+.ac_even .searchAllCategories							{background-color:#b3cde3;border-bottom:1px solid #cecece;color:#333;}
+.ac_odd .brand											{background-color:#d9e6f2;border-bottom:1px solid #cecece;}
+.ac_even .category										{background-color:#ecf1f4;border-bottom:1px solid #cecece;}
+.ac_even .searchterm										{background-color:#fff;border-bottom:1px solid #cecece;}
+/**/
+.ac_even .searchAllCategories div:hover,
+.ac_odd .brand div:hover,
+.ac_even .category div:hover,
+.ac_even .searchterm div:hover{background-color:#ff9024;}
+/**/
+.ac_results li{padding:0;font-size:11px;}
+.txtIndent{padding:3px 2px 4px 6px;}
+.txtIndent span{margin:0 3px 0 3px;}
+.ml3{margin-left:3px;}
+.ac_over .brand div,.ac_over .category div,.ac_over .searchterm div, .ac_over .searchAllCategories div{background-color:#FF9024;color:#fff;}
+.ac_results li{float:left;}
+.ac_results{border:1px solid #ccc;-moz-box-shadow:3px 3px 4px #888;-webkit-box-shadow:3px 3px 4px #888;box-shadow:3px 3px 4px #888;/* For IE 8 */-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#888888')";/* For IE 5.5 - 7 */filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#888888');}
+/* customAutoComplate.css?v=0.11 */
+
+/* ustBar.css?v=0.22 */
+
+#SGeneralBar *{margin:0;padding:0;border:0;text-align:left;outline:none;list-style:none;text-decoration:none;}
+#SGeneralBar h2{display:inline;font-size:11px !important;font-weight:normal;}
+#SGeneralBar{ width:100%;height:34px;border-bottom:solid 1px #b5b5b5;background-color:#fff;display:none;}
+#SGeneralBar .wrapBar .bLeft > a.logoLink{color:#000;display:inline-block;float:left;font:9pt Trebuchet MS,Arial,Helvetica,sans-serif;margin:9px 0 0 0;padding-left:10px;}
+#SGeneralBar .wrapBar{width:980px;height:34px;margin:0 auto;position:relative;z-index:2;}
+#SGeneralBar .wrapBar .bLeft{width:750px;float:left;overflow:hidden;}
+#SGeneralBar .wrapBar .bLeft a.mLogo{margin-top:7px;display:inline-block;width:47px;height:23px;float:left;background:transparent url(//static.hepsiburada.net/css/eKolay/images/ustBarSprite.png) no-repeat 0px -162px;}
+#SGeneralBar .wrapBar .bLeft > span{display:inline-block;float:left;font:normal 9pt arial;color:#000;margin:14px 0 0 10px;}
+#SGeneralBar .wrapBar .bLeft .channels{border-left:solid 1px #b8b8b8;float:left;margin-left:15px;padding:0px 15px}
+
+#SGeneralBar .wrapBar .bLeft .channels a.ch{ color:#000;display:inline-block;float:left;height:13px;padding-left:15px;background:transparent url(//static.hepsiburada.net/css/eKolay/images/ustBarSprite.png) no-repeat 0px 0px;margin:11px 15px 0px 0px;} 
+#SGeneralBar .wrapBar .bLeft .channels a.ch.ch_haber{background-position:0px 0px;} 
+#SGeneralBar .wrapBar .bLeft .channels a.ch.ch_spor{background-position:0px -28px;} 
+#SGeneralBar .wrapBar .bLeft .channels a.ch.ch_magazin{background-position:0px -56px;} 
+#SGeneralBar .wrapBar .bLeft .channels a.ch.ch_video{background-position:0px -84px;} 
+
+#SGeneralBar .wrapBar .bLeft .channels .search{float:left;width:210px;font:normal 9pt arial;color:#808080;font-style:italic;border-right:solid 1px #b8b8b8;height:34px;padding-top:10px;margin-right:15px;}
+#SGeneralBar .wrapBar .bLeft .channels .search input[type="text"]{float:left;width:150px;height:15px;border:solid 1px #9a9a9a;padding:3px 5px;font:normal 9pt arial;color:#808080;font-style:italic;box-shadow:inset 1px 1px 2px #d5d5d5;border-radius:3px 0px 0px 3px;}
+#SGeneralBar .wrapBar .bLeft .channels .search a{display:inline-block;height:15px;float:left;padding:3px 5px;background-color:#eeeeee;font:bold 8pt arial;color:#000;border:solid 1px #9a9a9a;border-left:none;border-radius:0px 3px 3px 0px;}
+#SGeneralBar .wrapBar .bLeft .channels .search a:hover{background-color:#e5e5e5;}
+
+
+#SGeneralBar .wrapBar .bRight{position:absolute;right:0;top:0;height:34px;z-index:1000;background:transparent url(//static.hepsiburada.net/css/eKolay/images/ch_seperator.gif) repeat-y top right;}
+#SGeneralBar .wrapBar .bRight .dropDownList{float:right;height:34px;position:relative;z-index:2;background:#ffffff url(//static.hepsiburada.net/css/eKolay/images/ch_seperator.gif) repeat-y top left;}
+#SGeneralBar .wrapBar .bRight .dropDownList > span{display:inline-block;font:normal 10pt arial;color:#555555;margin:7px 0;padding:0 35px 0 15px;background:transparent url(//static.hepsiburada.net/css/eKolay/images/ustBarSprite.png) no-repeat -66px -5px;cursor:pointer;}
+#SGeneralBar .wrapBar .bRight .dropDownList > span:hover{display:inline-block;font:normal 10pt arial;color:#000;margin:7px 0;padding:0 35px 0 15px;background:transparent url(//static.hepsiburada.net/css/eKolay/images/ustBarSprite.png) no-repeat -66px -5px;cursor:pointer;}
+#SGeneralBar .wrapBar .bRight .dropDownList > span.selected{display:inline-block;font:normal 10pt arial;color:#000;margin:7px 0;padding:0px 35px 0 15px;background:transparent url(//static.hepsiburada.net/css/eKolay/images/ustBarSprite.png) no-repeat -66px -35px;cursor:pointer;}
+#SGeneralBar .wrapBar .bRight .dropDownList .ddl_hover{position:absolute;top:35px;right:-1px;background-color:#fff;border:solid 1px #b8b8b8;border-top:none;padding:10px 0;display:none;}
+#SGeneralBar .wrapBar .bRight .dropDownList .ddl_hover ul{width:200px;margin:0 10px;overflow:hidden;}
+#SGeneralBar .wrapBar .bRight .dropDownList .ddl_hover ul li{float:left;width:100px;}
+#SGeneralBar .wrapBar .bRight .dropDownList .ddl_hover ul li a{font:normal 9pt arial;color:#2a6ebb;display:block;padding:3px 0;}
+#SGeneralBar .wrapBar .bRight .dropDownList .ddl_hover ul li a:hover{text-decoration:underline;}
+#SGeneralBar .wrapBar .bRight .dropDownList .ddl_hover .botRow{clear:both;width:220px;overflow:hidden;margin-top:10px;background-color:#ededed;padding:5px 10px;}
+#SGeneralBar .wrapBar .bRight .dropDownList .ddl_hover .botRow a{display:block;margin:3px 5px;font:bold 8pt arial;color:#222222;text-align:center;}
+#SGeneralBar .wrapBar .bRight .dropDownList .ddl_hover .botRow a span{color:#d76508}
+#SGeneralBar .wrapBar .bRight .dropDownList .ddl_hover .botRow a span:hover{text-decoration:underline;}
+
+#SGeneralBar .wrapBar .bRight .login{float:right;height:34px;background:transparent url(//static.hepsiburada.net/css/eKolay/images/ch_seperator.gif) repeat-y top left;overflow:hidden;}
+#SGeneralBar .wrapBar .bRight .login .signup{height:100%;background-color:#eff8ea;margin:0 1px;padding:13px 10px;}
+#SGeneralBar .wrapBar .bRight .login .signup a{display:inline-block;padding:0 0 0 20px;font:normal 10pt arial;color:#32840e;background:transparent url(//static.hepsiburada.net/css/eKolay/images/ustBarSprite.png) no-repeat 0px -115px;text-shadow:1px 1px 0px #fff;}
+#SGeneralBar .wrapBar .bRight .login .signup a:hover{display:inline-block;padding:0 0 0 20px;font:normal 10pt arial;color:#0c5406;background:transparent url(//static.hepsiburada.net/css/eKolay/images/ustBarSprite.png) no-repeat 0px -115px;text-decoration:underline;}
+
+#SGeneralBar .wrapBar .bRight .login .logged{height:100%;background-color:#fff;margin:0 1px;padding:6px 10px;}
+#SGeneralBar .wrapBar .bRight .login .logged span{display:block;font:bold 9pt arial;color:#222;margin-bottom:1px;}
+#SGeneralBar .wrapBar .bRight .login .logged a.member{display:block;padding-right:5px;float:left;font:normal 9pt arial;color:#0f4e96;height:14px;max-width:140px;overflow:hidden;}
+#SGeneralBar .wrapBar .bRight .login .logged a.member:hover{color:#0d335f}
+#SGeneralBar .wrapBar .bRight .login .logged a.logout{display:inline-block;float:left;width:13px;height:13px;background:transparent url(//static.hepsiburada.net/css/eKolay/images/ustBarSprite.png) no-repeat -178px -62px;margin-top:1px;}
+
+/* ustBar.css?v=0.22 */
+
+/* categoryMenu.css?v=0.04 */
+#catMenu{float:left;text-align:left;}
+#catMenu li, #catMenu li a{padding:0;}
+.catMenuListype{float:left;position:relative;list-style-type:none;background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v0.20") 0 -432px  no-repeat;}
+.catMenuListype li{padding:4px 0 4px 10px !important;line-height:18px;}
+.catMenuListype span{float:left;/*margin:0 20px;*/margin:0 13px;}
+.catMenuInnerSub{position:absolute;top:30px;left:0;z-index:2147483647;}
+/*.catMenuListype .icnV1{padding:0 0 0 10px;background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v0.20") -30px -523px  no-repeat;}*/
+.catMenuListype .icnV2{padding:0 11px 0 0;background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v0.20") right -481px  no-repeat;}
+.homeIcn{float:left;width:30px;height:30px;background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v0.20") 0 -560px  no-repeat;}
+.homeIcn a{float:left;width:30px;height:30px;}
+.homeIcn a:hover{background-color:#fff;opacity:0.40;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=40) !important;}
+.catMenuListypeA{padding:0px;float:left;display:block;position:absolute;width:100%;height:30px;top:0;left:0;}
+.catMenuListypeA:hover{background-color:#fff;opacity:0.40;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=40) !important;}
+.catMenuListypeRollOVER{background-color:#fff;opacity:0.40;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=40) !important;}
+/**/
+.emenu-root-version2                {border-bottom:1px solid #ebeae5;}
+.emenu-root-version2 li             {background:url("//design.hepsiburada.net/hbv2/Design2010/Menu/menubgDegClsitem.jpg") no-repeat 0 0;color:#333333;cursor:pointer;display:block;font-size:12px;height:18px;width:178px;font-weight:normal;}
+.emenu-root-version2 li:hover       {background-position:0 -26px;}
+.emenu-root-version2 li a           {color:#666666;font-weight:bold !important;padding-left:13px;font-family:trebuchet MS;}
+/*    
+.emenu-item a                       {color:#666666;font-weight:bold !important;padding-left:13px;font-family:trebuchet MS;}
+.emenu-item-active                  {color:#666666;font-weight:bold !important;padding-left:13px;font-family:trebuchet MS;}
+.emenu-item-hover, .emenu-item-sa   {color:#666666;font-weight:bold !important;padding-left:13px;font-family:trebuchet MS;}
+.emenu-item-sa a                    {color:#666666;font-weight:bold !important;padding-left:13px;font-family:trebuchet MS;}
+.emenu-item-active a                {color:#666666;font-weight:bold !important;padding-left:13px;}
+.emenu-item-hover a                 {color:#666666;font-weight:bold !important;padding-left:13px;font-family:trebuchet MS;}
+*/
+/**/
+.catMenuListypeB                    {position:absolute;top:0;left:0;width:100%;height:30px;background-color:black;opacity:0.10;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=10) !important;}
+.dNone                              {display:none;}
+.dBlock                             {display:block;}
+
+/* categoryMenu.css?v=0.04 */
+
+/* selectmenuCleaned.css */
+/* Selectmenu
+----------------------------------*/
+.ui-selectmenu { display:block;position:relative;height:2em;text-decoration:none;overflow:hidden;}
+.ui-selectmenu { height:17px;}
+.ui-selectmenu-icon { position:absolute;right:6px;margin-top:-8px;top:50%;}
+.ui-selectmenu-menu { padding:0;margin:0;list-style:none;position:absolute;top:0;visibility:hidden;overflow:auto;}
+.ui-selectmenu-open { visibility:visible;}
+.ui-selectmenu-menu-popup { margin-top:-1px;}
+.ui-selectmenu-menu-dropdown { z-index:100  }
+.ui-selectmenu-menu li { padding:0;margin:0;display:block;border-top:1px dotted transparent;border-bottom:1px dotted transparent;border-right-width:0 !important;border-left-width:0 !important;font-weight:normal !important;}
+.ui-selectmenu-menu li a,.ui-selectmenu-status {line-height:0.8em;display:block;padding:.3em 1em;outline:none;text-decoration:none;}
+.ui-selectmenu-status  { margin-top:-3px;}
+.ui-selectmenu-menu li.ui-selectmenu-hasIcon a,
+.ui-selectmenu-hasIcon .ui-selectmenu-status { padding-left:20px;position:relative;margin-left:5px;}
+.ui-selectmenu-menu li .ui-icon, .ui-selectmenu-status .ui-icon { position:absolute;top:1em;margin-top:-8px;left:0;}
+.ui-selectmenu-status { line-height:1.4em;}
+.ui-selectmenu-open li.ui-selectmenu-item-focus a {  }
+.ui-selectmenu-open li.ui-selectmenu-item-selected { }
+.ui-selectmenu-menu li span,.ui-selectmenu-status span { display:block;margin-bottom:.2em;}
+.ui-selectmenu-menu li .ui-selectmenu-item-header { font-weight:bold;}
+.ui-selectmenu-menu li .ui-selectmenu-item-content {  }
+.ui-selectmenu-menu li .ui-selectmenu-item-footer { opacity:.8;}
+/*for optgroups*/
+.ui-selectmenu-menu .ui-selectmenu-group { font-size:1em;}
+.ui-selectmenu-menu .ui-selectmenu-group .ui-selectmenu-group-label { line-height:1.4em;display:block;padding:.6em .5em 0;font-weight:bold;}
+.ui-selectmenu-menu .ui-selectmenu-group ul { margin:0;padding:0;}
+.smoothDDL{ width:163px;font-size:12px;font-family:"Trebuchet MS";}
+
+
+#divHeaderCatalogDropDown .ui-state-default,
+#divHeaderCatalogDropDown .ui-widget-content .ui-state-default { border:0px solid #d3d3d3;background:transparent url(//images.hepsiburada.com/hbv2/Design2010/Menu/ui-custom-ddl-orange.png) no-repeat 0px top;}
+
+#divHeaderCatalogDropDown a { color:black;}
+#divHeaderCatalogDropDown a :hover{ color:black;}
+
+
+#divBrandStores .ui-state-default,
+#divBrandStores .ui-widget-content .ui-state-default,
+
+#divDontMissList .ui-state-default,
+#divDontMissList .ui-widget-content .ui-state-default { border:0px solid #d3d3d3;background:transparent url(//images.hepsiburada.com/hbv2/Menu/ui-custom-ddl-white.png) no-repeat 0px top;}
+
+
+
+#tabInnerPortlet .ui-state-default,
+#tabInnerPortlet .ui-widget-content .ui-state-default { border:0px solid #d3d3d3;background:transparent url(//images.hepsiburada.com/hbv2/Design2010/Menu/ui-custom-ddl-orange.png) no-repeat 0px top;}
+
+
+/* selectmenuCleaned.css */
+
+
+/* headerMenu.css?v=0.68 */
+
+#hBottmMn                                                           {float:left;text-align:left;margin-top:3px;font-family:Arial;font-weight:bold;}
+#hBottmMn li                                                        {padding:0px;color:#666;}
+#hBottmMn li a                                                      {padding:0px;}
+.hBottomMenuListType                                                {float:left;position:relative;list-style-type:none;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerIcnMerged.png) 0 -69px  no-repeat;}
+.hBottomMenuListType li                                             {padding:4px 0 4px 10px !important;line-height:18px;}
+.hBottomMenuListType span                                           {float:left;/*margin:0 20px;*/margin:0 13px;}
+.hedMnInnerSub                                                      {position:absolute;top:30px;left:-2px;z-index:200;}
+.hBottomMenuListType .icnV1                                         {/*padding:0 0 0 10px;background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v0.20") -30px -523px  no-repeat;*/}
+.hBottomMenuListType .icnV2                                         {padding:0 11px 0 0;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerIcnMerged.png) 100% 0  no-repeat;}
+.hBottomMenuA                                                       {padding:0px;float:left;display:block;position:absolute;width:100%;height:30px;top:0;left:0;}
+.hBottomMenuA:hover                                                 {background-color:#fff;opacity:0.40;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=40) !important;}
+.hBottomMenuRollOVER                                                {background-color:#fff;opacity:0.40;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=40) !important;}
+/**/
+.dNone                                                              {display:none;}
+.dBlock                                                             {display:block;}
+/*header top menu*/
+.navTOP																{padding:0;margin:0;list-style:none;width:auto !important;height:30px;position:relative;z-index:1000;font-family:arial, verdana, sans-serif;}
+.navTOP li.top														{float:left !important;height:30px;}
+.navTOP li a.top_link												{display:block;float:left;height:30px;margin-top:8px;color:#666;text-decoration:none;font-size:11px;padding:0 0 0 10px;cursor:pointer;line-height:14px;}
+.toplinkhover:hover											{color:#FFA23E !important;}
+.navTOP li a.top_link .hLink										{float:left;display:block;height:30px;/*padding:0 10px 0 0;background:url(three_0.gif) right top no-repeat;*/}
+.navTOP li a.top_link .down										    {float:left;display:block;padding:0 15px 0 0;height:30px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerIcnMerged.png) no-repeat right -8px transparent;line-height:14px;}
+/*
+.navTOP li:hover a.top_link .hLink									{background:url(//design.hepsiburada.net/Carsi/HeaderV2/dDownImages.gif) no-repeat right top;}
+.navTOP li:hover a.top_link .down								    {background:url(//design.hepsiburada.net/Carsi/HeaderV2/dDownImages.gif) no-repeat right top;}
+*/
+/* Default */		
+.navTOP li:hover													{position:relative;z-index:200;}
+.navTOP li:hover ul.sub												{left:-10px;top:20px;padding:3px;white-space:nowrap;width:139px;height:auto;z-index:1001;/*opacity:0.80;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80) !important;*/}
+.navTOP li:hover ul.sub li											{display:block;position:relative;float:left;width:136px;font-weight:normal;}
+.navTOP li:hover ul.sub li a										{display:block;width:120px;height:18px;margin:1px 10px;padding:2px 10px;text-decoration:none;border-bottom:1px dotted #ccc;color:#666;}
+.navTOP li:hover ul.sub li a:hover									{color:#ffa23e;}
+.navTOP li ul.sub li a.fly											{/*background:#bbd37e url(arrow.gif) 80px 6px no-repeat;*/}
+.navTOP li:hover ul.sub li a.fly:hover								{/*background:#6a812c url(arrow_over.gif) 80px 6px no-repeat;*/ color:#fff;}
+.navTOP li:hover li:hover ul,
+.navTOP li:hover li:hover li:hover ul,
+.navTOP li:hover li:hover li:hover li:hover ul,
+.navTOP li:hover li:hover li:hover li:hover li:hover ul				{left:90px;top:-4px;background:#bbd37e;padding:3px;border:1px solid #5c731e;white-space:nowrap;width:90px;z-index:400;height:auto;}
+.navTOP ul, 
+.navTOP li:hover ul ul,
+.navTOP li:hover li:hover ul ul,
+.navTOP li:hover li:hover li:hover ul ul,
+.navTOP li:hover li:hover li:hover li:hover ul ul					{position:absolute;left:-9999px;top:-9999px;width:0;height:0;margin:0;padding:0;list-style:none;}
+.navTOP li:hover li:hover a.fly,
+.navTOP li:hover li:hover li:hover a.fly,
+.navTOP li:hover li:hover li:hover li:hover a.fly,
+.navTOP li:hover li:hover li:hover li:hover li:hover a.fly			{/*background:#6a812c url(arrow_over.gif) 80px 6px no-repeat;*/ color:#fff;border-color:#fff;} 
+.navTOP li:hover li:hover li a.fly,
+.navTOP li:hover li:hover li:hover li a.fly,
+.navTOP li:hover li:hover li:hover li:hover li a.fly				{/*background:#bbd37e url(arrow.gif) 80px 6px no-repeat;*/ color:#000;border-color:#bbd37e;}
+
+/* headerMenu.css?v=0.68 */
+
+/* notification.css?v=0.13 */
+.w200{width:200px;}
+.w250{width:250px;}
+.w300{width:300px;}
+.w800{width:800px;}
+.h60{height:60px;}
+.h55{height:55px;}
+.ml50{margin-left:50px;}
+.ml60{margin-left:60px;}
+.clsDiv{float:left;width:26px;height:29px;position:absolute;right:-19px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged_1.png) no-repeat -11px -20px;}
+.clsDiv span{float:left;margin:10px 0 0 10px;width:9px;height:9px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged02_1.png) no-repeat -10px -60px;}
+.clsDiv span:hover{float:left;margin:10px 0 0 10px;width:9px;height:9px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged02_1.png) no-repeat -20px -60px;cursor:pointer;}
+.popupCont{float:left;padding:25px 0;}
+.errPopupTopBgLeft{width:10px;height:10px;float:left;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged_1.png) no-repeat 0 0;}
+.errPopupTopBgCenter{height:10px;float:left;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged02_1.png) repeat-x 0 -69px;}
+.errPopupTopBgRight{width:10px;height:10px;float:left;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged_1.png) no-repeat -10px 0;}
+.errPopupCtrBgLeft{width:10px;float:left;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged_1.png) repeat-y -40px 0;}
+.errPopupCtrBgCenter{float:left;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged02_1.png) repeat-x 0 -81px;}
+.errPopupCtrBgRight{width:10px;float:left;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged_1.png) repeat-y -50px 0;}
+.errPopupBtmBgLeft{width:10px;height:10px;float:left;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged_1.png) no-repeat 0 -10px;}
+.errPopupBtmBgCenter{height:9px;float:left;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged02_1.png) repeat-x 0 -41px;}
+.errPopupBtmBgRight{width:10px;height:10px;float:left;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged_1.png) no-repeat -10px -10px;}
+.errPopupCtrBgCenter .icn{float:left;width:33px;height:33px;position:absolute;left:5px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged02_1.png) no-repeat -2px -1px;}
+.errPopupCtrBgCenter .icn2{float:left;width:33px;height:33px;position:absolute;left:5px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/popupMerged02_1.png) no-repeat -2px -897px;}
+
+.UserNotificationCont{float:left;width:238px;}
+.UserNotificationTop{float:left;width:238px;height:14px;background:url(tooltip.png) no-repeat scroll 0 0 transparent;}
+.UserNotificationHeader{background:url(tooltip2.png) repeat-y scroll 0 0 transparent;color: #FFFFFF;float: left;font-family: arial;font-size: 14px;font-weight: bold;padding: 2px 17px 9px 25px;width: 196px;line-height: 16px;}
+.UserNotificationHeader a{color: #FFFFFF;font-family: comic sans ms;font-size: 10px;font-weight: normal;text-decoration: none;margin-left: 10px;float:right;}
+.UserNotificationHeaderTxt{float:left;width:178px;}
+.UserNotificationText{background:url(tooltip3.png) repeat-y scroll 0 0 transparent;color: #444444;float: left;font-family: arial;font-size: 13px;line-height: 18px;padding: 4px 20px 3px 25px;width: 193px;}
+.UserNotificationBottom{float:left;width:238px;height:19px;background:url(tooltip4.png) no-repeat scroll 0 0 transparent;}
+/* notification.css?v=0.13 */
+
+/* jquery.jscrollpane.css */
+
+.jspContainer{overflow:hidden;position:relative;}
+.jspPane{position:absolute;}
+.jspVerticalBar{position:absolute;top:0;right:0;width:16px;height:100%;background:red;}
+.jspHorizontalBar{position:absolute;bottom:0;left:0;width:100%;height:16px;background:red;}
+.jspVerticalBar *,
+.jspHorizontalBar *{margin:0;padding:0;}
+.jspCap{display:none;}
+.jspHorizontalBar .jspCap{float:left;}
+.jspTrack{background:#dde;position:relative;}
+.jspDrag{background:#bbd;position:relative;top:0;left:0;cursor:pointer;}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag{float:left;height:100%;}
+.jspArrow{background:#50506d;text-indent:-20000px;display:block;cursor:pointer;}
+.jspArrow.jspDisabled{cursor:default;background:#80808d;}
+.jspVerticalBar .jspArrow{height:16px;}
+.jspHorizontalBar .jspArrow{width:16px;float:left;height:100%;}
+.jspVerticalBar .jspArrow:focus{outline:none;}
+.jspCorner{background:#eeeef4;float:left;height:100%;}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin:0 -3px 0 0;
+}
+/* jquery.jscrollpane.css */
+
+
+/* header.ascx && NDHeader.ascx */
+#pinContainer{display:none;position:absolute;width:100px;height:100px;font-family:Tahoma;z-index:999;float:right;margin-top:-5px;}
+#pinContainer img{/*cursor:url('Images/DragImages/grab.cur'), pointer;*/ margin:5px 0 0 60px;}
+#callout{font-size:10px;position:absolute;background-color:#ffe;padding:3px 5px;border:1px solid black;border-radius:5px;margin:10px 0 0 130px;width:100px;}
+
+/*ui*/
+.ui-state-default, .ui-widget-content .ui-state-default{border:none;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png) no-repeat 0 -303px !important;}
+.ui-selectmenu-status{margin-top:0;margin-left:10px;text-align:left;font-family:Arial;font-size:13px;}
+.ui-selectmenu{height:32px;}
+.ui-selectmenu-menu-dropdown{z-index:20000;}
+.ui-corner-all{-moz-border-radius:0px;-webkit-border-radius:0px;}
+.ui-corner-top{-moz-border-radius-topleft:0px;-moz-border-radius-topright:0px;-webkit-border-top-left-radius:0px;-webkit-border-top-right-radius:0px;}
+.ui-selectmenu-status{line-height:25px;font-size:13px;}
+.ui-state-active .ui-icon, .ui-state-default .ui-icon{background:none;}
+.ui-state-default, .ui-widget-content .ui-state-default{color:#333;font-weight:normal;}
+
+.headerLogoLink{display:block;float:left;height:67px;position:absolute;top:30px;width:200px;left:0;}
+.pl4{padding-left:4px !important;}
+.spnCartCountStyle{color:#F3E7DB;float:left;font-size:11px;font-weight:bold;left:95px;margin-top:13px;position:absolute;z-index:2;}
+#basketSpinner{display:block;float:left;width:16px;height:113px;padding-left:90px;padding-top:75px;}
+.smoothDDL{font-family:Arial;}
+#divHeaderPopUpMenu{top:34px !important;left:0px !important;float:left;}		
+.bordernone{border:0 !important;}
+.ui-widget-content{background:#fff !important;}
+#divMPTopSales .ui-state-default{border:1px solid #d3d3d3 !important;}
+input.searchInputBarinp{color:#333333 !important;font-size:13px;}
+#firsatlarim{background:transparent !important;}
+.emenu-root{width:193px !important;}
+
+.jspArrowUp {background:url(//static.hepsiburada.net/css/fashion/img/scrollUp.gif) no-repeat 0px 0px #f0f0f0 !important;}
+.jspArrowDown {background:url(//static.hepsiburada.net/css/fashion/img/scrollDown.gif) no-repeat 0px 0px #f0f0f0 !important;}
+.jspTrack{background:url(//static.hepsiburada.net/css/fashion/img/scrollBody.gif) repeat-y 0px 0px #f0f0f0 !important;height:155px !important;}
+.jspDrag{background:url(//static.hepsiburada.net/css/fashion/img/scrollDrag.gif) no-repeat 0px 0px transparent !important;height:32px !important;}
+#basketOnFlyProducts{width:221px;height:188px;overflow:auto;}
+.horizontal-only{height:auto;max-height:188px;}
+.jspVerticalBar{border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;background:#DDDDDD;}
+.jspVerticalBar .jspArrow {height:15px !important;}
+.jspTrack{height:155px !important;}	
+
+.emenu-item, .emenu-item-active, .emenu-item-hover, .emenu-item-sa{float:left !important;width:183px !important;height:22px !important;background:url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubg2.png?v=0.03) repeat scroll 0 0 transparent !important;}
+.emenu-item-hover{background:url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubg2.png) 0 0 !important;}
+.emenu-item-active{background:url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubg2.png) 0 -30px !important;}
+.emenu-item-sa{background:url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubg2.png) 0 0 !important;}
+
+ul.catA a.hb-menu-item-text{float:left;margin-top:2px;width:183px;}
+/* header.ascx && NDHeader.ascx */
+
+
+*+html #header { 
+    z-index:3;
+}

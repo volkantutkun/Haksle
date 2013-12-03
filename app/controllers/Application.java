@@ -91,47 +91,85 @@ public class Application extends Controller {
     		  Map<String,String> tempMap = filledProdForm.data();
     		  String emailStr = tempMap.get("email");
     		  
-    	    return badRequest(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "Bad Request"));
-    	  } else {
+    		  return badRequest(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "Bad Request"));
+    	  } 
+    	  else 
+    	  {
     		  Map<String,String> tempMap = filledProdForm.data();
     		  String sourceStr = tempMap.get("source");
     		  String emailStr = tempMap.get("email");
     		  String desiredSel = tempMap.get("desireddiscount");
-    		  ProductList newListItem = new ProductList();
     		  
-    		  // TODO: desireddiscount güncelleme case'i yazılacak
-    		  
-    		  if (desiredSel.equals("Sepet"))
-    			  newListItem.isinbasket = true;
-    		  else
-    			  newListItem.desireddiscount = Integer.parseInt(tempMap.get("desireddiscount"));;
-    		  
-    		  
-    		  String listnameStr = tempMap.get("listname");
-    		  if("newlist".equals(listnameStr))	listnameStr = tempMap.get("newlistname");
-    		  
+    		  boolean isDiscount = true; 
+    		  boolean isinbasket = false;
+    		  int desireddiscount = -1;
+			  if (desiredSel.equals("Sepet"))
+			  {
+				  isDiscount = false;
+				  isinbasket = true;
+			  }
+			  else
+			  {
+				  isDiscount = true;
+    			  desireddiscount = Integer.parseInt(tempMap.get("desireddiscount"));
+			  }
+			  
     		  int pid = 0;
     		  
     		  List<Product> tempList = Product.allbyurl(sourceStr);
-    		  if(tempList.size() > 0){
+    		  if(tempList.size() > 0)
+    		  {
     			  Product prodExist = tempList.get(0);
     			  pid = prodExist.pid;
-    		  }else{
+
+    			  List<ProductList> tempPLList = ProductList.selectbypid(pid);
+    			  ProductList prListObj = tempPLList.get(0);
+    			  
+    			  if (isDiscount && desireddiscount != -1)
+    			  {
+	        		  if (prListObj.desireddiscount!=desireddiscount)
+	        			  prListObj.desireddiscount = desireddiscount;
+	        		  
+	        		  prListObj.isinbasket = false;
+	        			 
+    			  }
+    			  else if (!isDiscount)
+    			  {
+    				  if (prListObj.isinbasket!=isinbasket)
+	        			  prListObj.isinbasket = isinbasket;
+    			  }
+    			  
+    			  prListObj.save();
+        		 
+    		  }
+    		  else
+    		  {
     			  Product newProduct = parseURL(sourceStr);
         		  Product.create(newProduct);
         		  
         		  tempList = Product.allbyurl(sourceStr);
         		  Product prodExist = tempList.get(0);
     			  pid = prodExist.pid;
+    			  
+    			  ProductList newListItem = new ProductList();        		  
+        		  if (desiredSel.equals("Sepet"))
+        			  newListItem.isinbasket = isinbasket;
+        		  else
+        			  newListItem.desireddiscount = desireddiscount;
+              		  
+        		  String listnameStr = tempMap.get("listname");
+        		  if("newlist".equals(listnameStr))	
+        			  listnameStr = tempMap.get("newlistname");
+        		  
+        		  newListItem.email = emailStr;
+        		  newListItem.listname = listnameStr;
+        		  newListItem.pid = pid;
+        		  
+        		  newListItem.create(newListItem);
+        		  
+    			  
     		  }
-    		  
-    		  
-    		  newListItem.email = emailStr;
-    		  newListItem.listname = listnameStr;
-    		  newListItem.pid = pid;
-    		  
-    		  newListItem.create(newListItem);
-    		  
+	  
     		  return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, "New Product is added."));
     	  }
     }

@@ -1,0 +1,11 @@
+//tealium universal tag - utag.26 ut4.0.201311261339, Copyright 2013 Tealium.com Inc. All Rights Reserved.
+(function(c,a){window.mixpanel=a;var b,d,h,e;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+
+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=a[f]=[]:f="mixpanel";g.people=g.people||[];h=['disable','track','track_pageview','track_links','track_forms','register','register_once','unregister','identify','alias','name_tag','set_config','people.set','people.set_once','people.increment','people.track_charge','people.append'];for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.2;})(document,window.mixpanel||[]);mixpanel.init("7383eb5d4d7c9441802d61e75f16c3bd");try{(function(id,loader,u){try{u=utag.o[loader].sender[id]={}}catch(e){u=utag.sender[id]};u.ev={'view':1,'link':1};u.event_name="";u.people={};u.event_list={"event_name":1,"track_event_name":1,"loaded":1,"identify":1,"alias":1};u.map={"dom.url":"track_event_name","user_id":"identify"};u.extend=[];u.send=function(a,b,c,d,e,f){if(u.ev[a]||typeof u.ev.all!="undefined"){u.people.set={};u.people.set_once={};u.people.increment={};c={};for(d in utag.loader.GV(u.map)){if(typeof b[d]!="undefined"&&b[d]!=""){e=u.map[d].split(",");for(f=0;f<e.length;f++){if(u.event_list[e[f]]){u[e[f]]=b[d];}else if(e[f].indexOf("people.")==0){var g=7+e[f].substring(7).indexOf(".");u.people[e[f].substring(7,g)][e[f].substring(g+1)]=b[d];u.people[e[f].substring(7,g)+"_flag"]=1;}else{c[e[f]]=b[d]}}}}
+if(u.track_event_name){u.event_name=u.track_event_name};if(u.loaded){mixpanel.set_config({loaded:u.loaded});}
+if(u.people.set_flag){mixpanel.people.set(u.people.set);}
+if(u.people.set_once_flag){mixpanel.people.set_once(u.people.set_once);}
+if(u.people.increment_flag){mixpanel.people.increment(u.people.increment);}
+if(u.alias){mixpanel.alias(u.alias);}
+if(u.identify){mixpanel.identify(u.identify);}
+if(u.event_name){mixpanel.track(u.event_name,c);}}}
+try{utag.o[loader].loader.LOAD(id)}catch(e){utag.loader.LOAD(id)}})('26','hepsiburada.main');}catch(e){}

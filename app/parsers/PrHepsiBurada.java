@@ -113,7 +113,7 @@ public class PrHepsiBurada{
 			
 			parsedProduct.title = prodName;
 			
-			double price = Double.parseDouble(trimPrice(prodPrice));
+			double price = Double.parseDouble(prodPrice);
 			parsedProduct.initialprice = price;
 			parsedProduct.currentprice = price;
 			

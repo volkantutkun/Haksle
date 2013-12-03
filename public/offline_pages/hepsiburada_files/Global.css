@@ -1,0 +1,769 @@
+/*body*/
+body																	{margin:0 auto;min-width:1000px;font:62.5% Arial, Helvetica, sans-serif;font-size:0.7em;color:#333333;text-align:left;}
+/*IE 6 | CSS-Tricks*/
+.Lh0																	{line-height:0px !important;}
+.Lh17																	{line-height:17px !important;}
+.font0																	{font-size:0px !important;}
+/**/
+a{color:#333333;text-decoration:none;}
+a:hover{color:#ffa23e;}
+/*globalContainer*/
+.productMarkaTopLeft, 
+.productMarkaTopCenter, .productMarkaTopRight, 
+.productMarkaContent, .productMarkaBottomLeft, 
+.productMarkaBottomCenter, .productMarkaBottomRight						{float:left;}
+.productMarkaTopLeft													{font-size:0px; line-height:0px;width:10px;height:12px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -14px -289px;}
+.productMarkaTopCenter													{font-size:0px; line-height:0px;width:980px;height:12px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/GlobalTile.png?v=0.01) repeat-x 0px -636px;}
+.productMarkaTopRight													{font-size:0px; line-height:0px;width:10px;height:12px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -37px -289px;}
+.productMarkaContent													{width:998px;height:auto;border-left:solid 1px #dfdfdf;border-right:solid 1px #dfdfdf; background-color:#fff;}
+.productMarkaBottomLeft													{font-size:0px; line-height:0px;padding:0 0 12px 0;width:10px;height:13px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -14px -311px;}
+.productMarkaBottomCenter												{font-size:0px; line-height:0px; padding:0 0 12px 0;width:980px;height:13px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/GlobalTile.png?v=0.01) repeat-x 0px -656px;}
+.productMarkaBottomRight												{font-size:0px; line-height:0px;padding:0 0 12px 0;width:10px;height:13px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -37px -311px;}
+.menuband																{width:188px;height:24px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/ContentItem.png?v=0.06) no-repeat -6px -6px;}
+.ThemeMenuband															{width:188px;height:24px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/ThemeMenuband.gif?v2.15) no-repeat -6px -6px;}
+.generalPanelMiddleDiv													{width:186px;border-left:solid 1px #dfdfdf;border-right:solid 1px #dfdfdf;background:url("//design.hepsiburada.net/hbv2/Background/Panels/PanelsItemTile.jpg") repeat-x 0 bottom;}
+.generalPanelBottomDiv													{width:188px;height:13px;background:url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/ContentItem.png?v=0.06") no-repeat -221px -24px;}
+/*HEADER-FOOTER*/
+#contentholder, #footer, #headerV2										{margin:0 auto;width:1000px;text-align:left;}
+/*container*/
+#divWrapperCenter														{width: 100%;}
+#divMainCenter															{width:1000px;margin: 0 auto;}
+/*header*/
+#navRight																{padding:0; margin:0; list-style:none; width:auto !important; height:30px; position:relative; z-index:1000; font-family:arial, verdana, sans-serif;}
+#navRight li.top														{float:left !important; height:30px;}
+#navRight li a.top_link													{display:block; float:left; height:30px; line-height:30px; color:#ccc; text-decoration:none; font-size:11px; font-weight:bold; padding:0 0 0 12px; cursor:pointer;}
+#navRight li:hover a.top_link											{color:#cccccc; background: url(//design.hepsiburada.net/Carsi/HeaderV2/dDownImages.gif) no-repeat;}
+/**/
+#navRight li a.top_link .hLink											{float:left; display:block; padding:0 10px 0 0; height:30px; /*background: url(three_0.gif) right top no-repeat;*/}
+#navRight li a.top_link .down										    {float:left; display:block; padding:0 10px 0 0; height:30px; /*background: url(three_0a.gif) no-repeat right top;*/}
+#navRight li:hover a.top_link .hLink									{background:url(//design.hepsiburada.net/Carsi/HeaderV2/dDownImages.gif) no-repeat right top;}
+#navRight li:hover a.top_link .down								        {background:url(//design.hepsiburada.net/Carsi/HeaderV2/dDownImages.gif) no-repeat right top;}
+
+/* Default */		
+#navRight li:hover														{position:relative; z-index:200;}
+#navRight li:hover ul.sub												{left:1px; top:30px; background: #000; padding:3px;  white-space:nowrap; width:139px; height:auto; z-index:1001; opacity:0.80; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80) !important;}
+#navRight li:hover ul.sub li											{display:block; height:30px; position:relative; float:left; width:136px; font-weight:normal;}
+#navRight li:hover ul.sub li a											{display:block; font-size:11px; height:28px; width:136px; line-height:25px; text-indent:5px; color:#ccc; font-weight:bold; text-decoration:none; border-bottom: 1px dotted #666; border-left:3px solid #666;}
+#navRight li:hover ul.sub li a:hover									{background:#333; color:#ffa23e; border-left:3px solid #ffa23e;}
+#navRight li ul.sub li a.fly											{/*background:#bbd37e url(arrow.gif) 80px 6px no-repeat;*/}
+#navRight li:hover ul.sub li a.fly:hover								{/*background:#6a812c url(arrow_over.gif) 80px 6px no-repeat;*/ color:#fff; }
+#navRight li:hover li:hover ul,
+#navRight li:hover li:hover li:hover ul,
+#navRight li:hover li:hover li:hover li:hover ul,
+#navRight li:hover li:hover li:hover li:hover li:hover ul				{left:90px; top:-4px; background: #bbd37e; padding:3px; border:1px solid #5c731e; white-space:nowrap; width:90px; z-index:400; height:auto;}
+#navRight ul, 
+#navRight li:hover ul ul,
+#navRight li:hover li:hover ul ul,
+#navRight li:hover li:hover li:hover ul ul,
+#navRight li:hover li:hover li:hover li:hover ul ul						{position:absolute; left:-9999px; top:-9999px; width:0; height:0; margin:0; padding:0; list-style:none;}
+#navRight li:hover li:hover a.fly,
+#navRight li:hover li:hover li:hover a.fly,
+#navRight li:hover li:hover li:hover li:hover a.fly,
+#navRight li:hover li:hover li:hover li:hover li:hover a.fly			{/*background:#6a812c url(arrow_over.gif) 80px 6px no-repeat;*/ color:#fff; border-color:#fff;} 
+#navRight li:hover li:hover li a.fly,
+#navRight li:hover li:hover li:hover li a.fly,
+#navRight li:hover li:hover li:hover li:hover li a.fly					{/*background:#bbd37e url(arrow.gif) 80px 6px no-repeat;*/ color:#000; border-color:#bbd37e;}
+
+#navLeft																{padding:0; margin:0; list-style:none; width:auto !important; height:30px; position:relative; z-index:1000; font-family:arial, verdana, sans-serif;}
+#navLeft li.top															{float:left !important; height:30px;}
+#navLeft li a.top_link													{display:block; float:left; height:30px; line-height:30px; color:#ccc; text-decoration:none; font-size:11px; font-weight:bold; padding:0 0 0 12px; cursor:pointer;}
+#navLeft li:hover a.top_link											{color:#cccccc; background: url(//design.hepsiburada.net/Carsi/HeaderV2/dDownImages.gif) no-repeat;}
+/**/
+#navLeft li a.top_link .hLink											{float:left; display:block; padding:0 10px 0 0; height:30px; /*background: url(three_0.gif) right top no-repeat;*/}
+#navLeft li a.top_link .down										    {float:left; display:block; padding:0 10px 0 0; height:30px; /*background: url(three_0a.gif) no-repeat right top;*/}
+#navLeft li:hover a.top_link .hLink										{background:url(//design.hepsiburada.net/Carsi/HeaderV2/dDownImages.gif) no-repeat right top;}
+#navLeft li:hover a.top_link .down								        {background:url(//design.hepsiburada.net/Carsi/HeaderV2/dDownImages.gif) no-repeat right top;}
+/**/
+.iconAs																	{background: url("//design.hepsiburada.net/Carsi/HeaderV2/part3.png?v0.08") no-repeat 0px -47px; margin:9px 0 0 0; width:16px; height:13px !important;}
+.iconSp																	{background: url("//design.hepsiburada.net/Carsi/HeaderV2/part3.png?v0.08") no-repeat 0px -68px; margin:9px 0 0 0; width:16px; height:13px !important;}
+.iconClickClose02														{background: url("//design.hepsiburada.net/Carsi/HeaderV2/part3.png?v0.08") no-repeat 0px -88px; margin:9px 0 0 0; width:12px; height:13px !important;}
+.iconLogin02															{background: url("//design.hepsiburada.net/Carsi/HeaderV2/part3.png?v0.08") no-repeat 0px -111px; width:16px; margin:9px 0 0 0; height:13px !important;}
+.iconAddLog02															{background: url("//design.hepsiburada.net/Carsi/HeaderV2/part3.png?v0.08") no-repeat 0px -129px; width:16px; margin:9px 0 0 0; height:13px !important;}
+.HeaderTopV3															{background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part3.gif") 0px -85px repeat-x; color:#ccc; height:30px;}
+.HeaderTopV3 h3															{float:left; font-size:11px; color:#eee;background:url("//design.hepsiburada.net/Carsi/HeaderV2/profile-icon.gif") 0px 3px no-repeat;padding-left:40px;}
+#pnlNotFound, #Cart1_tblBosSepet										{margin: 10px 0 30px 0px;}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,ul.tmpa  li 
+#HeaderRoot table, caption, tbody, tfoot, thead, 
+#HeaderRoot tr, #HeaderRoot th, #HeaderRoot td							{margin: 0;	padding: 0;	border: 0; outline: 0;} 
+fieldset, form, label, legend, input, 
+#HeaderRoot ol, #HeaderRoot ul											{list-style: none;}
+:focus																	{outline: 0;}
+.fl-left																{float:left;}
+.fl-right																{float:right;}
+.contHeader																{margin:0px auto; width:1000px; overflow:hidden;text-align:left;}
+.horizontalList															{overflow:hidden;width:auto;}
+.horizontalList li														{float:left;}
+#LogoContainer, .HeaderTopV2, .HeaderMiddle, .HeaderBottom				{text-align:center;}
+/**/
+.HeaderTopV2 li.selected strong span#spnMessageCount, 
+.HeaderTopV2 li.selected strong span#spnFirsatCount, 
+.HeaderTopV2 li.selected strong span#spnCartCount						{display:inline;background-image:none; color:#FF7E00;}
+.HeaderTopV2 strong span#spnMessageCount, 
+.HeaderTopV2 strong span#spnFirsatCount, 
+.HeaderTopV2 strong span#spnCartCount									{display:inline;background-image:none; color:#f8a23d;font-size:9px;}
+/**/
+#HeaderRoot																{font-size:11px;font-family: Tahoma, Arial, sans-serif;margin-bottom:15px;}
+#HeaderRoot table														{border-collapse: collapse;	border-spacing: 0;}
+#HeaderRoot a:link														{text-decoration: none;}
+#HeaderRoot a:visited													{text-decoration: none;}
+/**/
+.HeaderMiddle															{background:url("//design.hepsiburada.net/css/CssItems/Thematic/AltsayfaDefault/arkaplan-altsayfa.gif") center top repeat-x;}
+.HeaderMiddle ul.horizontalList											{width:420px;margin:0 auto;text-align:center;}
+.HeaderMiddle ul.horizontalList li										{margin-right:8px;}
+.HeaderMiddle .transmitter												{float:left;padding-top:17px;}
+.HeaderMiddle .contHeader												{overflow:visible; background:url("//design.hepsiburada.net/Carsi/HeaderV2/part3.png?v0.08") no-repeat scroll right -256px transparent;width:1000px;}
+.HeaderMiddle ul.horizontalList li a									{background-repeat:no-repeat; float:left; display:block; }
+.HeaderMiddle ul.horizontalList li a.hariyorum							{width:77px; height:22px; background-position:-15px -80px;}
+.HeaderMiddle ul.horizontalList li a.hbingo								{width:76px; height:22px; background-position:-116px -80px;}
+.HeaderMiddle ul.horizontalList li a.hkarti								{width:91px; height:22px; background-position:-211px -80px;}
+.HeaderMiddle ul.horizontalList li a.ksatis								{width:106px; height:22px; background-position:-318px -80px;}
+.HeaderMiddle ul.horizontalList li a.hariyorum1							{width:87px; height:22px; background-position:-15px -80px;}
+.HeaderMiddle ul.horizontalList li a.Dbd								{width:76px; height:22px; background-position:-116px -80px;}
+.HeaderMiddle ul.horizontalList li a.hkarti1							{width:70px; height:22px; background-position:-228px -80px;}
+.HeaderMiddle ul.horizontalList li a.ksatis1							{width:80px; height:22px; background-position:-333px -80px;}
+.HeaderMiddle .jqTransformSelectWrapper									{padding-left:6px;background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part2.png?v0.02") -59px 0px no-repeat;}
+.HeaderMiddle .jqTransformSelectWrapper ul								{height:720px;}
+.HeaderMiddle .jqTransformSelectWrapper a.jqTransformSelectOpen			{background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v0.20") right top no-repeat;}
+.HeaderMiddle .selectovic												{margin-left:7px;}
+.HeaderMiddle .jqTransformSelectWrapper div span						{padding-top:2px;}
+/**/
+.searchVers .jqTransformSelectWrapper									{width:163px !important; height:29px !important; padding:0 !important;background:url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/searchItem.png?v0.11") -5px -5px no-repeat;}
+.searchVers .jqTransformSelectWrapper a.jqTransformSelectOpen			{width:24px !important; height:29px !important; right:0px !important; background:url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/searchItem.png?v0.11") -144px -5px no-repeat;}
+.searchVers .jqTransformSelectWrapper ul								{height:720px; left:0; top:29px;}
+.searchVers .jqTransformSelectWrapper div span							{width:132px !important; cursor: pointer;float: none;font-size: 12px; text-align:center; height: 23px;line-height: 15px;overflow: hidden;padding: 6px 0 0 7px;position: absolute;white-space: nowrap;}
+.searchVers input.txbSearch												{float:left; display:block; padding:5px 3px 3px 5px; border:none; width:325px; background:none !important;}
+.searchVers .inputTileVers												{background:url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/GlobalTile.png?v=0.01") 0px -2830px repeat-x;}
+.searchVers .btnSearch													{width:71px !important; height:29px !important; display:block;float:left;background:url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/searchItem.png?v0.11") -483px -5px no-repeat;}
+.searchVers .searchMar													{margin-top:17px; margin-left:23px;}
+/**/
+.HeaderBottom															{background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part3.gif") 0px -38px repeat-x;line-height:30px;}
+.HeaderBottom li														{padding:0px 10px;}
+.HeaderBottom li.hov a													{background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v0.20") 0px -201px no-repeat;}
+.HeaderBottom li a														{color:#333;padding-left:13px;font-weight:normal;}
+.HeaderBottom li#writeUs a												{padding-left:25px;background-position: 0px -261px;}
+.HeaderBottom li.first #headermenu  strong a							{background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v0.20") 0px -159px no-repeat;display:block;padding-left:20px;}
+.HeaderBottom .contHeader												{width:1000px;}
+.HeaderBottom li.first													{_width:95px;}
+.HeaderBottom li.selected												{background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v0.20") 0px -31px  no-repeat;padding-right:0px;}
+.HeaderBottom li.selected strong										{background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v0.20") right -31px  no-repeat;padding-right:10px;display:block;}
+.HeaderBottom li.selected span											{background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part3.gif") 0px -204px  repeat-x;display:block;}
+.HeaderBottom a.fl-right												{margin:10px 10px 0px 0px;}
+.HeaderBottom li #divHeaderPopUpMenu a									{padding-left:0px;font-family:Trebuchet MS;color:#333;font-size:12px;/*display:block;*/ font-weight:bold;}
+.HeaderBottom li #divHeaderPopUpMenu .emenu-root a.hb-menu-item-text	{background-image:none;}
+.HeaderBottom li #divHeaderPopUpMenu a.colorV2							{color:#FFA23E;}
+.HeaderBottom li #divHeaderPopUpMenu .menubottom li a					{background:url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/HeaderItem4.gif?v2.09") no-repeat scroll -708px -147px transparent; padding:0 12px;display: block;}
+.HeaderBottom li #divHeaderPopUpMenu  li a:hover						{color:#FFA23E;}
+.HeaderBottom #headermenu ul											{line-height:13px !important;}
+.HeaderBottom #headermenu .menubottom li								{padding:0 10px;float:none;}
+.HeaderBottom #headermenu li											{padding:6px 0 2px 10px;}
+.HeaderBottom #headermenu td li											{padding:0 0 0 15px}
+#cart, #lists, #opportunity, #message, 
+#pageList, #logOut, #logIn, #logOn, #wellcomeUser, #MainPage			{display:none;}
+.logo																	{vertical-align:top;float:left;}
+.logo img																{margin:10px 60px 0px 0px;}
+.logo span																{background: url("//design.hepsiburada.net/css/CssItems/Thematic/AltsayfaDefault/merge-altsayfa.png?v=0.01") no-repeat -5px -10px; width:250px; height:58px; margin-bottom:-6px; margin-right:15px; text-indent:-9999px; display:block; }
+#LogoContainer span														{border-left:1px solid #999;vertical-align:super;margin-left:8px; float:left; margin-top:5px;}
+input.txbSearch															{border:none; height:21px; width:285px; background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part3.gif") 0px -170px repeat-x; float:left; display:block; padding: 1px 0 0 4px;}
+.btnSearch																{display:block;float:left;background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part2.png?v0.02") -289px 0px no-repeat;width:49px;height:21px;*margin-left:-3px;}
+ul.tmpaUL li a															{background-image:url("//design.hepsiburada.net/css/CssItems/Thematic/Altsayfa5/merge-altsayfa.png?v=0.04"); background-repeat:no-repeat; float:left; display:block; text-indent:-9999px; }
+ul.tmpa li a															{background-image:url("//design.hepsiburada.net/css/CssItems/Thematic/ThemeticAltSayfa/merge-altsayfa.png"); background-repeat:no-repeat; float:left; display:block; text-indent:-9999px; }
+.cart-popup-top															{background:url("//design.hepsiburada.net/Carsi/HeaderV2/Part2.png?v0.02") 30px -6px no-repeat;padding-top:7px;line-height:9px;position:absolute;margin-top:-5px;font-weight:bold;margin-left:-15px;z-index:9999;display:none;}
+.cart-popup-body														{background:url("//design.hepsiburada.net/Carsi/HeaderV2/cart-left.png") left top no-repeat;padding-left:5px;}
+.cart-popup-body div													{background:url("//design.hepsiburada.net/Carsi/HeaderV2/cart-right.png") right top no-repeat;padding-right:5px;}
+.cart-popup-body p														{background:url("//design.hepsiburada.net/Carsi/HeaderV2/cart-bg.png") left top repeat-x;padding:10px;font-size:13px;color:#dda957;}
+.cart-popup-body span													{margin-top:10px;display:block;}
+/*footer*/
+#footer																	{height:350px;}
+.footertop																{width:1000px;}
+.footertop																{width:1000px;}
+
+.footertopleft															{width:6px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -6px -6px;}
+.footertopcenter														{width:988px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/GlobalTile.png?v=0.01) repeat-x 0px -159px;}
+.footertopright															{width:6px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -25px -6px;}
+.footerTleft                                                            {float:left; width:6px; height:127px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem3.png?v0.01) no-repeat -6px -6px;}	
+.footerTcenter                                                          {float:left; width:988px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/GlobalTile.png?v=0.01) repeat-x 0px -3117px;}
+.footerTright                                                           {float:left; width:6px; height:127px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem3.png?v0.01) no-repeat -25px -6px;}	
+.footerTcenter ul                                                       {margin:15px 0 0 15px;}
+.footerTcenter ul, .footerTcenter li                                    {float:left; list-style-type:none;}
+.footerTcenter li                                                       {width:185px; margin:5px 5px 0 0; text-align:center; font-size:12px;}
+.footerTcenter li a                                                     {color:#999999;}
+.footerTcenter li a:hover                                               {color:#ffa23e;}
+.footermenu02															{float:left;margin:20px 0 0 0;width:988px;height:50px;}
+.footermenu02 ul														{list-style-type:none;padding:0;margin:0 0 5px 0;text-align:center;float:none;}
+.footermenu02 li														{display:inline;padding-left:15px;margin:10px 0 0 15px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -37px -288px;}
+.footermenu02 li a														{font-weight:bold;text-decoration:none;color:#666666;}
+.footermenu02 li a:hover												{font-weight:bold;color:#ffa23e;text-decoration:none;}
+.footermenulist															{float:left;margin:18px 0 0 0;width:160px;height:auto;}
+.footermenulist ul														{list-style-type:none;padding:0 0 0 14px;margin:0;}
+.footermenulist li														{font-size:12px;font-weight:bold;color:#222222;}
+.footermenulist li a													{text-decoration:none;color:#666666; font-weight:normal;}
+.footermenulist li a:hover												{color:#ffa23e;text-decoration:none;}
+.footermiddle															{width:1000px;height:74px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/GlobalTile.png?v=0.01) repeat-x 0px -79px;}
+.footerbottom															{width:1000px;height:67px;}
+/*public css*/
+.fleft																	{float:left;}
+.fright																	{float:right;}
+.fnone																	{float:none !important;}
+.clearfix:after															{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.cb																		{clear:both;}
+.strong																	{font-weight:bold !important;}
+.dBlock																	{display:block;}
+.mAuto																	{margin:0 auto !important;}
+.posR																	{position:relative !important;}
+.posA																	{position:absolute !important;}
+.m0																		{margin:0 !important;}
+.ml0																    {margin-left:0 !important;}
+.p0																		{padding:0 !important;}
+.zIndexMax{z-index:9999;}
+.zIndexMin{z-index:0;}
+/*private css*/
+.leftpart																{float:left;width:188px;}
+.logodiv																{margin:0 auto;width:710px;height:42px;}
+#sponsorContainer .dashboard_button:hover 
+.dashboard_button_heading												{color:#222;}
+.dashboard_button span													{display:block;}
+.dashboard_button:hover													{padding-top:8px;height:42px;}
+#sponsorContainer .dashboard_button_heading								{display:block;height:35px;}
+#sponsorContainer .button1 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -37px -6px;}
+#sponsorContainer .button2 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -90px -6px;}
+#sponsorContainer .button3 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -143px -6px;}
+#sponsorContainer .button4 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -37px -47px;}
+#sponsorContainer .button5 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -90px -47px;}
+#sponsorContainer .button6 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -143px -47px;}
+#sponsorContainer .button7 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -37px -88px;}
+#sponsorContainer .button8 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -90px -88px;}
+#sponsorContainer .button9 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -143px -88px;}
+#sponsorContainer .button10 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -37px -129px;}
+#sponsorContainer .button11 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -90px -129px;}
+#sponsorContainer .button12 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -143px -129px;}
+#sponsorContainer .button13 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -145px -175px;}
+#sponsorContainer .button14 .dashboard_button_heading					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -37px -318px;}
+
+.dolFooterIcn															{background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26") no-repeat scroll -90px -313px transparent;display: block;float: left;height: 40px;margin-right: 7px;margin-top: 10px;width: 50px;}
+.copyright																{width:350px;line-height:16px;}
+.verysign																{width:94px;}
+.hepsiburada															{width:164px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -33px -230px;}
+.dashboard_button														{float:left;width:47px;overflow:hidden;padding:5px 0px 5px 2px;margin:0 10px 5px 0;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/FooterItem2.png?v0.26) no-repeat -37px -171px;}
+.wYUZDE																	{width:100% !important;}
+.w1000																	{width:1000px !important;}
+.w800                                                                   {width:800px;}
+.w690																	{width:690px !important;}
+.w570																	{width:570px !important;}
+.w550																	{width:550px !important;}
+.w370																	{width:370px !important;}
+.w344																	{width:344px !important;}
+.w336																	{width:336px !important;}
+.w300																	{width:300px !important;}
+.w240																	{width:240px !important;}
+.w200                                                                   {width:200px;}
+.w175																	{width:175px !important;}
+.w180																	{width:180px !important;}
+.w143																	{width:143px !important;}
+.w164                                                                   {width:164px;}
+.w163																	{width:163px !important;}
+.w114																	{width:114px !important;}
+.w110																	{width:110px !important;}
+.w71																	{width:71px !important;}
+.w40																	{width:40px !important;}
+.w20																	{width:20px !important;}
+.h344																	{height:344px !important;}
+.h310																	{height:310px !important;}
+.h243																	{height:243px !important;}
+.h217																	{height:217px !important;}
+.h108																	{height:108px !important;}
+.h56																	{height:56px !important;}
+.h66																	{height:66px !important;}
+.h67                                                                    {height:67px;}
+.h50                                                                    {height:50px;}
+.h48                                                                    {height:48px;}
+.h42																	{height:42px !important;}
+.h40																	{height:40px !important;}
+.h32                                                                    {height:32px;}  
+.h39																	{height:39px !important;}
+.h30																	{height:30px !important;}
+.h29																	{height:29px !important;}
+.h10                                                                    {height:10px;}
+.hAuto																	{height:auto !important;}
+/*margins*/
+.mb3																	{margin-bottom:3px !important;}
+.mb7																	{margin-bottom:7px !important;}
+.mb50																	{margin-bottom:50px !important;}
+.mt100																	{margin-top:100px !important;}
+.mr10																	{margin-right:10px !important;}
+.mr0																	{margin-right:0px !important;}
+.mt8																	{margin-top:8px !important;}
+.mt7                                                                    {margin-top:7px;}
+.mt30																	{margin-top:30px !important;}
+.mt3																	{margin-top:3px !important;}
+.mt5                                                                    {margin-top:5px;}
+.mt20																	{margin-top:20px !important;}
+.mt15																	{margin-top:15px !important;}
+.mt10																	{margin-top:10px !important;}
+.mt13																	{margin-top:13px !important;}
+.mt1																	{margin-top:1px !important;}
+.ml44                                                                   {margin-left:44px;}
+.ml10                                                                   {margin-left:10px;}
+.ml8																	{margin-left:8px !important;}
+.ml5																	{margin-left:5px !important;}
+.ml3																	{margin-left:3px !important;}
+.ml1																	{margin-left:1px !important;}
+.pl25																	{padding-left:25px !important;}
+.pl8																	{padding-left:8px !important;}
+.pr8																	{padding-right:8px !important;}
+.pt0																	{padding-top:0 !important;}
+.pb0																	{padding-bottom:0 !important;}
+.colorccc																{color:#ccc !important;}
+.colorBgWhite															{background-color:#fff !important;}
+.colorBgdf																{background-color:#dfdfdf;}
+.fontThm																{font-family:Tahoma !important;}
+.font11																	{font-size:11px !important;}
+.colorV5																{color:#F8A23D !important;}
+.whiteBackgroundColor													{background-color:#ffffff;}
+.tAlignCt																{text-align:center !important;}
+.tIndent																{text-indent:-9999999px;}
+/*e-menu items*/
+.emenu-root																{margin: 0;padding: 0;width: auto;list-style: none;list-style-position: outside;display: inline; float: left; border-bottom:1px solid #d6d6d6;}
+.emenu-item , .emenu-item-active , 
+.emenu-item-hover , .emenu-item-sa										{width: 178px;height: 18px;font-size: 12px;background: url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubg.jpg);color: #333333;display: block;font-weight: bold;padding: 6px 0 2px 10px;cursor:pointer;}
+.emenu-item-hover														{background: url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubg.jpg) 0 -52px;}
+.emenu-item-active														{background: url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubg.jpg) 0 -26px;}
+.emenu-item-sa															{background: url(//design.hepsiburada.net/hbv2/Design2010/Menu/menubg.jpg) 0 -78px;}
+.emenu-item-text , .emenu-item-text-hover								{text-decoration:none;color: #333333;}
+.emenu-item-text-hover													{color:#ff7e00}
+.Menulink																{text-decoration: none!important; color:#666666!important; background:none!important; background-image:none!important; width:auto!important;}
+.Menulink:hover															{text-decoration: none!important; color:#ffa23e!important;background:none!important; background-image:none!important; width:auto!important;}
+/*Menu Item li*/
+.emenuItems li															{background-image:url("//design.hepsiburada.net/hbv2/Icn/MultiMenuIcn.gif");background-repeat:no-repeat;margin:0;padding:0 0 0 15px;}
+.emenuItems																{list-style-type:none;}
+.menubottom																{float:left;}
+.menubottom ol 															{margin:0; padding:0; list-style-type:none;}
+.menubottom ul 															{margin:0; /*padding:0 0 0 5px;*/ list-style-type:none;}
+.menubottom li 															{padding:0 !important; margin:0;}
+.menubottom li a														{margin:0; padding:0 0 0 12px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/HeaderItem4.gif?v2.09) no-repeat -708px -147px;}
+.menubottom li a:hover													{color:#ffa23e; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/HeaderItem4.gif?v2.09) no-repeat -708px -175px;}
+.multiMenuGeneralItemBg													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -438px -30px;}
+.multiMenuFont															{font-size:12px; font-weight:bold; line-height:1.2em; }
+/*bilgisayar*/
+.multiMenuPriceBg01														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat 0 -132px;}
+.multiMenuPriceBg02														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat 0 0;}
+.multiMenuPriceBg03														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -110px 0;}
+.multiMenuPriceBg04														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -110px -66px;}
+.multiMenuPriceBg05														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat 0 -66px;}
+.multiMenuPriceBg06														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -110px -128px;}
+/*telefon*/
+.multiMenuPriceBg07														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -220px -66px;}
+.multiMenuPriceBg08														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -330px 0px;}
+.multiMenuPriceBg09														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -220px 0;}
+.multiMenuPriceBg10														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -330px -66px;}
+.multiMenuPriceBg11														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -220px -132px;}
+.multiMenuPriceBg12														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -330px -132px;}
+/*Elektronik*/
+.multiMenuPriceBg13														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat 0 -330px;}
+.multiMenuPriceBg14														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -110px -198px;}
+.multiMenuPriceBg15														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -110px -330px;}
+.multiMenuPriceBg16														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat 0 -264px;}
+.multiMenuPriceBg17														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat 0 -198px;}
+.multiMenuPriceBg18														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -110px -264px;}
+/*Beyaz Eþya Mutfak*/
+.multiMenuPriceBg19														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -220px -264px;}
+.multiMenuPriceBg20														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -330px -198px;}
+.multiMenuPriceBg21														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -220px -198px;}
+.multiMenuPriceBg22														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -220px -330px;}
+.multiMenuPriceBg23														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -330px -330px;}
+.multiMenuPriceBg24														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -330px -264px;}
+/*Foto Kamera*/
+.multiMenuPriceBg25														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -220px -319px;}
+.multiMenuPriceBg26														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -220px -259px;}
+.multiMenuPriceBg27														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat 0 -253px;}
+.multiMenuPriceBg28														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -110px -253px;}
+.multiMenuPriceBg29														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -110px -319px;}
+.multiMenuPriceBg30														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat 0 -319px;}
+/*Kýrtasiye ofis*/
+.multiMenuPriceBg31														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -440px -66px;}
+.multiMenuPriceBg32														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -440px 0;}
+.multiMenuPriceBg33														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -440px -132px;}
+.multiMenuPriceBg34														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -440px -198px;}
+.multiMenuPriceBg35														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -440px -264px;}
+.multiMenuPriceBg36														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart1.jpg?v1.09) no-repeat -440px -330px;}
+/*Film Müzik kitap*/
+.multiMenuPriceBg37 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat 0 0;}
+.multiMenuPriceBg38 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat 0 -66px;}
+.multiMenuPriceBg39 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -110px 0;}
+.multiMenuPriceBg40 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -110px -66px;}
+.multiMenuPriceBg41 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat 0 -132px;}
+.multiMenuPriceBg42 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -110px -132px;}
+/*Giyim Ayakkabý*/
+.multiMenuPriceBg43 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -220px -132px;}
+.multiMenuPriceBg44 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -330px -132px;}
+.multiMenuPriceBg45 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -330px 0;}
+.multiMenuPriceBg46 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -220px 0;}
+.multiMenuPriceBg47 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -220px -66px;}
+.multiMenuPriceBg48 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -330px -66px;}
+/*Spor outdoor*/
+.multiMenuPriceBg49 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -110px -330px;}
+.multiMenuPriceBg50 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -110px -198px;}
+.multiMenuPriceBg51 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -110px -264px;}
+.multiMenuPriceBg52 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat 0 -264px;}
+.multiMenuPriceBg53 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat 0 -330px;}
+.multiMenuPriceBg54 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat 0 -198px;}
+/*Saðlýk ve kiþisel bakým*/
+.multiMenuPriceBg55 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -220px -198px;}
+.multiMenuPriceBg56 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -220px -264px;}
+.multiMenuPriceBg57 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -330px -198px;}
+.multiMenuPriceBg58 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -330px -264px;}
+.multiMenuPriceBg59 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -330px -330px;}
+.multiMenuPriceBg60 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -220px -330px;}
+/*Taký Mücevher*/
+.multiMenuPriceBg61 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -440px -198px;}
+.multiMenuPriceBg62 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -440px 0;}
+.multiMenuPriceBg63 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -440px -132px;}
+.multiMenuPriceBg64 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -440px -330px;}
+.multiMenuPriceBg65 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -440px -264px;}
+.multiMenuPriceBg66														{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart2.jpg?v1.06) no-repeat -440px -66px;}
+/*Saat Gözlük Aksesuar*/
+.multiMenuPriceBg67 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -110px -66px;}
+.multiMenuPriceBg68 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -110px -132px;}
+.multiMenuPriceBg69 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat 0 0;}
+.multiMenuPriceBg70 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat 0 -66px;}
+.multiMenuPriceBg71 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat 0 -132px;}
+.multiMenuPriceBg72 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -110px 0;}
+/*Mobilya Ev tekstil bahçe*/
+.multiMenuPriceBg73 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -330px -66px;}
+.multiMenuPriceBg74 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -330px 0;}
+.multiMenuPriceBg75 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -220px 0;}
+.multiMenuPriceBg76 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -220px -132px;}
+.multiMenuPriceBg77 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -330px -132px;}
+.multiMenuPriceBg78 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -220px -66px;}
+/*Anne Bebek Çocuk*/													
+.multiMenuPriceBg79 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -110px -198px;}
+.multiMenuPriceBg80 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat 0 -198px;}
+.multiMenuPriceBg81 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat 0 -264px;}
+.multiMenuPriceBg82 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -110px -264px;}
+.multiMenuPriceBg83 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -110px -330px;}
+.multiMenuPriceBg84 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat 0 -330px;}
+/*Hobi Oyun*/
+.multiMenuPriceBg85 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -220px -264px;}
+.multiMenuPriceBg86 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -330px -264px;}
+.multiMenuPriceBg87 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -330px -198px;}
+.multiMenuPriceBg88 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -330px -330px;}
+.multiMenuPriceBg89 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -220px -198px;}
+.multiMenuPriceBg90 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -220px -330px;}
+.multiMenuPriceBg110 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -330px -253px;}
+/*Pet Shop*/
+.multiMenuPriceBg91 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -440px -66px;}
+.multiMenuPriceBg92 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -440px -198px;}
+.multiMenuPriceBg93 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -440px -132px;}
+.multiMenuPriceBg94 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -440px -330px;}
+.multiMenuPriceBg95 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -440px 0;}
+.multiMenuPriceBg96 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart3.jpg?v1.03) no-repeat -440px -264px;}
+/*Oto Aksesuar Yapý market*/
+.multiMenuPriceBg97 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat 0 -56px;}
+.multiMenuPriceBg98 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -110px -56px;}
+.multiMenuPriceBg99 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat 0 -121px;}
+.multiMenuPriceBg100 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -110px -121px;}
+.multiMenuPriceBg101 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -110px -187px;}
+.multiMenuPriceBg102 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat 0 -187px;}
+/*Diðer Kategoriler*/
+.multiMenuPriceBg103 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -325px -56px;}
+.multiMenuPriceBg104 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -220px -121px;}
+.multiMenuPriceBg105 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -220px -56px;}
+.multiMenuPriceBg106 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -325px -121px;}
+.multiMenuPriceBg107 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -220px -187px;}
+.multiMenuPriceBg108 													{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/multiMenuMergedPart4.jpg?v1.05) no-repeat -325px -187px;}
+.e-menuLoadImages 														{background: url(//design.hepsiburada.net/hbv2/ajax/loader.gif?v0.01) no-repeat 0px 3px; width:150px; height:50px;}
+/*autoComplate*/
+.ac_results																{border:1px solid #000;background-color:#FFF;overflow:hidden;/*16052013z-index:99999;*/z-index:999;padding:0;}
+.ac_results ul															{width:100%;list-style-position:outside;list-style:none;margin:0;padding:0;}
+.ac_results li															{cursor:default;display:block;font:menu;font-size:12px;line-height:16px;overflow:hidden;margin:0;padding:2px 5px;}
+.ac_loading																{background:#FFF url(//design.hepsiburada.net/hbv2/ajax/loader.gif) right center no-repeat;}
+.ac_odd																	{background-color:#eee;}
+.ac_over																{background-color:#ff9024;color:#FFF;}
+/*
+.ui-selectmenu-open li.ui-selectmenu-item-focus a {}
+.ui-selectmenu-open li.ui-selectmenu-item-selected {}
+.ui-selectmenu-menu li .ui-selectmenu-item-content {}
+*/
+.ui-dropdownchecklist													{height:20px;border:1px solid #ddd;border-right:0;background:#fff url(//design.hepsiburada.net/hbv2/Design2010/dropdown.png?v=0.01) no-repeat center right;}
+.ui-dropdownchecklist-hover,.ui-dropdownchecklist-active				{background-image:url(//design.hepsiburada.net/hbv2/Design2010/dropdown_hover.png?v=0.01);border-color:#999;}
+.ui-dropdownchecklist-text												{font-size:10px;height:20px;line-height:20px;margin-right:17px;padding-left:2px;}
+.ui-dropdownchecklist-dropcontainer										{background-color:#fffbed;border:1px solid #999;}
+.ui-dropdownchecklist-item-hover										{background-color:#faecb7;}
+.ui-dropdownchecklist-item-disabled label								{color:#ccc;}
+.ui-dropdownchecklist-item-hover .ui-dropdownchecklist-text				{color:#333;}
+.ui-dropdownchecklist-group												{font-weight:700;font-style:italic;}
+.ui-dropdownchecklist-indent											{padding-left:20px;}
+/*eksilen yuzde barlar*/
+.ImagesBorder															{border:solid 1px #dfdfdf;}
+.yuzdeBarContainer														{width:100px;height:10px;background-color:White;border-top:solid 1px #dfdfdf;border-right:solid 1px #cccccc;border-bottom:solid 1px #cccccc;border-left:solid 1px #dfdfdf;}
+.yuzdeBarContainerInner													{width:100px !important;height:8px !important;background-color:White;}
+.yuzdeBarTile															{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/YuzdeTile02.gif) repeat-x; height:11px; margin:1px;}
+.strip																	{position:absolute;top:0;right:0;}
+/*Buttons*/
+.Button03 a.link-button-trans							                {background-position:0px -178px;height:24px;line-height:24px;margin:0px;padding-left:6px;display:block;float:left; text-decoration:none;cursor: pointer;}
+.Button03 a.link-button-trans span						                {float:left;background-position:right -178px;padding:0 10px 0 5px;font-weight:bold;color:#333;}
+.Button03 a.link-button-trans:hover						                {background-position:0px -202px;text-decoration:none;}
+.Button03 a.link-button-trans:hover span				                {background-position:right -202px;color:#666;}
+.Button03 .sprite img									                {border:0;height: 14px;padding: 5px 0;width: 78px;}
+
+/*Buttons5*/
+.Button05 a.link-button-trans							                {background-position:0px -178px;height:23px;line-height:23px;margin:0px;padding-left:10px;display:block;float:left; text-decoration:none;cursor: pointer;}
+.Button05 a.link-button-trans span						                {float:left;background-position:right -178px;padding:0 10px 0 5px;font-weight:bold;color:#ffffff;font-size: 12px;}
+.Button05 a.link-button-trans:hover						                {background-position:0px -202px;text-decoration:none;}
+.Button05 a.link-button-trans:hover span				                {background-position:right -202px;color:#FFFFFF;}
+.Button05 .sprite                         								{background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/buttonsMerge.png?v=0.03') no-repeat top left;}
+.Button05 .sprite img									                {border:0;height: 14px;padding: 5px 0;width: 78px;}
+
+/*Buttons4*/
+.Button04 a.link-button-trans							                {background-position:0px -329px;height:23px;line-height:23px;margin:0px;padding-left:10px;display:block;float:left; text-decoration:none;cursor: pointer;}
+.Button04 a.link-button-trans span						                {float:left;background-position:right -329px;padding:0 10px 0 5px;font-weight:bold;color:#333;}
+.Button04 a.link-button-trans:hover						                {background-position:0px -352px;text-decoration:none;}
+.Button04 a.link-button-trans:hover span				                {background-position:right -352px;color:#666;}
+.Button04 .sprite                         								{background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/buttonsMerge.png?v=0.03') no-repeat top left;}
+.Button04 .sprite img									                {border:0;height: 14px;padding: 5px 0;width: 78px;}
+/**/
+.sprite                         										{background:transparent url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/buttonsMerge02.png?v=0.01') no-repeat top left;}
+a.link-button-trans             										{background-position:0 0px;height:22px;line-height:22px;margin:0px;padding-left:6px;display:block;float:left; text-decoration:none;}
+a.link-button-trans span        										{float:left;background-position:right 0px;padding:0px 20px 0px 15px;font-weight:normal;color:#333;}
+a.link-button-trans span span        									{padding:0 !important;}
+a.link-button-trans:hover       										{background-position:0px -22px;text-decoration:none;}
+a.link-button-trans:hover span  										{background-position:right -22px;color:#666;}
+/**/
+a.link-button-smallOrange             									{background-position:0 -124px;height:22px;line-height:22px;margin:0 3px 0 0;padding-left:6px;display:block;float:left; text-decoration:none; color:#383838;}
+a.link-button-smallOrange span        									{float:left;background-position:right -124px;padding:0 10px 0 5px; font-weight:bold;}
+a.link-button-smallOrange:hover       									{background-position:0 -146px;text-decoration:none; color:#666;}
+a.link-button-smallOrange:hover span  									{background-position:right -146px;color:#666;}
+/**/
+.spriteyellowBtn														{background:transparent url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/buttonsMerge02.png?v=0.01') no-repeat top left; color:#f5f5f5;}
+a.link-button-yellowBtn													{background-position:0px -53px;height:31px;line-height:31px;margin:0px;padding-left:6px;display:block;float:left; text-decoration:none;}
+a.link-button-yellowBtn span											{float:left;background-position:right -53px;padding:0px 20px 0px 15px;font-weight:bold;}
+a.link-button-yellowBtn:hover											{background-position:0px -84px;text-decoration:none;}
+a.link-button-yellowBtn:hover span										{background-position:right -84px;color:#fff;}
+/**/
+.bgNone																	{background:none !important;}
+.borderDf 																{border:1px solid #dfdfdf;}
+/**/
+.footermenulist h1														{font-weight: normal;font-size: 12px; text-decoration:none !important;}
+.footermenulistHBold													{font-weight: bold !important; color:#666; text-decoration:none !important;}
+.okulalisverisi															{padding:0 !important; }
+/*global text messages*/
+.okMessage																{float:left; border:1px solid #d8fdb1; padding:10px 10px 10px 40px; margin:0; font-size:12px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/checkicn.png") no-repeat 10px 15px #ebffe3; color:#666666;}
+.okMessage2																{float:left; border:1px solid #d8fdb1; padding:10px 10px 10px 40px; margin:0; font-size:12px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/checkicn.png") no-repeat 10px 9px #ebffe3; color:#666666;}
+.okMessageTxt															{color:#6dcb45; font-family:Verdana;}
+.errMessage																{float:left; border:1px solid #fde0b1; padding:10px 10px 10px 40px; margin:0; font-size:12px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/checkicn.png") no-repeat 10px -39px #fffbe3; color:#666666;}
+.errMessage2																{float:left; border:1px solid #fde0b1; padding:10px 10px 10px 40px; margin:0; font-size:12px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/checkicn.png") no-repeat 10px -43px #fffbe3; color:#666666;}
+.errMessageTxt															{color:#fb323a; font-family:Verdana;}
+/*ellipsis*/
+.overflowTxt                                                            {text-overflow: ellipsis; -o-text-overflow: ellipsis;white-space: nowrap; overflow: hidden;}
+.w154                                                                   {width:154px;}
+/*wellcomeUser*/
+#wellcomeUser                                                           {background: url("//design.hepsiburada.net/Carsi/HeaderV2/part3.png?v0.08") no-repeat scroll 0 -162px transparent;color: #EEEEEE;float: left;font-size: 11px;padding-left: 40px;}
+.w53                                                                    {width:53px;}
+/*new header*/
+.color999                                                               {color:#999;}
+.colorfff                                                               {color:#fff !important;}
+
+a.openedRep                                                             {background-color: #000000 !important;opacity: 0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=00) !important;}
+a.openedRep:hover                                                       {background-color: #000000 !important;opacity: 0.05; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=05) !important;}
+.headerMenutopBgLeft                                                    {float:left; width:10px; height:10px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -87px -258px;}
+.headerMenutopBgTile                                                    {float:left; width:144px; height:10px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerTile.png") repeat-x scroll 0 -106px;}
+.headerMenutopBgRight                                                   {float:left; width:10px; height:10px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -98px -258px;}
+.headerMenubtmBgLeft                                                    {float:left; width:10px; height:10px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -87px -248px;}
+.headerMenubtmBgTile                                                    {float:left; width:144px; height:10px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerTile.png") repeat-x scroll 0 -96px;}
+.headerMenubtmBgRight                                                   {float:left; width:10px; height:10px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -98px -248px;}
+.headerMenuMidBgLeft                                                    {float:left; width:164px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerTileY.png") repeat-y  scroll -254px 0;}
+.headerBtm div                                                          {float:left; display:block;  width:130px; height:18px; margin:1px 5px; padding:2px 10px; text-decoration:none;  font-weight:bold; border-bottom:1px dotted #ccc; color:#666; line-height:12px;}
+.headerBtm div a:hover                                                  {color:#ffa23e;}
+
+.headerLogo                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -9px -130px transparent;}
+.tumKategorilerBg                                                       {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -9px -9px transparent;}
+.searchBarContainer                                                     {float:left; width:648px; height:67px;}
+.myBasket                                                               {float:left; width:152px; height:67px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -14px -55px transparent; }
+.fontArial                                                              {font-family:Arial;}
+.fntArial                                                     	         {font-family:Arial !important;}
+.backgroundNone                                                         {background:none !important;}
+.searchButton                                                           {width:39px; height:32px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -40px -248px transparent;display: block;float: left;}
+.dottBorderBtm                                                          {border-bottom:1px dotted #dfdfdf;}
+.headerBottomeMenuLeft                                                  {float:left; width:7px; height:48px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -14px -248px transparent;}
+.headerBottomeMenuTile                                                  {float:left; width:783px; height:48px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerTile.png") repeat-x scroll 0 0 transparent; text-align: center; line-height: 30px;}
+.headerBottomeMenuRight                                                 {float:left; width:10px; height:48px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -26px -248px transparent;}
+.searchInputBarTileBg                                                   {width:354px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerTile.png") repeat-x scroll 0 -52px transparent;}
+input.searchInputBarinp                                                 {border: medium none;display: block;float: left;height: 21px;margin-top: 5px;padding: 0 0 0 4px;width:340px; color:#999;}
+.gAlisveris                                                             {float:left; margin: 5px; padding:0 0 0 15px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerIcnMerged.png") no-repeat scroll 0 -110px transparent;}
+.myBasketOpenedDiv                                                      {width:254px; top:36px; right:-17px; z-index:2; }
+.openedMid                                                              {float:left; width:254px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerTileY.png") repeat-y scroll 0 0;}
+.openedBottom                                                           {float:left; width:254px; height:31px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -9px -380px;}
+.openedTop                                                              {float:left; width:254px; height:20px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll -9px -356px;}
+.openedDivPrdCnt                                                        {float:left; width:200px; margin:2px 0 0 16px;}
+.openedDivPrd                                                           {float:left; border:1px solid #dfdfdf; width:50px; height:50px;}
+.openedDivPrdRep                                                        {float:left; width:200px; height:52px; line-height:12px;padding-bottom: 5px;padding-left: 10px;padding-top: 5px;}
+.gift a:hover                                                           {color:#F8A23D;}
+.temporaryCategories {width:180px; height:32px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/headerMerged.png?v0.39") no-repeat scroll 0 -303px;}
+
+
+/* blockUi { */
+.blockMsg{
+	-webkit-border-radius: 10px;border-radius: 10px;
+	font-size:12px;
+	border-radius: 10px 10px 10px 10px;
+	font-size: 12px;
+	-webkit-box-shadow:  0px 0px 45px 0px #333;
+	box-shadow:  0px 0px 45px 0px #333;
+	font-size:12px;
+}
+#floatingCirclesG{
+position:relative;
+width:64px;
+height:64px;
+margin:0 auto;
+-webkit-transform:scale(0.6);
+-moz-transform:scale(0.6);
+-o-transform:scale(0.6);
+-ms-transform:scale(0.6);
+}
+
+.f_circleG{
+position:absolute;
+background-color:#ffffff;
+height:12px;
+width:12px;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+border-radius:6px;
+-webkit-animation-name:f_fadeG;
+-webkit-animation-duration:0.72s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-moz-animation-name:f_fadeG;
+-moz-animation-duration:0.72s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+-o-animation-name:f_fadeG;
+-o-animation-duration:0.72s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+-ms-animation-name:f_fadeG;
+-ms-animation-duration:0.72s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+}
+
+#frotateG_01{
+left:0;
+top:26px;
+-webkit-animation-delay:0.27s;
+-moz-animation-delay:0.27s;
+-o-animation-delay:0.27s;
+-ms-animation-delay:0.27s}
+
+#frotateG_02{
+left:8px;
+top:8px;
+-webkit-animation-delay:0.36s;
+-moz-animation-delay:0.36s;
+-o-animation-delay:0.36s;
+-ms-animation-delay:0.36s}
+
+#frotateG_03{
+left:26px;
+top:0;
+-webkit-animation-delay:0.45s;
+-moz-animation-delay:0.45s;
+-o-animation-delay:0.45s;
+-ms-animation-delay:0.45s;
+}
+
+#frotateG_04{
+right:8px;
+top:8px;
+-webkit-animation-delay:0.54s;
+-moz-animation-delay:0.54s;
+-o-animation-delay:0.54s;
+-ms-animation-delay:0.54s;
+}
+
+#frotateG_05{
+right:0;
+top:26px;
+-webkit-animation-delay:0.63s;
+-moz-animation-delay:0.63s;
+-o-animation-delay:0.63s;
+-ms-animation-delay:0.63s;
+}
+
+#frotateG_06{
+right:8px;
+bottom:8px;
+-webkit-animation-delay:0.72s;
+-moz-animation-delay:0.72s;
+-o-animation-delay:0.72s;
+-ms-animation-delay:0.72s;
+}
+
+#frotateG_07{
+left:26px;
+bottom:0;
+-webkit-animation-delay:0.81s;
+-moz-animation-delay:0.81s;
+-o-animation-delay:0.81s;
+-ms-animation-delay:0.81s;
+}
+
+#frotateG_08{
+left:8px;
+bottom:8px;
+-webkit-animation-delay:0.9s;
+-moz-animation-delay:0.9s;
+-o-animation-delay:0.9s;
+-ms-animation-delay:0.9s;
+}
+
+@-webkit-keyframes f_fadeG{
+0%{
+background-color:#ff9900}
+
+100%{
+background-color:#ffffff}
+
+}
+
+@-moz-keyframes f_fadeG{
+0%{
+background-color:#ff9900}
+
+100%{
+background-color:#ffffff}
+
+}
+
+@-o-keyframes f_fadeG{
+0%{
+background-color:#ff9900}
+
+100%{
+background-color:#ffffff}
+
+}
+
+@-ms-keyframes f_fadeG{
+0%{
+background-color:#ff9900}
+
+100%{
+background-color:#ffffff}
+
+}
+/* blockUi } */
+
+.advantageBenefitLeft{background:url(//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif) no-repeat 0px -302px;}
+.advantageBenefitTile{background:url(//design.hepsiburada.net/Carsi/HeaderV2/GlobalTileV2.gif) repeat-x;}
+.advantageBenefitRight{background:url(//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif) no-repeat -13px -302px;}
+.h33{height: 33px !important;}
+.w7{width: 7px !important;}
+.mr5{margin-right:5px !important;}
+.colorWhite{color:#fff !important;}

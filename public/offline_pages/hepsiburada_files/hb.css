@@ -1,0 +1,85 @@
+/* HB.Master */
+.bg01{width:50%; height:800px; float:left;}
+.bg02{width:49%; height:800px; float:left;}
+
+#main-wrapper{width:100%; position:absolute; margin:0 auto; top:0; left:0;}
+#contentholder{width:1000px;margin-bottom:50px;}
+
+#footer:after, #contentholder:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+
+#footer{position:relative;width:100% !important;float:left;}
+.footerLogo a{width:200px;height:67px;display:block;float:left;overflow:hidden;text-indent:-9000pt;}
+
+.app-store-link{width:130px;height:45px;float:right;display:block;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.45) no-repeat -162px -303px;margin-top:10px;}
+.app-store-link a{width:130px;height:45px;display:block;float:left;text-indent:-9000pt;}
+.app-store-text{float:right;width:100px;height:30px; margin-top:18px;}
+
+.android-store-link{width:130px;height:45px;margin-right:10px;float:right;display:block;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.45) no-repeat -27px -303px;margin-top:10px;}
+.android-store-link a{width:130px;height:45px;display:block;float:left;text-indent:-9000pt;}
+.android-store-text{width:100px;height:30px; margin-top:18px;float:right;}
+
+.app-store-link2{width:130px;height:45px;float:right;display:block;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.45) no-repeat -162px -359px;margin-top:10px;margin-right:10px;}
+.app-store-link2 a{width:130px;height:45px;display:block;float:left;text-indent:-9000pt;}
+.app-store-text2{float:right;width:100px;height:30px; margin-top:18px;}
+
+.foooterTopMEN{float:left;width:1000px !important;margin-top:20px;}
+.foooterTopMEN div{float:left;}
+
+.sub-info-first{color:#666;margin-top:20px;font-size:10px;float:left;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.45) no-repeat scroll -38px -268px transparent;height: 30px;padding-left: 63px;padding-top: 2px;width: 257px;}
+.sub-info-second{float:right;font-size:10px;margin-top:20px;color:#666;width:680px;text-align:right;}
+#divWrapperCenter{z-index:2;float:left;width:100%;position:relative;}
+
+/* department */
+.Acordeon200x200{margin:10px 0 5px !important;}
+.ImagesContainer200x200{float:none !important;display:block;margin:0 auto;}
+
+/* category e-menu */
+#headermenu{z-index:1000;}
+
+/* product_deatils brand_list */
+.productMarks_meta .pItem{height: 20px; width: 116px; float: left;margin:0 5px 1px 0;display:block;-webkit-transition: color .1s linear;-moz-transition: color .1s linear;-ms-transition: color .1s linear;-o-transition: color .1s linear;transition: color .1s linear;}
+.productMarks_meta .pItem:hover{color:#FFA23E;}
+
+
+/* product New icons */
+
+.V3newGallery{float:left;height:109px;position:absolute;right:-19px;top:-19px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -425px -109px no-repeat;z-index:2}
+.V3newCategory{float:left;height:78px;position:absolute;right:-24px;top:-12px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -425px -220px no-repeat;z-index:2}
+.V3new{float:left;height:110px;position:absolute;right:-11px;top:-11px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -425px -109px no-repeat;z-index:2}
+
+.profesyonelGallery{float:left;height:109px;position:absolute;right:-19px;top:-19px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) 0 0 no-repeat;z-index:1;}
+.gunlukGallery{float:left;height:109px;position:absolute;right:-19px;top:-19px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -107px 0 no-repeat;z-index:1;}
+.eglenceGallery{float:left;height:109px;position:absolute;right:-19px;top:-19px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -213px 0 no-repeat;z-index:1;}
+.oyunGallery{float:left;height:109px;position:absolute;right:-19px;top:-19px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -319px 0 no-repeat;z-index:1;}
+.mobilGallery{float:left;height:109px;position:absolute;right:-19px;top:-19px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -425px 0 no-repeat;z-index:1;}
+
+.profesyonelCategory{float:left;height:78px;position:absolute;right:-24px;top:-12px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) 0 -298px no-repeat;z-index:1;}
+.gunlukCategory{float:left;height:78px;position:absolute;right:-24px;top:-12px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -107px -298px no-repeat;z-index:1;}
+.eglenceCategory{float:left;height:78px;position:absolute;right:-24px;top:-12px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -213px -298px no-repeat;z-index:1;}
+.oyunCategory{float:left;height:78px;position:absolute;right:-24px;top:-12px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -319px -298px no-repeat;z-index:1;}
+.mobilCategory{float:left;height:78px;position:absolute;right:-24px;top:-12px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -425px -298px no-repeat;z-index:1;}
+
+.profesyonel{float:left;height:109px;position:absolute;right:-11px;top:-11px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) 0 0 no-repeat;z-index:1;}
+.gunluk{float:left;height:109px;position:absolute;right:-11px;top:-11px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -107px 0 no-repeat;z-index:1;}
+.eglence{float:left;height:109px;position:absolute;right:-11px;top:-11px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -213px 0 no-repeat;z-index:1;}
+.oyun{float:left;height:109px;position:absolute;right:-11px;top:-11px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -319px 0 no-repeat;z-index:1;}
+.mobil{float:left;height:109px;position:absolute;right:-11px;top:-11px;width:106px;background:url(//design.hepsiburada.net/hbv2/i/compNewIcons.png?v=0.11) -425px 0 no-repeat;z-index:1;}
+/** mobile-tablet detect **/
+.overlayMobileLB{background:#000000;height: 100%;left: 0;opacity: 0.6;position: absolute;top: 0;width: 100%;z-index: 10000001;display:block;}
+.contentMb{display: block;left:50%;opacity: 1;position: absolute;top:10%;width: 100%;z-index: 10000002;}
+.IpadLB{max-width: 760px;margin-left:-380px;position: fixed;}
+.androidLB{max-width: 1000px;margin-left:-500px;top:0;}
+.IphoneLB{max-width: 1000px;margin-left:-500px;top:0;}
+.contentMb a{position: absolute;}
+.IpadLB .goApp{height: 17%;right: 12%;top: 36%;width: 23%;}
+.IpadLB .goSite{height: 7%;right: 13%;top: 57%;width: 20%;}
+.IpadLB .goHelp{height: 6%;right: 13%;top: 65%;width: 20%;}
+.IphoneLB .goApp {height: 17%;right: 5%;top: 41%;width: 44%;}
+.IphoneLB .goSite {height: 7%;right: 5%;top: 63%;width: 44%;}
+.IphoneLB .goHelp {height: 7%;right: 5%;top: 70%;width: 44%;}
+.IphoneLB.less .goApp{} 
+.IphoneLB.less .goSite{} 
+.IphoneLB.less .goHelp{} 
+.androidLB .goApp {height: 14%;right: 8%;top: 34%;width: 40%;}
+.androidLB .goSite {height: 5%;right: 9%;top: 53%;width: 38%;}
+.androidLB .goHelp {height: 5%;right: 9%;top: 58%;width: 38%;}

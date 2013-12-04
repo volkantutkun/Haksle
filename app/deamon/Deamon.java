@@ -399,7 +399,7 @@ public class Deamon {
     
     
     
-    //**************Deprecated code here************
+    /**************Deprecated code here************
     @SuppressWarnings("serial")
    	public static class Hukk implements Serializable
        {
@@ -576,6 +576,6 @@ public class Deamon {
    	    		
    	    	}
 
-       }
+       }*/
  
 }

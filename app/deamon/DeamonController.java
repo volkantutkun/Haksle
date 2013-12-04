@@ -118,7 +118,7 @@ public class DeamonController
 	  
 	  
 	  
-	  //**************Deprecated code here*************
+	  /**************Deprecated code here*************
 	  
 		public void singularDeamon()
 		{
@@ -136,5 +136,5 @@ public class DeamonController
 					deamon.watchItem(productIdentifier, product.source, 50.0, "Hakan");
 				}
 
-		  }
+		  }*/
 }

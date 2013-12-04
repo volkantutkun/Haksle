@@ -576,6 +576,11 @@ public class Deamon {
    	    		
    	    	}
 
+<<<<<<< HEAD
        }*/
  
+=======
+       }
+ */
+>>>>>>> 51b6fb6b43d6ed7700708953ba6ac903f5fc4214
 }

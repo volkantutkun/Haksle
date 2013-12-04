@@ -1,0 +1,54 @@
+.footerDiv{height:414px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerTile.png?v=0.03) repeat-x 0 0 transparent;}
+.footermiddleBGLeft{float:left;width:8px;height:48px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat 0 0;}
+.footermiddleBGRight{float:left;width:8px;height:48px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -15px 0;}
+.footermiddleBGTile{float:left;width:984px;height:48px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerTile.png?v=0.03) repeat-x 0 -414px;}
+.footerLogos01{float:left;height:46px;width:153px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -41px 1px;}
+.footerLogos02{cursor:pointer;float:left;height:46px;width:72px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -41px -47px;}
+.footerLogosAdvantage{float:left;height:46px;width:88px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -169px -140px;}
+.footerLogosMaximum{float:left;height:46px;width:64px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -102px -95px;}
+.footerLogosWorld{float:left;height:46px;width:64px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -41px -142px;}
+.footerLogosBonus{float:left;height:46px;width:56px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -168px -95px;}
+.footerLogosCardFinans{float:left;height:46px;width:70px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -115px -48px transparent;}
+.footerLogosParaf{float:left; height:46px; width:34px; background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -234px -94px;}
+.footerLogos07{float:left;height:46px;width:59px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -41px -95px;}
+.footerLogos08{float:left;height:46px;width:47px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -196px 1px;}
+.footerLogos09{float:left;height:46px;width:62px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -107px -141px;}
+.footerLogosAxess{float:left;height:46px;width:56px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -185px -46px;}
+.foooterBtmMEN ul{float:left;width:90px;margin:0;padding:0;}
+.foooterBtmMEN li{float:left;width:90px;margin:0;padding:0;list-style-type:none;font-size:10px;}
+.foooterTopMEN ul{float:left;width:155px;padding:0;margin:0 0 0 10px;}
+.foooterTopMEN li{float:left;width:155px;margin:5px 0 0 0;padding:0;list-style-type:none;font-size:12px;color:#666;}
+.foooterTopMEN div{border-right:1px solid #dfdfdf;}
+.footerLogo{float:left;margin: 20px 0 0 5px;width:180px;height:33px;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -40px -198px;}
+.tc{text-align:center;}
+.font10{font-size:10px;}
+.color666{color:#666;}
+.color000{color:#000 !important;} 
+.foooterTopMEN a{color:#666666;}
+.foooterTopMEN a:hover{color:#f8a24e;}
+.social li .facebook{width:11px;height:12px;float:left;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat 0 -253px;padding:2px 2px 0 0;}
+.social li .twitt{width:11px;height:12px;float:left;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat 0 -267px;padding:2px 2px 0 0;}
+.social li .googlePlus{width:11px;height:12px;float:left;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat -288px -237px;padding:2px 2px 0 0;}
+.social li .LinkedIn{width:11px;height:12px;float:left;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat 0 -200px;padding:2px 2px 0 0;}
+.social li .RSS{width:11px;height:12px;float:left;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat 0 -218px;padding:2px 2px 0 0;}
+.social li .iPhone{width:11px;height:12px;float:left;background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59) no-repeat 0 -238px;padding:2px 2px 0 0;}
+.headerLogo span{text-indent: -9999px;display: block;}
+.footerLogo span{text-indent: -9999px;display: block;}
+.bordernone{border:0 !important;}
+
+.foooterTopMENU ul{float:left;width:170px;padding:0;margin:0 0 0 29px;}
+.foooterTopMENU li{float:left;width:180px;margin:0;padding:0;list-style-type:none;font-size:11px;color:#000000;}
+.foooterTopMENU li.menuHeader{margin-bottom:7px;font-size:12px;font-weight:bold;}
+.foooterTopMENU div{background:url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59") no-repeat scroll 198px -307px transparent;float:left;min-height: 190px;}
+.foooterTopMENU a{color:#000000;}
+.foooterTopMENU a:hover{color:#f8a24e;}
+.foooterTopMENU {float: left;margin-top: 10px;width: 1000px !important;}
+.appStoreLink{  background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59") no-repeat scroll -169px -303px transparent;display: block;float:left;height: 45px;width: 130px;}
+.androidStoreLink{ background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59") no-repeat scroll -32px -303px transparent;display: block;float:left;height: 45px;width: 130px;}
+.appStoreLink2{ background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59") no-repeat scroll -169px -359px transparent;display: block;float: left;height: 45px;width: 130px;}
+.nokiaStoreLink{ background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59") no-repeat scroll -33px -359px transparent;display: block;float: left;height: 45px;width: 130px;}
+.DOLlogo{background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59") no-repeat scroll -38px -268px transparent;display:block;float: left;height: 32px;width: 63px;margin-bottom: 5px;}
+.social li a{margin-left:3px;}
+.footerArr{background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/footerMerged.png?v=0.59") no-repeat scroll 0 -284px transparent;display: block;float: left;width: 8px;height:14px;}
+.subInfoFirst{color: #000000;margin: 10px;width: 257px;float: left;font-size: 10px;}
+.subInfoSecond {color: #000000;float: right;font-size: 10px;margin: 10px;text-align: right;width: 680px;}

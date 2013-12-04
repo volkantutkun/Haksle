@@ -81,11 +81,11 @@ public class ProductList extends Model{
   		return tempMap;
 	}
  
-	public static void create(ProductList prodList) {
+	public void create(ProductList prodList) {
 		prodList.save();
 	}
 
-	public static void delete(Integer listid) {
+	public void delete(Integer listid) {
 	  find.ref(listid).delete();
 	}
 	

@@ -28,6 +28,7 @@ public class PrGittiGidiyor
 
 		try {
 
+		
 			Connection _conn = Jsoup.connect(preurl);
 
 			Iterator<Product> it = receivedProducts.iterator();
@@ -35,6 +36,7 @@ public class PrGittiGidiyor
 	    	{
 	    		Product parsedProduct = it.next();
 	    		String prodPrice = "NOTFOUND";
+	    		boolean isDeleted = false;
 	    		
 	    		String posturl=parsedProduct.getPostUrl();
 	    		Document doc;
@@ -51,8 +53,14 @@ public class PrGittiGidiyor
     			for (Element pId : pIds) 
     			{
     				if(pId.attr("class").equals("other-products-title"))
-    					break;
+    				{
+    					parsedProduct.delete();
+    					isDeleted = true;
+    				}
     			}
+    			
+    			if (isDeleted)
+    				continue;
     			
     			for (Element spanId : spanIds) 
     			{	
@@ -132,7 +140,6 @@ public class PrGittiGidiyor
 			if (prodPrice != null && !"".equals(prodPrice))	
 			{
 
-				Logger.info(trimPrice(prodPrice));
 				double price = Double.parseDouble(trimPrice(prodPrice));
 				parsedProduct.initialprice = price;
 				parsedProduct.currentprice = price;			

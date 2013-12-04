@@ -32,7 +32,7 @@ public class DeamonController
 			    		//List<Product> productList = products.all(400); 
 			    		List<Product> productList = products.all_4parserdeamon(site); 
 			    	 	
-			    		String preurl = productList.get(1).getPreUrl();
+			    		String preurl = productList.get(0).getPreUrl();
 					    Iterator<Product> urlIterator = productList.iterator();		    
 					    
 					    int resultSize = productList.size();
@@ -118,7 +118,7 @@ public class DeamonController
 	  
 	  
 	  
-	  //**************Deprecated code here*************
+	  /***************Deprecated code here*************
 	  
 		public void singularDeamon()
 		{
@@ -136,5 +136,5 @@ public class DeamonController
 					deamon.watchItem(productIdentifier, product.source, 50.0, "Hakan");
 				}
 
-		  }
+		  }*/
 }

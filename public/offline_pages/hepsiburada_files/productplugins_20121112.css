@@ -1,0 +1,1342 @@
+/*otherSaleSlider v1.1*/
+img{text-decoration:none;}
+#mainOtherSale{width:122px;margin:0 auto;}
+#headerOtherSale{position:relative;height:80px;}
+#prevBtn, #nextBtn{display:block;width:17px;height:49px;position:absolute;left:-25px;top:22px;}
+#nextBtn{left:132px;}					
+#prevBtn a, #nextBtn a{display:block;width:17px;height:17px;background:url(//design.hepsiburada.net/hbv2/Design2010/Icn/btn_prev.png) no-repeat 0 0;}
+#prevBtn a:hover{background:url(//design.hepsiburada.net/hbv2/Design2010/Icn/btn_prev.png) no-repeat 0 -17px;}
+#nextBtn a{background:url(//design.hepsiburada.net/hbv2/Design2010/Icn/btn_next.png) no-repeat 0 0;}
+#nextBtn a:hover{background:url(//design.hepsiburada.net/hbv2/Design2010/Icn/btn_next.png) no-repeat 0 -17px;}
+#slider{position:absolute;width:122px;}
+#slider ul, #slider li{margin:0;padding:0;list-style:none;}
+#slider li{width:122px;height:80px;}
+#slider a:hover{color:#f9a13a;text-decoration:underline;}
+#slider h3{font-family:Trebuchet MS;font-size:11px;text-decoration:underline;margin:0 0 0 5px;color:#333;}
+.slideHolderRight{float:left;width:72px;height:50px;}
+.slideHolderLeft{float:left;width:50px;height:50px;}
+.slideHolderBottom{float:left;width:122px;width:auto;height:auto;}
+.PriceTxtLink{margin:0 0 0 5px;font-family:Trebuchet MS;color:#f9a13a;text-decoration:none;}
+.otherPrice{font-size:11px;font-family:Trebuchet MS;color:#666;text-decoration:none; }
+/* otherSaleSlider v1.1 */
+/* jqZoom101 */
+div.jqZoomTitle{z-index:5000;text-align:center;font-size:11px;font-family:Tahoma;height:16px;padding-top:2px;position:absolute;top:0;left:0;width:100%;color:#FFF;background:#999;}
+.jqZoomPup{overflow:hidden;background-color:#FFF;-moz-opacity:0.6;opacity:0.6;filter:alpha(opacity=60);z-index:10;cursor:crosshair;border-color:#c4c4c4;border-style:solid;}
+.jqZoomPup img{border:0;}
+.preload{-moz-opacity:0.8;opacity:0.8;filter:alpha(opacity=80);color:#333;font-size:12px;font-family:Tahoma;text-decoration:none;border:1px solid #CCC;background-color:#FFF;text-align:center;background-image:url(../images/zoomloader.gif);background-repeat:no-repeat;background-position:43px 30px;width:100px;height:55px;z-index:10;position:absolute;top:3px;left:3px;padding:8px;}
+.jqZoomWindow{border:1px solid #999;background-color:#FFF;}
+/* jqZoom101 */
+/* ProductTest v0.02 */
+#galleryshow														{font-weight:bold;}
+#theshow															{margin:0 auto; padding:0; width:500px; height:500px; overflow:hidden; border:solid 1px #dfdfdf;}
+#bigshow															{overflow:hidden; width:500px; height:500px;}
+#theshow img														{display:block; }
+#pictures_nav														{overflow:hidden; width:500px; height:95px;}
+#pictures_nav li													{display:inline; float:left; width:100px; }
+.boxgrid															{width:500px; height:500px; float:left; background:#161613; overflow:hidden; position:relative;}
+.boxgrid img														{position:absolute; top:0; left:0; border:0;}
+.boxcaption															{float:left; position:absolute; background:#ffa23e; height:100px; width:100%; opacity:0.8; top:500px;}
+.captionfull .boxcaption											{top:350px; left:0;}
+.caption .boxcaption												{top:350px; left:0;}
+.jcarousel-skin-product .jcarousel-container-horizontal				{width:500px; padding:0 25px; margin:0 auto;}
+.jcarousel-skin-product .jcarousel-container-vertical				{width:75px; height:245px; padding:40px 20px;}
+.jcarousel-skin-product .jcarousel-clip-horizontal					{width:500px; height:93px;}
+.jcarousel-skin-product .jcarousel-clip-vertical					{width:75px; height:245px;}
+.jcarousel-skin-product .jcarousel-next-horizontal					{position:absolute; top:35px; right:0; width:19px; height:19px; cursor:pointer; background:transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 0;}
+.jcarousel-skin-product .jcarousel-next-horizontal:hover			{background:transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 -19px;}
+.jcarousel-skin-product .jcarousel-next-horizontal:active			{background:transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 -19px;}
+.jcarousel-skin-product .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-product .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-product .jcarousel-next-disabled-horizontal:active	{cursor:default; background-position:-96px 0; }
+.jcarousel-skin-product .jcarousel-prev-horizontal					{position:absolute; top:35px; left:0px; width:19px; height:19px; cursor:pointer; background:transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px 0;}
+.jcarousel-skin-product .jcarousel-prev-horizontal:hover			{background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px -19px;}
+.jcarousel-skin-product .jcarousel-prev-horizontal:active			{background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px -19px;}
+.jcarousel-skin-product .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-product .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-product .jcarousel-prev-disabled-horizontal:active	{cursor: default; background-position: -96px 0;}
+.jcarouselLiBorder													{display:block; width:80px; height:80px; border:solid 1px #dfdfdf;}
+.jcarouselLiBorder:hover											{display:block; width:80px; height:80px; border:solid 1px #ffa23e;}
+.jcarouselLiBorder img												{border:none;}
+
+.w980{width:980px !important;}
+.w202							{width:202px !important;}
+.w817							{width:817px !important;}
+.w772							{width:772px !important;}
+.w762							{width:762px !important;}
+.w180							{width:180px !important;}
+.w276							{width:276px !important;}
+.borderRgtDf					{border-right:1px solid #dfdfdf;}
+.thumbShow img					{float:left; width:40px; height:40px; margin:10px 5px 0 0; border:1px solid #ccc;}
+.thumbShow img.selected			{border:1px solid #ffa23e;}
+.thumbShow img:hover			{border:1px solid #ffa23e;}
+.h200							{height:200px !important;}
+.mt93							{margin-top:93px !important;}
+.mt4							{margin-top:4px !important;}
+.w550							{width:550px !important;}
+
+.sliderProductPageIcon01		{width:15px; height:15px; background: url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -102px -473px;}
+.sliderProductPageIcon02		{width:15px; height:14px; background: url("//design.hepsiburada.com/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01") no-repeat scroll -118px -473px transparent;}
+
+.globalButtonLeft				{width:2px; background: url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -44px -473px;}
+.globalButtonTile				{background: url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/GlobalTile.png?v=0.01) repeat-x 0 -2265px;}
+.globalButtonRight				{width:2px; background: url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -48px -473px;}
+
+.globalButtonIcon01				{width:14px; height:12px; background: url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -83px -473px;}
+.globalButtonIcon02				{width:14px; height:12px; background: url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -53px -473px;}
+.globalButtonIcon03				{width:14px; height:12px; background: url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -67px -473px;}
+
+.slideShowNextBgInnerBtnNext				{text-indent:-9999px; position: absolute; top: 11px; right: 0; width: 19px; height: 19px; cursor: pointer; background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 0;}
+.slideShowNextBgInnerBtnNext:hover			{background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 -19px;}
+.slideShowNextBgInnerBtnNext:active			{background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 -19px;}
+
+.slideShowNextBgInnerBtnPrev				{text-indent:-9999px; position: absolute; top: 11px; left: 0; width: 19px; height: 19px; cursor: pointer; background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px 0;}
+.slideShowNextBgInnerBtnPrev:hover			{background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px -19px;}
+.slideShowNextBgInnerBtnPrev:active			{background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px -19px;}
+
+.w278						{width:278px !important;}
+.h262						{height:262px !important;}
+.w25						{width:25px !important;}
+.h43						{height:43px !important;}
+
+
+/* Product Test v0.02 */
+
+/*
+   Magic Zoom Plus v2.0.9 
+   Copyright 2010 Magic Toolbox
+   You must buy a license to use this tool.
+   Go to www.magictoolbox.com/magiczoomplus/
+*/
+
+.MagicZoom img {
+border: 0 !important;
+padding: 0 !important;
+margin: 0 !important;
+}
+
+/* Style of zoomed window */
+.MagicZoomBigImageCont {
+/*border: 1px solid #999;*/
+}
+
+/* Style of header, activated with "title" attribute in <a> tag */
+.MagicZoomHeader {
+font-size: 8pt !important;
+line-height: normal !important;
+color: #fff;
+background: #666;
+text-align: center !important;
+}
+
+/* Style of small square under mouse */
+.MagicZoomPup {
+border: 1px solid #aaa;
+background: #fff;
+cursor: pointer;
+}
+
+/* Style of message box while image is loading */
+.MagicZoomLoading {
+border: 1px solid #ccc;
+background: #fff url(//design.hepsiburada.com/assets/graphics/loader.gif) no-repeat 0 0;
+padding: 4px 4px 4px 24px !important;
+margin: 0;
+text-decoration: none;
+text-align: left;
+font-size: 8pt;
+font-family: sans-serif;
+color: #444;
+}
+/* Style of the small image link */
+.MagicZoomPlus {
+/*cursor:url(graphics/zoomin.cur),pointer;*/
+cursor:pointer;
+outline: 0 !important;
+}
+
+/* Style of the small image */
+.MagicZoomPlus img {
+border: 0 !important;
+padding: 0 !important;
+margin: 0 !important;
+}
+
+/* Style of the span inside the small image link */
+.MagicZoomPlus span {
+display: none !important; 
+}
+
+
+/* Style of hotspots */
+.MagicHotspots {
+display: none;
+visibility: hidden;
+}
+.MagicHotspots a {
+border: 1px solid #ccc;
+}
+.MagicHotspots a:hover {
+border: 1px solid red;
+}
+
+/* Style of the small image link */
+.MagicThumb, .MagicThumb:hover {
+cursor: url(graphics/zoomin.cur), pointer;
+outline: 0 !important;
+}
+
+/* Style of the small image when the large image is expanded */ 
+.MagicThumb-expanded-thumbnail {
+cursor: default;
+}
+
+/* Style of the span inside the small image link */
+.MagicThumb span {
+display: none !important;
+}
+
+/* Style of the small image */
+.MagicThumb img {
+border: 0;
+outline: 0;
+}
+
+/* Style of the expanded image */
+.MagicThumb-expanded {
+/*cursor: url(graphics/zoomout.cur), pointer;*/
+cursor:pointer;
+background: transparent;
+border: 1px solid #ccc;
+outline: 0;
+padding: 0;
+}
+
+/* Style of the caption for the expanded image */
+.MagicThumb-caption {
+color: #333;
+font: normal 10pt Verdana, Helvetica;
+background: #ccc;
+text-align: left;
+padding: 8px;
+border: 0 !important;
+outline: 0 !important;
+/*19072013*/
+height:auto !important;
+}
+
+/* Style of the close/next/previous buttons */
+.MagicThumb-buttons {
+background: transparent url(//design.hepsiburada.com/assets/graphics/buttons1.png) no-repeat 0 0;
+/*background:transparent;*/
+height: 24px;
+display: block;
+}
+
+.MagicThumb-buttons a {
+width: 24px;
+height: 24px;
+margin: 0px 1px !important;
+overflow: hidden;
+}
+
+/* Style of the loading message box */
+.MagicThumb-loader {
+font: normal 12pt sans-serif;
+border: 1px solid #000;
+background: #fff url(//design.hepsiburada.com/assets/graphics/loader.gif) no-repeat 0 0;
+padding: 2px 2px 2px 22px;
+margin: 0;
+text-decoration: none;
+text-align: left;
+}
+
+/* Style of the small images which swap the main image */
+.MagicThumb-swap {
+}
+
+/* Style to hide caption on page. Only needed for #id method. */
+.MagicThumb-external-caption {
+display: none;
+}
+
+/* Magiczoomplus */
+
+/* Products v1.98 */
+/*private css*/
+.productMarks																				{width:968px;padding:0 15px 0 15px;color:#fff;overflow:hidden;text-align:center;}
+.productMarks a																				{color:#666666;}
+.productMarks_meta																			{text-align:left;width:auto;color:#666;overflow:hidden;}
+#leftpart_lacking_master																	{float:left;width:800px;height:auto;}
+.w998																						{width:998px !important;}
+.w974																						{width:974px !important;}
+.w940																						{width:940px !important;}
+.w817																						{width:817px !important;}
+.w760																						{width:760px !important;}
+.w730																						{width:730px !important;}
+.w600																						{width:600px !important;}
+.w550																						{width:550px !important;}
+.w425																						{width:425px !important;}
+.w320																						{width:320px !important;}
+.w300																						{width:300px !important;}
+.w278																						{width:278px !important;}
+.w276																						{width:276px !important;}
+.w250																						{width:250px !important;}
+.w209																						{width:209px !important;}
+.w180																						{width:180px !important;}
+.w160																						{width:160px !important;}
+.w142																						{width:142px !important;}
+.w110																						{width:110px !important;}
+.w100																						{width:100px !important;}
+.w99																						{width:99px !important;}
+.w50																						{width:50px !important;}
+.w40																						{width:40px !important;}
+.w30																						{width:30px !important;}
+.w35																						{width:35px !important;}
+.w25																						{width:25px !important;}
+.h290																						{height:290px !important;}
+.h262																						{height:262px !important;}
+.h100																						{height:100px !important;}
+.h75																						{height:75px !important;}
+.h50																						{height:50px !important;}
+.h30																						{height:30px !important;}
+.h24																						{height:24px !important;}
+.h18																						{height:18px !important;}
+.h26																						{height:26px !important;}
+.h22																						{height:22px !important;}
+.w20																						{width:20px !important;}
+.h46																						{height:46px !important;}
+.h43																						{height:43px !important;}
+.h5																							{height:5px !important;}
+.w7																							{width:7px !important;}
+.h33																						{height:33px !important;}
+.ml20																						{margin-left:20px !important;}
+.mr10																						{margin-right:10px !important;}
+.mt15																						{margin-top:15px !important;}
+.mt130																						{margin-top:130px !important;}
+.mt5																						{margin-top:5px !important;}
+.ml10																						{margin-left:10px !important;}
+.ml5																						{margin-left:5px !important;}
+.mt3																						{margin-top:3px !important;}
+.mb3																						{margin-bottom:3px !important;}
+.ml3																						{margin-left:3px !important;}
+.ml1																						{margin-left:1px !important;}
+.mr5																						{margin-right:5px !important;}
+.mt8																						{margin-top:8px !important;}
+.mt7																						{margin-top:7px !important;}
+.mt2																						{margin-top:2px !important;}
+.mb12																						{margin-bottom:12px !important;}
+.mb10																						{margin-bottom:10px !important;}
+.mb50																						{margin-bottom:50px !important;}
+.mb1																						{margin-bottom:1px !important;}
+.m0																							{margin:0 !important;}
+.p0																							{padding:0 !important;}
+.p10																						{padding:10px !important;}
+.p5																							{padding:5px !important;}
+.w135               																		{width:135px;}
+.w130               																		{width:130px;}
+.w137               																		{width:137px;}
+.w200               																		{width:200px;}
+.h300               																		{height:300px;}
+.h135               																		{height:135px;}
+.h137               																		{height:137px;}
+.h60                																		{height:60px;}
+.colorVersion2      																		{color: #FFA23E !important;}
+.borderDF           																		{border:1px solid #dfdfdf;}
+.borderRgtDf																				{border-right:1px solid #dfdfdf;}
+.bBottomNone																				{border-bottom:none !important;}
+.colorBgdf																					{background-color:#dfdfdf;}
+.tc																							{text-align:center;}
+.fnone																						{float:none !important; }
+.font11																						{font-size:11px !important;}
+.colorV4																					{color:Maroon !important;}
+.colorWhite																					{color:#fff !important;}
+.colorF7F6F4																				{background-color:#F7F6F4;}
+.fontVrd																					{font-family:Verdana !important; }
+.font10pt																					{font-size:10pt !important; }
+.colorV2																					{color:#ffa23e;}
+.fsize12																					{font-size:12px !important;}
+/*rooter*/
+.rooterContainer																			{float:left;width:800px;height:37px;}
+.rooterItemLeft																				{float:left;width:10px;height:37px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -205px -75px;}
+.rooterItemTile																				{float:left;width:780px;height:37px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerGlobalTile.gif?v=2.20) repeat-x 0px -859px;}
+.rooterItemRight																			{float:left;width:10px;height:37px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -219px -75px;}
+.innerBandMenu																				{float:left; width:auto;height:auto;}
+.innerBandMenu ul																			{float:left; list-style-type:none;padding:0;margin:3px 0 0 -10px;}
+.innerBandMenu li																			{float:left; display:inline;padding:0 0 0 15px;margin:0 0 0 12px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -261px -75px;}
+.innerBandMenu li a																			{font-weight:bold;text-decoration:none;color:#666666;}
+.innerBandMenu li a:hover																	{font-weight:bold;text-decoration:underline;}
+.mainContentContainerTopProduct																{height:32px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -14px -375px;}
+.mainContentContainerMiddle																	{height:auto; padding-bottom:10px; border-left:solid 1px #dfdfdf;border-right:solid 1px #dfdfdf;background:url("//design.hepsiburada.net/hbv2/Background/Panels/PanelsItemTile.jpg") repeat-x 0 bottom;}
+.mainContentContainerBottomProduct															{height:24px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -14px -410px;}
+.productCap{padding:0 0 10px 20px;width:768px;font-size:18px;height:auto;float:left;}
+.productCap h1																				{font-size:18px;height:auto;float:left; font-weight:normal !important;}
+.productImages{float:left;padding:0;width:367px;position:relative;*z-index:9998;}
+.jqZoomHolder																				{width:278px;height:262px;margin:0 0 0 20px;border:1px solid #e1e1e1;}
+.slideShowNextBg{width:25px;height:43px;background:url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/InnerContentItem02.png) no-repeat -70px -500px;position:absolute;top:150px;left:-1px;}
+.slideShowPrewBg{width:25px;height:43px;background:url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/InnerContentItem02.png) no-repeat -44px -500px;position:absolute;top:150px;right:-1px;}
+.slideShowNextBgInnerBtnNext																{text-indent:-9999px; position: absolute; top: 11px; right: 0; width: 19px; height: 19px; cursor: pointer; background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 0;}
+.slideShowNextBgInnerBtnNext:hover															{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 -19px;}
+.slideShowNextBgInnerBtnNext:active															{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 -19px;}
+.slideShowNextBgInnerBtnPrev																{text-indent:-9999px; position: absolute; top: 11px; left: 0; width: 19px; height: 19px; cursor: pointer; background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px 0;}
+.slideShowNextBgInnerBtnPrev:hover															{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px -19px;}
+.slideShowNextBgInnerBtnPrev:active															{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px -19px;}
+.minizoom{margin:0 0 0 15px;float:left;}
+.minizoom img																				{float:left;width:50px;height:50px;margin:10px 5px 0 0;border:1px solid #ccc;}
+.minizoom img.selected																		{border:1px solid #0087cd;}
+.minizoom img:hover																			{border:1px solid #0087cd;}
+.thumbShow img																				{float:left; width:40px; height:40px; margin:10px 5px 0 0; border:1px solid #ccc;}
+.thumbShow img.selected																		{border:1px solid #ffa23e;}
+.thumbShow img:hover																		{border:1px solid #ffa23e;}
+.globalButtonLeft																			{width:2px; background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -44px -473px;}
+.globalButtonTile																			{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/GlobalTile.png?v=0.01) repeat-x 0 -2265px;}
+.globalButtonRight																			{width:2px; background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -48px -473px;}
+.productContent{float:right;height:100%;padding:0;width:425px;margin:0 10px;}
+.productContentLeftKdv																		{float:left;width:100px;padding:8px 0 0 0;}
+.productContentItemListTable																{float:left;width:425px;height:auto;padding:0;}
+.productContentItemCampaign																	{width:425px;padding:0; float:left;height:100%;}
+.productContentItemListTableItems01, .productContentItemListTableItems02, 
+.productContentItemListTableItems03, 
+.productContentItemListTableItems04, .productContentItemListTableItems05, 
+.productContentItemListTableItems06, .productContentItemListTableItems07					{width:425px; height:30px; float:left; border-bottom:dotted 1px #dfdfdf;}
+.productContentItemListTableItems06															{height:auto !important;}
+.productContentLeftPrice																	{float:left; width:100px; padding:8px 0 0 0;}
+.productContentRightPrice																	{float:left; padding:8px 0 0 0;}
+.productContentRightKdvV2																	{color:Maroon;font-size:18px;padding:1px 0 0;}
+.advantageBenefitLeft																		{background: url(//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v00.01) no-repeat 0px -302px;}
+.advantageBenefitTile																		{background: url(//design.hepsiburada.net/Carsi/HeaderV2/GlobalTileV2.gif?v00.01) repeat-x;}
+.advantageBenefitRight																		{background: url(//design.hepsiburada.net/Carsi/HeaderV2/Part1.gif?v00.01) no-repeat -13px -302px;}
+.productContentLeftTransfer																	{padding:8px 0 0 0; float:left; width:100px;}
+.productContentRightTransfer																{padding:8px 0 0 0;}
+#ProductSponsorContainer																	{margin:14px 0 0 0;}
+#ProductSponsorContainer .ProductDashboard_button:hover 
+.ProductDashboard_button_heading															{color:#222;}
+#ProductSponsorContainer .ProductDashboard_button_heading									{display:block; height:55px; }
+.ProductDashboard_button																	{float:left; width:90px; height:51px; overflow:hidden; padding:5px 0px 5px 0; margin:8px 10px 0 0;}
+.ProductDashboard_button span																{display:block; }
+#ProductSponsorContainer .button1 .ProductDashboard_button_heading							{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -284px -289px; }
+#ProductSponsorContainer .button2 .ProductDashboard_button_heading							{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -383px -289px; }
+/*#ProductSponsorContainer .button3 .ProductDashboard_button_heading						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -404px -289px; }*/
+/*#ProductSponsorContainer .button4 .ProductDashboard_button_heading						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -464px -289px; }*/
+#ProductSponsorContainer .button5 .ProductDashboard_button_heading							{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -482px -289px; }
+#ProductSponsorContainer .button6 .ProductDashboard_button_heading							{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -626px -289px; }
+#ProductSponsorContainer .button7 .ProductDashboard_button_heading							{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -831px -13px; }
+#ProductSponsorContainer .button8 .ProductDashboard_button_heading							{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -933px -13px; }
+#ProductSponsorContainer .button9 .ProductDashboard_button_heading							{background:url(//design.hepsiburada.net/hbv2/ProductDetails/kargo_banka.gif?v=2.37) no-repeat;}
+#ProductSponsorContainer .button10 .ProductDashboard_button_heading							{background:url(//design.hepsiburada.net/hbv2/ProductDetails/WorldWignet_03.jpg?v=0.01) no-repeat;}
+.myShopContainer																			{width:100%; height:auto;}
+.myShopBorderDiv																			{float:left;width:100%;height:auto;}
+.myShopBorderWhiteDiv																		{float:left; height:auto; width:184px; border-left:solid 1px #fff; border-right:solid 1px #fff; }
+.borderNone																					{border:none !important;}
+.SaleButton																					{width:162px; height:37px; margin:0 auto; position:relative; background: url(//design.hepsiburada.net/hbv2/Design2010/Button/ButtonSale.jpg) no-repeat; }
+.uruneAboneOl																				{width:162px; height:37px; margin:0 auto; background: url(//design.hepsiburada.net/hbv2/Design2010/Button/uruneAboneOl.jpg?v=0.01) no-repeat; }
+.myShopUnderDiv2																			{height:auto; }
+.myShopUnderDiv3																			{float:left;width:100%; height:auto; border-bottom:dotted 1px #dfdfdf; }
+.myShopUnderDiv3_01, .myShopUnderDiv3_02, .myShopUnderDiv3_03, 
+.myShopUnderDiv3_04																			{float:left;width:164px;height:100%;padding:0 0 0 15px;}
+.myShopCheckboxTxt																			{float:left;width:100%;height:auto;}
+.underlineLink																				{text-decoration:underline; font-weight:bold;}
+.underlineLink a:hover																		{color:#333;}
+.pointer																					{cursor:pointer;}
+.hierrarchyMenu																				{width:164px;height:auto;margin:0 0 0 11px;}
+.hierrarchyMenu ul																			{margin:0;padding:0;list-style-type:none;}
+.hierrarchyMenu li																			{margin:0 2px 0 0;padding:1px 1px 1px 1px;border-bottom:dotted 1px #dfdfdf;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/GlobalButtons.png?v=0.01) no-repeat -8px -202px;}
+.hierrarchyMenu a																			{height:100%;padding:0 0 2px 12px;display:block;}
+.hierrarchyMenu a:hover																		{background-color:#fffbed;}
+a.facebookV2																				{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/social32x32.gif) no-repeat 0px -30px;}
+a.facebookV2:hover																			{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/social32x32.gif) no-repeat 0px 0px;}
+a.twitwerV2																					{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/social32x32.gif) no-repeat -30px -30px;}
+a.twitwerV2:hover																			{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/social32x32.gif) no-repeat -30px 0px;}
+a.ffV2																						{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/social32x32.gif) no-repeat -60px -30px;}
+a.ffV2:hover																				{background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/social32x32.gif) no-repeat -60px 0px;}
+.tabHolder																					{float:left;width:100%;height:auto;}
+/*tab*/
+div.innerContentEx																			{width:1000px; padding:0; margin:0; position:relative; left:0; top:0; float:left; border:none;}
+.tabsContainerBottomBg																		{width:1000px; height:13px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01") no-repeat -14px -410px;}
+.tabsContainerBgs																			{border-left: 1px solid #DFDFDF;border-right: 1px solid #DFDFDF; background: url("//design.hepsiburada.net/hbv2/Design2010/Tab/TabTile_bottom0.gif") repeat-x scroll center bottom #FFFFFF;}
+ul, ol																						{list-style:none;}
+.contentBox																					{width:1000px; margin: -10px 0 0 0; background:url(//design.hepsiburada.net/hbv2/Design2010/Tab/TabTile.gif) repeat-x bottom #fff; }
+.contentBoxTop																				{height:43px; border-bottom:solid 1px #dfdfdf;  }
+.bottomTile																					{width:100%; height:25px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem02.png?v=0.01) no-repeat -14px -410px; }
+ul.switcherTabs																				{float:left;  width:auto;  left:0;margin-top: 0;position: absolute;top:4px;}
+ul.switcherTabs li																			{float:left; background: url("//design.hepsiburada.net/hbv2/Design2010/Tab/0switcherTabs_left.jpg?v=0.06") no-repeat left top; padding-left:10px; }
+ul.switcherTabs li a																		{background-position:top right; outline:none; background: url("//design.hepsiburada.net/hbv2/Design2010/Tab/0switcherTabs_right.jpg?v=0.07") no-repeat right top; padding:9px 10px 8px 0; display:block;  text-decoration:none; color:#333; font-weight:bold; }
+ul.switcherTabs li a:hover																	{color:#999; text-decoration:none;}
+ul.switcherTabs li.selected																	{background-image:url(//design.hepsiburada.net/hbv2/Design2010/Tab/switcherTabs_active_left.jpg);}
+ul.switcherTabs li.selected a																{color:#f9a13a; background-image:url(//design.hepsiburada.net/hbv2/Design2010/Tab/switcherTabs_active_right.jpg);}
+.ico1																						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v4) no-repeat -8px -8px;height:17px;width:17px;position:relative;float:left;padding:0 5px 0 0;top:-3px;}
+.ico2																						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v4) no-repeat -34px -6px;height:17px;width:16px;position:relative;float:left;padding:0 5px 0 0;top:-3px;}
+.ico3																						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v4) no-repeat -60px -7px;height:18px;width:15px;position:relative;float:left;padding:0 5px 0 0;top:-3px;}
+.ico4																						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v4) no-repeat -88px -6px;height:17px;width:22px;position:relative;float:left;padding:0 5px 0 0;top:-3px;}
+.ico5																						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v4) no-repeat -120px -6px;height:16px;width:16px;position:relative;float:left;padding:0 5px 0 0;top:-3px;}
+.ico6																						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v4) no-repeat -149px -6px;height:16px;width:14px;position:relative;float:left;padding:0 5px 0 0;top:-3px;}
+.ico7																						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v4) no-repeat -150px -24px;height:16px;width:14px;position:relative;float:left;padding:0 5px 0 0;top:-3px;}
+.ico8																						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v4) no-repeat -120px -24px;height:16px;width:14px;position:relative;float:left;padding:0 5px 0 0;top:-3px;}
+.ico9																						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v4) no-repeat -88px -24px;height:16px;width:22px;position:relative;float:left;padding:0 5px 0 0;top:-3px;}
+.ico10																						{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v4) no-repeat scroll -61px -24px transparent;height:16px;width:14px;position:relative;float:left;padding:0 5px 0 0;top:-3px;}
+.listN																						{list-style-type:none;}
+.contentContainerVersionSecond																{float:left; width:800px;height:auto;}
+.contentContainerVersionSecondBarLeft														{float:left;width:10px;height:25px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -234px -75px;}
+.contentContainerVersionSecondBarTile														{float:left;width:780px;height:25px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerGlobalTile.gif?v=2.20) repeat-x 0px -859px;}
+.contentContainerVersionSecondBarRight														{float:left;width:10px;height:25px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -248px -75px;}
+.contentContainerVersionSecondBarTileText													{float:left;width:100%;height:auto;display:block;padding:4px 0 0 0;font-weight:bold;}
+.contentContainerVersionSecondHolder														{float:left;width:798px;height:auto;border-left:solid 1px #dfdfdf;border-right:solid 1px #dfdfdf;}
+.contentContainerVersionSecondBarBottom														{float:left;width:800px;height:19px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -14px -121px;}
+.portletContainerV2																			{float:left; width:776px;height:auto;margin:0;}
+/*table*/
+table.VersionSecondTable																	{width:798px;height:auto;margin:0;border-collapse:collapse;}
+table.VersionSecondTable tr.oddRow															{height:44px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerGlobalTile.gif?v=2.20) repeat-x 0px -751px;}
+table.VersionSecondTable tr.lastRow															{height:44px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerGlobalTile.gif?v=2.20) repeat-x 0px -806px;}
+table.VersionSecondTable td																	{margin:0;color:#333;}
+table.VersionSecondTable td a																{display:block;}
+table.VersionSecondTable td:first-child														{width:50px;padding:0 0 0 4px;text-align:left;}
+table.VersionSecondTable td.secondCol														{width:auto;}
+table.VersionSecondTable td.thirdCol														{width:120px;}
+table.VersionSecondTable td.fourthCol														{width:50px;}
+table.VersionSecondTable td.fifthCol														{width:120px;}
+table.VersionSecondTable td.editItem														{width:50px;}
+table.VersionSecondTableBottomspace															{width:798px;height:44px;margin:0;border-collapse:collapse;}
+table.VersionSecondTableBottomspace td														{margin:0;padding:0 0 0 55px;border-collapse:collapse;}
+/**/
+.header08																					{font-size:12px;font-weight:bold;color:#FB7B00;}
+.main{width:690px;margin:0 auto;text-align:center;font-size:10px;height:100%;padding:30px 0 0 0;}
+.line{width:693px;height:20px;clear:both;float:left;margin:0 0 1px 0;}
+.line-1																						{width:34px;margin:0 1px 0 0;background:#ededed;color:#666;height:100%;display:block;float:left;font-weight:bold;}
+.begining																					{background:none !important;}
+.second																						{background:#d0d0d0 !important;}
+.headers																					{width:163px;height:100%;float:left;margin:0 1px 0 0;}
+.lastbox																					{margin:0 !important;}
+.header-1																					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v2) no-repeat 0px -40px;height:20px;width:163px;}
+.header-2																					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v2) no-repeat 0px -60px;height:20px;width:163px;}
+.header-3																					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v2) no-repeat 0px -80px;height:20px;width:163px;}
+.header-4																					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v2) no-repeat 0px -100px;height:20px;width:163px;}
+.header-5																					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v2) no-repeat 0px -120px;height:20px;width:163px;}
+.header-6																					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v2) no-repeat 0px -140px;height:20px;width:163px;}
+.header-7																					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v2) no-repeat 0px -160px;height:20px;width:163px;}
+.header-8																					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v2) no-repeat 0px -180px;height:20px;width:163px;}
+.header-9																					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v2) no-repeat 0px -200px;height:20px;width:163px;}
+.header-10{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/iconMerged.gif?v2) no-repeat 0px -220px;height:18px;height:20px\9;width:161px;width:163px\9;border:1px solid #eee}
+
+.argueColDivColorv2																			{background-color:#e6e5e3;}
+.borderBtm																					{border-bottom:solid 1px #dfdfdf;}
+.borderTop																					{border-top:solid 1px #dfdfdf;}
+.bgDivLimitedStockContainer																	{background:url(//design.hepsiburada.net/assets/hbv2/ProductDetails/SonXGun_02.jpg?v1) no-repeat; }
+.bgDivLimitedStockContainerSmall															{background:url(//design.hepsiburada.net/assets/hbv2/ProductDetails/SonXGun_03.jpg?v1) no-repeat; }
+.ml80																						{margin-left:80px !important;}
+.w320																						{width:320px !important;}
+.limitedProductGeneralText																	{font-size:18px;}
+.colorcc0000																				{color:#cc0000 !important;}
+.font22																						{font-size:22px !important;}
+.font13																						{font-size:13px !important;}
+.font12																						{font-size:12px !important;}
+.underline																					{text-decoration:underline;}
+.productContentLeftStar																		{padding:8px 0 0 0; float:left; width:100px;}
+.productContentRightStar																	{float:left; padding:8px 0 0 0;}
+.campaignCapText																			{color:#ffa23e; font-weight:bold;}
+.campaignBg																					{width:425px;height:auto;background-color:#f7f6f4; }
+.campaignText																				{width:auto;border:1px solid black; }
+.campaignBgTableContainer																	{width:425px !important;height:auto;}
+.campaignBgTableCheckbox																	{width:15px; vertical-align:middle;}
+.campaignBgTableImages																		{width:66px;vertical-align:middle;}
+.campaignBgTableText																		{width:auto;vertical-align:middle;padding:5px 0 5px 5px;}
+.campaignEdgeFirstrowMiddlecolumnImgBorder a												{border:1px solid #dfdfdf;display:block;}
+.campaignEdgeFirstrowMiddlecolumnImgBorder a:hover											{border:1px solid #ffa23e;}
+.ImagesBorder																				{border:solid 1px #dfdfdf;}
+.campaignEdgeFirstrowLastcolumn																{float:left;width:582px;height:100%;}
+.campaignEdgeFirstrowLastcolumn3															{padding:0 0 0 5px;}
+.campaignEdgeContainer																		{width:760px;height:auto;margin:0 auto;padding:30px 0 30px 0;}
+.campaignEdgeFirstrow																		{float:left;width:688px;height:90px;margin:1px 0 1px 0;background-color:#f7f6f4;/*added17052013->*/overflow:hidden;line-height:135%;}
+.campaignEdgeLastrow																		{float:left;width:688px;height:90px;border-bottom:dotted 1px #dfdfdf;border-top:dotted 1px #dfdfdf;/*added17052013->*/overflow:hidden;line-height:135%;}
+.campaignEdgeFirstrowFirstcolumn															{float:left;width:24px;height:100%;}
+.campaignEdgeFirstrowMiddlecolumn															{float:left;width:82px;height:auto;margin:4px 0 0 0;}
+.campaignEdgeFirstrowMiddlecolumnImgBorder a												{border:1px solid #dfdfdf;display:block;}
+.campaignEdgeFirstrowMiddlecolumnImgBorder a:hover											{border:1px solid #ffa23e;}
+.DikeyHizala1																				{#position:relative;display:table;}
+.DikeyHizala2																				{display:table-cell;vertical-align:middle;#position:absolute;#top:50%;}
+.DikeyHizala3																				{#position:relative;#top:-50%;padding-left: 5px;}
+.fullToBoldTextType																			{font-weight:bold;}
+/*Yorum*/
+.main-comment																				{width:760px;margin:0 auto;padding:30px 0 30px 0;position:relative;height:100%;}
+.siralamabar																				{float:left;width:100%;margin:0 0 10px 0;}
+.ortalamabar																				{margin:10px 0 15px 0;color:#444;height:20px;}
+.ortalamatext																				{float:left;font-weight:bold;margin:0 20px 0 0;}
+.comment-area																				{width:100%;float:left;padding:10px 0px 10px 0px;border-bottom:dotted 1px #cccccc;}
+.star-area																					{width:70px;height:14px;float:left;margin:0 10px 0 0;}
+.star-area img																				{float:left;}
+.topdate																					{float:left;}
+.comment																					{color:#000; /*padding:5px 0px 10px 0px;*/ margin:0;}
+.comment h1																					{font-size:18px;padding:0;margin:0;color:#444;text-decoration:none;}
+.gonderen																					{color:#c2c2c2;}
+.gonderenisim																				{color:#ff7e00;text-decoration:underline;}
+.buton-evet																					{width:30px;height:18px;background:url(//design.hepsiburada.net/Carsi/MergedImages/evet-hayir.gif);border:none;cursor:pointer;}
+.buton-hayir																				{width:30px;height:18px;background:url(//design.hepsiburada.net/Carsi/MergedImages/evet-hayir.gif) 30px 0px;border:none;cursor:pointer;}
+.dogrumu																					{color:#999;margin:0 0 5px 0;}
+.yorumselect																				{height:20px;width:183px;font-size:11px;margin:0 0 0 15px;}
+.yoruminfo																					{color:#999;margin:0 0 0 10px;}
+.yoruminfo a																				{color:#999;text-decoration:underline;}
+.yoruminfo a:hover																			{text-decoration:none;}
+/*carusel*/
+*																							{list-style: none;margin: 0;padding: 0;outline: none;text-decoration: none;}
+.contentProductImageThmbBig																	{font-size:1em; text-align:left;}
+img																							{border:0 none;}
+.jcarousel-skin-productImageThmbBig .jcarousel-container-horizontal							{width:482px;padding:0 25px; margin-left:9px; position: relative;}
+.jcarousel-skin-productImageThmbBig .jcarousel-clip-horizontal								{width:482px;height:95px; z-index: 2;padding: 0;margin: 0;overflow: hidden;position: relative;}
+.jcarousel-skin-productImageThmbBig .jcarousel-item											{width:95px;height: 95px; float: left;list-style: none;width: 95px;height: 95px;}
+.jcarousel-skin-productImageThmbBig .jcarousel-item-horizontal								{margin-right: 18px;}
+.jcarousel-skin-productImageThmbBig .jcarousel-item-placeholder								{background: #fff;color: #000;}
+.jcarousel-skin-productImageThmbBig .jcarousel-next-horizontal								{position:absolute; cursor: pointer; width:19px; height:19px; right:0; top:35px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg") no-repeat 0 0;}
+.jcarousel-skin-productImageThmbBig .jcarousel-next-horizontal:hover						{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 -19px;}
+.jcarousel-skin-productImageThmbBig .jcarousel-next-horizontal:active						{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 -19px;}
+.jcarousel-skin-productImageThmbBig .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-productImageThmbBig .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-productImageThmbBig .jcarousel-next-disabled-horizontal:active				{cursor: default;background-position: -96px 0;}
+.jcarousel-skin-productImageThmbBig .jcarousel-prev-horizontal								{position:absolute; cursor:pointer; width:19px; height:19px; left:0; top:35px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg") no-repeat -19px 0;}
+.jcarousel-skin-productImageThmbBig .jcarousel-prev-horizontal:hover						{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px -19px;}
+.jcarousel-skin-productImageThmbBig .jcarousel-prev-horizontal:active						{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px -19px;}
+.jcarousel-skin-productImageThmbBig .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-productImageThmbBig .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-productImageThmbBig .jcarousel-prev-disabled-horizontal:active				{cursor: default;background-position: -96px 0;}
+.jcarousel-skin-productImageThmbBig .jcarousel-list											{z-index: 1;overflow: hidden;position: relative;top: 0;left: 0;margin: 0;padding: 0;}
+.jcarousel-skin-productImageThmbBig .jcarousel-next											{z-index: 3;display: none;}
+.jcarousel-skin-productImageThmbBig .jcarousel-prev											{z-index: 3;display: none;}
+/*02*/
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-container-horizontal				{width:932px;padding:0 22px; margin-left:2px; position: relative;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-clip-horizontal					{width:932px;height:230px; z-index: 2;padding: 0;margin: 0;overflow: hidden;position: relative;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-item								{width:95px;height: 95px; float: left;list-style: none;width: 95px;height: 95px;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-item-horizontal					{margin-right: 4px;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-item-placeholder					{background: #fff;color: #000;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-next-horizontal					{position:absolute; cursor: pointer; width:19px; height:19px; right:0; top:105px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg") no-repeat 0 0;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-next-horizontal:hover				{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 -19px;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-next-horizontal:active				{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat 0 -19px;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-next-disabled-horizontal:active	{cursor: default;background-position: -96px 0;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-prev-horizontal					{position:absolute; cursor:pointer; width:19px; height:19px; left:0; top:105px; background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg") no-repeat -19px 0;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-prev-horizontal:hover				{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px -19px;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-prev-horizontal:active				{background: transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrow.jpg) no-repeat -19px -19px;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-prev-disabled-horizontal:active	{cursor: default;background-position: -96px 0;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-list								{z-index: 1;overflow: hidden;position: relative;top: 0;left: 0;margin: 0;padding: 0;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-next								{z-index: 3;display: none;}
+.jcarousel-skin-productGalleryRelatedProducts .jcarousel-prev								{z-index: 3;display: none;}
+#galleryRelatedProducts .content															{margin:0 auto; padding:0 0 20px 0;width:550px;}
+#galleryRelatedProducts #productRelatedProducts												{overflow:hidden;width:960px; height:230px;}
+#galleryRelatedProducts #productRelatedProducts li											{display:inline; float:left;width:152px; height:152px; background-color:#dfdfdf;}
+#galleryRelatedProducts #productRelatedProducts li a										{display:block;}
+#galleryProductImageThmbBig .content														{margin:0 auto; padding:0 0 20px 0;width:550px;}
+#galleryProductImageThmbBig #theshow														{margin:0 auto; padding:0; width:500px; height:500px; overflow:hidden; border:solid 1px #dfdfdf;}
+#galleryProductImageThmbBig #bigshow														{overflow:hidden;}
+#galleryProductImageThmbBig #theshow img													{display: block;}
+#galleryProductImageThmbBig #picturesProductImageThmbBig									{overflow:hidden;width:960px; height:95px;}
+#galleryProductImageThmbBig #picturesProductImageThmbBig li									{display:inline; float:left;width:82px; height:82px; background-color:#dfdfdf;}
+#galleryProductImageThmbBig #picturesProductImageThmbBig li a								{display:block;}
+/* Boxegrid effect */
+.boxgridProductImageThmbBig																	{width:550px; height:500px; float:left; overflow:hidden; position:relative;/*18072013*/border: 1px solid #DFDFDF;border-bottom:none;height:499px !important; }
+.boxgridProductImageThmbBig img																{position: relative; top:0; border:0;}
+.w548																						{width:548px !important;}
+.w152																						{width:152px !important;}
+.h82																						{height:82px !important;}
+.textPad																					{margin:0;padding:2px 0 0 0;}
+.numbers																					{width:81px;float:left;margin:0 1px 0 0;height:100%;}
+.text-1																						{background:#d0ecb5;}
+.text-2																						{background:#e0b7e7;}
+.text-3																						{background:#faaadb;}
+.text-4																						{background:#adc1ea;}
+.text-5																						{background:#e8efa4;}
+.text-6																						{background:#fcd6c2;}
+.text-7,.text-10{background:#b8e6f1;}
+.text-8{background:#d6d6d6;}
+.text-9																						{background:#ceeff8;}
+.number-1																					{background:#edf4e6;}
+.number-2																					{background:#f1e7f3;}
+.number-3																					{background:#f8e3f0;}
+.number-4																					{background:#e4e9f4;}
+.number-5																					{background:#f4f6db;}
+.number-6																					{background:#fbede6;}
+.number-7,.number-10{background:#e2f3f7;}
+.number-8																					{background:#ededed;}
+.number-9																					{background:#eef9fc;}
+.hediye-et																					{width: 465px;height: 321px;margin: 0;padding: 0;border: 0;background-color: #000000;overflow: hidden;}
+.hediye-et-content																			{width: 436px;height: 267px;margin: 0 auto;padding: 20px 0 0 0;margin-top: 14px;background-color: #FFFFFF;}
+.hediye-et-content h1																		{width: 391px;margin: 0 auto;border-bottom: 1px solid #cccccc;color: #fb7b00;font-size: 19px;text-align: center;padding-bottom: 5px;font-weight: normal;}
+.hediye-et-text																				{text-align: center;margin: 15px 0 14px 0;padding: 0;border: 0;font-size: 14px;}
+.hediye-et-input-area																		{width: 436px;height: 45px;background-color: #f2f2f2;}
+.hediye-et-input																			{width: 170px;height: 10px;margin: 0 auto;padding: 10px 0 0 0;}
+.hediyet-input																				{width: 72px;height: 25px;float: left;background: #cccccc;color: #333333;font-size: 14px;text-align: center;line-height: 25px;margin-right: 10px;}
+.hediye-et-select																			{margin: 0;padding: 0;border: 0;width: 232px;height: 27px;float: left;background: url(images/hediyet-select.jpg) no-repeat;clear: both;}
+.hediyet-input a																			{display: block;text-decoration: none;color: #000000;height: 25px;}
+.hediyet-input a:hover																		{background-color: #fb7b00;color: #FFFFFF;text-decoration: none;}
+.HediyeEtBtnPassive																			{background: #cccccc;color: #333333;border: none;width: 70px;height: 30px;}
+.productDetails_Discount																	{background: url("//design.hepsiburada.net/hbv2/Design2010/Button/patlangac.png") no-repeat;width: 48px;height: 48px;overflow: hidden;}
+.productDetails_Discount_Text																{color: #A00D01;font-weight: bold;font-size: 1.2em;margin-top: 12px;text-align: center;}
+#SatinAlmaRehberi li, ol																	{list-style: disc outside none;margin-left: 25px;margin-right: 25px;padding-bottom: 10px;padding-top: 10px;}
+/*sale button*/
+.inputBorder																				{border-left:1px solid #a18469; border-top:1px solid #a18469; border-right:1px solid white; border-bottom:1px solid white;background-color: #fdeddc;}
+.inputBorder:hover																			{border-left:1px solid #cabfb4; border-top:1px solid #cabfb4; border-right:1px solid white; border-bottom:1px solid white;background-color: #fff;}
+.inputBorder:focus																			{border-left:1px solid #cabfb4; border-top:1p solid #cabfb4; border-right:1px solid white; border-bottom:1px solid white;background-color: #fff; color:#ffa23e;}
+/*vodafone*/
+.bgDivVodafoneContainer																		{background:url("//design.hepsiburada.net/assets/hbv2/ProductDetails/Vodafone02.jpg?v0.02") no-repeat;}
+.vodafoneTopBg																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -248px -500px;}
+.vodafoneIcon01																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/Vodafone.jpg?v0.02) no-repeat -415px -13px;}
+.vodafoneIcon02																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/Vodafone.jpg?v0.02) no-repeat -147px -13px;}
+.vodafoneIcon03																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/Vodafone.jpg?v0.02) no-repeat -281px -147px;}
+.vodafoneIcon04																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/Vodafone.jpg?v0.02) no-repeat -13px -147px;}
+.vodafoneIcon05																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/Vodafone.jpg?v0.02) no-repeat -147px -147px;}
+.vodafoneIcon06																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/Vodafone.jpg?v0.02) no-repeat -13px -281px;}
+.vodafoneIcon07																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/Vodafone.jpg?v0.02) no-repeat -281px -281px;}
+.vodafoneIcon08																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/Vodafone.jpg?v0.02) no-repeat -147px -281px;}
+.vodafoneIcon09																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/Vodafone.jpg?v0.02) no-repeat -415px -281px;}
+.vodafoneIcon10																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/Vodafone.jpg?v0.02) no-repeat -13px -13px;}
+.vodafoneCont 																				{background:url(//design.hepsiburada.net/assets/hbv2/ProductDetails/Vodafone03.jpg?v0.01) no-repeat top right;}
+.checkIconTrue																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/checkIcon.jpg?v0.02) no-repeat 0 6px;}
+.checkIconFalse																				{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/checkIcon.jpg?v0.02) no-repeat -18px 6px;}
+.vodafoneContainerTopBG																		{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/vodafonePS.jpg?v0.01) no-repeat 0 0;}
+.vodafoneContainerBG 																		{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/vodafonePS.jpg?v0.01) no-repeat 260px -41px;}
+.vodafoneBG																					{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/vodafonePS.jpg?v0.01) no-repeat -225px -50px;}
+.w423																						{width:423px !important;}
+.h31																						{height:31px !important;}
+.w400																						{width:400px !important;}
+.font10																						{font-size:10px !important;}
+.mb2																						{margin-bottom:2px !important;}
+.lH10																						{line-height:10px !important;}
+.w405																						{width:405px !important;}
+.dNone																						{display:none !important;}
+/**/
+.newSeason																					{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 0;}
+.nobel																						{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -225px;}
+.mothersDay																					{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -75px;}
+.new																						{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -150px;}
+.fener																						{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -300px;}
+.vizyonda																					{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -375px;}
+.yuzyil100																					{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -456px;}
+.babamIcin																					{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -606px;}
+.KarneyeAferin 																				{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat scroll 0 -755px transparent;}
+.kravat																					    {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -681px;}
+
+
+/*.artiguvence                                                                              {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/guvenceRibbon.png?v=0.01") no-repeat -11px -50px;float: left;height: 45px;left: -52px;position: absolute;top: 187px;width: 107px;}*/
+.KDVKadar																					{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -531px;}
+.GunesliUrunler 																			{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat scroll 0 -830px transparent;}
+.Sinema 																				    {float:left; position:absolute; top:-28px; right:-35px; width:72px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/sinemabileti.png?v=0.01) no-repeat scroll 0 0px transparent;}
+/*gnctrkcll*/
+.gnctrkcllY03                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 0;}
+.gnctrkcllY05                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -75px;}
+.gnctrkcllY07                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -150px;}
+.gnctrkcllY10                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -225px;}
+.gnctrkcllY11                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -300px;}
+.gnctrkcllY12                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -375px;}
+.gnctrkcllY13                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -450px;}
+.gnctrkcllY14                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -525px;}
+.gnctrkcllY15                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -600px;}
+.gnctrkcllY16                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -675px;}
+.gnctrkcllY17                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -750px;}
+.gnctrkcllY20                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -825px;}
+.gnctrkcllY21                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -900px;}
+.gnctrkcllY22                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -975px;}
+.gnctrkcllY23                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1050px;}
+.gnctrkcllY24                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1125px;}
+.gnctrkcllY25                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1200px;}
+.gnctrkcllY27                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1275px;}
+.gnctrkcllY29                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1350px;}
+.gnctrkcllY30                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1425px;}
+.gnctrkcllY33                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1500px;}
+.gnctrkcllY34                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1575px;}
+.gnctrkcllY35                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1650px;}
+.gnctrkcllY36                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1725px;}
+.gnctrkcllY37                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1800px;}
+.gnctrkcllY39                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1875px;}
+.gnctrkcllY40                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1950px;}
+.gnctrkcllY44                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -2025px;}
+.gnctrkcllY50                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -2100px;}
+.gnctrkcllY54                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -2175px;}
+.gnctrkcllY56                                                                               {float:left; position:absolute; top:-35px; right:-50px; width:81px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -2250px;}
+/*gnctrkcllNEW*/
+.gnctrkcllNEW03                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 0; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW05                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -80px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW07                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -160px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW10                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -240px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW11                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -320px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW12                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -400px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW13                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -480px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW14                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -560px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW15                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -640px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW16                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -720px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW17                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -800px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW20                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -880px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW21                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -960px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW22                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1040px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW23                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1120px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW24                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1200px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW25                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1280px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW27                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1360px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW29                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1440px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW30                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1520px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW33                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1600px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW34                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1680px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW35                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1760px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW36                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1840px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW37                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -1920px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW39                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -2000px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW40                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -2080px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW44                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -2160px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW50                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -2240px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW54                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -2320px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+.gnctrkcllNEW56                                                                             {background: url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50") no-repeat 0 -2400px; float:left; height:80px; position:absolute; right:-50px; top:-5px; width:87px;}
+/**/
+.tamYerindeSmallLogo																		{width:55px; height:20px; background:url(//design.hepsiburada.net/hbv2/Design2010/Guvence/tamYerindeSmall.jpg?v0.27) no-repeat 0 0;}
+.mt11																						{margin-top: 11px !important;}
+.color008000																				{color:#008000 !important;}
+.w271																						{width:271px !important;}
+.w377																						{width:377px !important;}
+.h34																						{height:34px;}
+/**/
+.borderLftDf																				{border-left: 1px solid #DFDFDF;}
+.color666																					{color:#666;}
+.color333																					{color:#333;}
+.w980                                       												{width:980px;}
+.gadgetColoumn1                             												{padding: 0 0 0 4px; text-align:left;width: 50px;}
+.gadgetColoumn3                             												{width: 120px;}
+.gadgetColoumn4                             												{width: 50px;}
+.gadgetColoumn5                             												{width: 120px;}
+.gadgetColoumn6                             												{width: 50px;}
+.teminEdilemiyor																			{color: #FFA23E;font-size: 13pt;font-weight: bold;margin-bottom: 2px;}
+.pColumn h1																					{font-size:11px; font-weight:normal;}
+.innerBandMenu h1																			{font-size: 11px;}
+#loaderDiv																					{width:972px; height:300px; background-color:#fff; display:block; margin-left:13px;}
+.ProductImageDesc{background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/ProductImageDesc.png?v=0.03) no-repeat 0 0 transparent;top:0;color:#fff;display: block;float: left;line-height: 10px;padding: 10px 10px 9px 30px;font-weight: bold;line-height: 16px;position: absolute;width: 560px;font-size: 12px; text-align:left;z-index: 999 !important;left: -50px;}
+.vidIcn{z-index: 1; bottom:0;right:3px;width:45px; height:48px;background-image:url(//design.hepsiburada.net/hbv2/Design2010/Icn/vidIcn.png); cursor:pointer;}
+.pr360Icn{z-index: 1; bottom:0;right:48px; width:45px; height:48px;background-image:url(//design.hepsiburada.net/hbv2/Design2010/Icn/icn360v4.png); cursor:pointer;}
+/*.prPdfIcn{z-index: 1; bottom: -27px; right:-35px; width:76px; height:76px; background-image:url('//design.hepsiburada.net/hbv2/Design2010/Icn/icn2.png'); cursor:pointer;}*/
+.prPdfIcn{z-index: 1; bottom:0;right:0;width:76px;height:76px;background-image:url('//design.hepsiburada.net/hbv2/Design2010/Icn/icn3.png'); cursor:pointer;}
+/*tab*/
+.w80                                                                                        {width: 80px !important}
+.w336                                                                                       {width: 336px !important}
+.w938                                                                                       {width: 938px !important};
+#divTabContainer .ui-tabs-panel                                                             {padding:0 !important; border-width:1px; }
+#divTabContainer .ui-tabs-panel                                                             {border:1px solid #DFDFDF !important;}
+.ui-tabs                                                                                    {padding:0 !important;}
+/*Gift*/
+.jqzoom                 {margin:20px auto;}
+.V2jqZoomHolder         {width:348px;height:340px;margin:0 0 0 15px;border:1px solid #e1e1e1;}
+.V2newSeason            {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 0;z-index:1;}
+.V2nobel                {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -225px;z-index:1;}
+.V2mothersDay           {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -75px;z-index:1;}
+.V2new                  {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -150px;z-index:1;}
+.V2freeService                  {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url("//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47") no-repeat scroll 0 -1129px transparent;z-index:1;}
+.V2fener                {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -300px;z-index:1;}
+.V2vizyonda             {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -375px;z-index:1;}
+.V2yuzyil100            {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -456px;z-index:1;}
+.V2babamIcin            {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -606px;z-index:1;}
+.V2KarneyeAferin        {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat scroll 0 -755px transparent;z-index:1;}
+.V2kravat               {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -681px;z-index:1;}
+.V2geziH                {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -905px;z-index:1;}
+.V2SBurada              {float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.25) no-repeat 0 -980px;z-index:1;}
+.V2birAlanaBirBedava    {float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -1054px;z-index:1;}
+.V2editorunYorumu                  {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -1204px;z-index:1;}
+.V2hediyeli                  {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -1279px;z-index:1;}
+.V2ayniGunKargo                  {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -1354px;z-index:1;}
+.V2atasay                  {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -1429px;z-index:1;}
+.V2ucAl2Ode                  {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -1504px;z-index:1;}
+.V2ikincisiYuzdeElli                  {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -1579px;z-index:1;}
+.V2ucAl1Ode                  {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -1654px;z-index:1;}
+.V2kolDugmesi                  {float:left;position:absolute;top:-5px;right:-12px;width:81px;height:75px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -1739px;z-index:1;}
+
+/*gnctrkcll*/
+.V2gnctrkcllY03{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 0;}
+.V2gnctrkcllY05{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -75px;}
+.V2gnctrkcllY07{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -150px;}
+.V2gnctrkcllY10{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -225px;}
+.V2gnctrkcllY11{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -300px;}
+.V2gnctrkcllY12{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -375px;}
+.V2gnctrkcllY13{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -450px;}
+.V2gnctrkcllY14{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -525px;}
+.V2gnctrkcllY15{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -600px;}
+.V2gnctrkcllY16{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -675px;}
+.V2gnctrkcllY17{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -750px;}
+.V2gnctrkcllY20{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -825px;}
+.V2gnctrkcllY21{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -900px;}
+.V2gnctrkcllY22{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -975px;}
+.V2gnctrkcllY23{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1050px;}
+.V2gnctrkcllY24{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1125px;}
+.V2gnctrkcllY25{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1200px;}
+.V2gnctrkcllY27{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1275px;}
+.V2gnctrkcllY29{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1350px;}
+.V2gnctrkcllY30{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1425px;}
+.V2gnctrkcllY33{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1500px;}
+.V2gnctrkcllY34{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1575px;}
+.V2gnctrkcllY35{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1650px;}
+.V2gnctrkcllY36{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1725px;}
+.V2gnctrkcllY37{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1800px;}
+.V2gnctrkcllY39{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1875px;}
+.V2gnctrkcllY40{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -1950px;}
+.V2gnctrkcllY44{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -2025px;}
+.V2gnctrkcllY50{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -2100px;}
+.V2gnctrkcllY54{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -2175px;}
+.V2gnctrkcllY56{z-index:1;float:left; position:absolute; top:-5px; right:-12px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSize.png?v=0.50) no-repeat 0 -2250px;}
+
+.V2gnctrkcllNEW03{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 0; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW05{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -80px; float:left; height:80px; position:absolute; right:-12Px; top:-7px; width:87px;}
+.V2gnctrkcllNEW07{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -160px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW10{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -240px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW11{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -320px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW12{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -400px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW13{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -480px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW14{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -560px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW15{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -640px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW16{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -720px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW17{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -800px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW20{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -880px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW21{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -960px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW22{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1040px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW23{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1120px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW24{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1200px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW25{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1280px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW27{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1360px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW29{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1440px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW30{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1520px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW33{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1600px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW34{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1680px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW35{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1760px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW36{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1840px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW37{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -1920px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW39{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -2000px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW40{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -2080px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW44{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -2160px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW50{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -2240px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW54{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -2320px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+.V2gnctrkcllNEW56{z-index:1;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/turkcellProductsSmallSizeV2.png?v=0.50) no-repeat 0 -2400px; float:left; height:80px; position:absolute; right:-12px; top:-7px; width:87px;}
+/*icn*/
+.V2pr360Icn{background-image:url(//design.hepsiburada.net/hbv2/Design2010/Icn/icn360v4.png);cursor:pointer;height:48px;width:45px;z-index:1;}
+.V2vidIcn{background-image: url(//design.hepsiburada.net/hbv2/Design2010/Icn/vidIcn.png);bottom:-32px;cursor: pointer;height: 48px;right: -35px;width: 45px;z-index: 1;}
+.V2prPdfIcn{background-image: url(//design.hepsiburada.net/hbv2/Design2010/Icn/icn3.png);bottom:-32px;cursor: pointer;height: 76px;right: -38px;width: 76px;z-index: 1;}
+.V2KDVKadar{float:left;position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat 0 -531px;}
+.V2GunesliUrunler{float:left; position:absolute; top:-35px; right:-50px; width:81px; height:75px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/propertiesProductsSmallSize.png?v=0.47) no-repeat scroll 0 -830px transparent;}
+.V2Sinema{float:left; position:absolute; top:-28px; right:-35px; width:72px; height:72px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/sinemabileti.png?v=0.01) no-repeat scroll 0 0px transparent;}
+/* Products v1.98 */
+
+/* jcarouselCustom v23 */
+img{border:0;}
+#products_gallery #products_galleryshow								{margin:0 auto; padding:0;padding:0;}
+#products_gallery #products_nav										{overflow:hidden;height:260px;}
+#products_gallery #products_nav li									{display:inline;float:left;width:150px; height:260px; border-right:solid 1px #dfdfdf; margin-left:3px;}
+.jcarousel-container												{position:relative;}
+.jcarousel-clip														{z-index:2;padding: 0;margin: 0;overflow: hidden;position:relative;}
+.jcarousel-list														{z-index:1;overflow:hidden;position:relative;top:0;left:0;margin:0;padding:0;}
+.jcarousel-list li,.jcarousel-item									{float:left;list-style:none;width:95px;height:95px;}
+.jcarousel-next														{z-index:3;display:none;}
+.jcarousel-prev														{z-index:3;display:none;}
+.jcarousel-skin .jcarousel-container-horizontal						{width:942px;padding:0 19px;margin:0 auto;}
+.jcarousel-skin .jcarousel-container-vertical						{width:75px;height:245px;padding: 40px 20px;}
+.jcarousel-skin .jcarousel-clip-horizontal							{width:942px;height:260px;}
+.jcarousel-skin .jcarousel-clip-vertical							{width:75px;height:245px;}
+.jcarousel-skin .jcarousel-item										{width:80px;height:80px;}
+.jcarousel-skin .jcarousel-item-horizontal							{margin-right:3px;}
+.jcarousel-skin .jcarousel-item-vertical							{margin-bottom:10px;}
+.jcarousel-skin .jcarousel-item-placeholder							{background:#fff;color:#000;}
+/*Buttons*/
+.jcarousel-skin .jcarousel-next-horizontal							{position: absolute;top:120px;right:0px;width:19px;height:19px;cursor:pointer;background:transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrowMerge.jpg?v=0.01) no-repeat -19px 0;}
+.jcarousel-skin .jcarousel-next-horizontal:hover					{background:transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrowMerge.jpg?v=0.01) no-repeat -19px -19px;}
+.jcarousel-skin .jcarousel-next-horizontal:active					{background:transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrowMerge.jpg?v=0.01) no-repeat -19px 0;}
+.jcarousel-skin .jcarousel-next-disabled-horizontal,
+.jcarousel-skin .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin .jcarousel-next-disabled-horizontal:active			{cursor:default;background-position:-96px 0;}
+.jcarousel-skin .jcarousel-prev-horizontal							{position:absolute;top:120px;left:0px;width:19px;height:19px;cursor:pointer;background:transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrowMerge.jpg?v=0.01) no-repeat 0 0;}
+.jcarousel-skin .jcarousel-prev-horizontal:hover					{background:transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrowMerge.jpg?v=0.01) no-repeat 0 -19px;}
+.jcarousel-skin .jcarousel-prev-horizontal:active					{background:transparent url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/arrowMerge.jpg?v=0.01) no-repeat 0 0;}
+.jcarousel-skin .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin .jcarousel-prev-disabled-horizontal:active			{cursor:default;background-position: -96px 0;}
+.products-jcarouselLiBorder											{display:block;width:150px;height:150px;/*border:solid 1px #dfdfdf;*/ }
+/**/
+.jcarousel-skin-popupCarousel .jcarousel-container {background: #fff;}
+.jcarousel-skin-popupCarousel .jcarousel-direction-rtl {direction: rtl;}
+.jcarousel-skin-popupCarousel .jcarousel-container-horizontal {width: 245px;padding: 20px 40px;}
+.jcarousel-skin-popupCarousel .jcarousel-container-vertical {width:137px; height:340px; float:left; padding: 24px 0 24px 0;}
+.jcarousel-skin-popupCarousel .jcarousel-clip-horizontal {width:  200px; height:75px;}
+.jcarousel-skin-popupCarousel .jcarousel-clip-vertical {width:137px; height:340px;}
+.jcarousel-skin-popupCarousel .jcarousel-item {width:137px; height:170px; background-color:#f5f5f5;}
+.jcarousel-skin-popupCarousel .jcarousel-item-horizontal {margin-left:0;margin-right: 10px;}
+.jcarousel-skin-popupCarousel .jcarousel-direction-rtl .jcarousel-item-horizontal {margin-left: 10px;margin-right: 0;}
+.jcarousel-skin-popupCarousel .jcarousel-item-vertical {margin:0px;}
+.jcarousel-skin-popupCarousel .jcarousel-item-placeholder {background: #fff;color: #000;}
+/*Vertical Buttons*/
+.jcarousel-skin-popupCarousel .jcarousel-next-vertical {position: absolute;bottom:0px; left:57px; width: 19px;height: 19px;cursor: pointer; background:url(http://design.hepsiburada.net/hbv2/Design2010/MergedImages/arrowVertical.jpg?v=0.02) no-repeat -19px 0;}
+.jcarousel-skin-popupCarousel .jcarousel-next-vertical:hover {background-position: -19px -19px;}
+.jcarousel-skin-popupCarousel .jcarousel-next-vertical:active {background-position: -19px 0;}
+.jcarousel-skin-popupCarousel .jcarousel-next-disabled-vertical,
+.jcarousel-skin-popupCarousel .jcarousel-next-disabled-vertical:hover,
+.jcarousel-skin-popupCarousel .jcarousel-next-disabled-vertical:active {cursor: default; background-position: 0 -96px;}
+.jcarousel-skin-popupCarousel .jcarousel-prev-vertical {position: absolute;top:0px; left:57px; width:19px; height:19px; cursor: pointer; background:url(http://design.hepsiburada.net/hbv2/Design2010/MergedImages/arrowVertical.jpg?v=0.02) no-repeat 0 0;}
+.jcarousel-skin-popupCarousel .jcarousel-prev-vertical:hover {background-position: 0 -19px;}
+.jcarousel-skin-popupCarousel .jcarousel-prev-vertical:active {background-position: 0 -19px;}
+.jcarousel-skin-popupCarousel .jcarousel-prev-disabled-vertical,
+.jcarousel-skin-popupCarousel .jcarousel-prev-disabled-vertical:hover,
+.jcarousel-skin-popupCarousel .jcarousel-prev-disabled-vertical:active {cursor: default;background-position: 0 -96px;}
+/**/
+.w135               																		{width:135px;}
+.w130               																		{width:130px;}
+.w137               																		{width:137px;}
+.w200               																		{width:200px;}
+.h300               																		{height:300px;}
+.h135               																		{height:135px;}
+.h137               																		{height:137px;}
+.h60                																		{height:60px;}
+.colorVersion2      																		{color: #FFA23E !important;}
+.borderDF           																		{border:1px solid #dfdfdf;}
+.borderRgtDf																				{border-right:1px solid #dfdfdf;}
+.bBottomNone																				{border-bottom:none !important;}
+.colorBgdf																					{background-color:#dfdfdf;}
+.tc																							{text-align:center;}
+.fnone																						{float:none !important; }
+.font11																						{font-size:11px !important;}
+.colorV4																					{color:Maroon !important;}
+.colorWhite																					{color:#fff !important;}
+.colorF7F6F4																				{background-color:#F7F6F4;}
+.fontVrd																					{font-family:Verdana !important; }
+.font10pt																					{font-size:10pt !important; }
+.colorV2																					{color:#ffa23e;}
+.fsize12																					{font-size:12px !important;}
+.fleft																						{float:left;}
+.clearfix:after																				{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.mAuto																						{margin:0 auto !important;}
+.NAtextBLink a																				{font-size:12px; text-decoration:none; color:#333;}
+.NAtextBLink a:hover																		{font-size:12px; text-decoration:underline; color:#333;}
+.mt5																						{margin-top: 5px;}
+.ml5																						{margin-left: 5px !important;}
+.ml20																						{margin-left: 20px !important;}
+.mb10																						{margin-bottom: 10px;}
+.mt10																						{margin-top: 10px !important;}
+.w200																						{width: 200px;}
+.w137																						{width: 137px;}
+.bgColorccc         																		{background-color:#f5f5f5;}
+.strong             																		{font-weight:bold;}
+.font11																						{font-size:11px !important;}
+
+/* jcarouselCustom v23 */
+
+/* zoomGallerySkinProduct v0.03 */
+
+.jcarousel-skin-productZoomGallery .jcarousel-container-horizontal												{width:542px; padding:0 29px; /*margin-left:9px;*/ position: relative;}
+.jcarousel-skin-productZoomGallery .jcarousel-clip-horizontal													{width:542px;height:82px; z-index: 2;padding: 0;margin: 0;overflow: hidden;position: relative;}
+.jcarousel-skin-productZoomGallery .jcarousel-item																{width:95px;height: 95px; float: left;list-style: none;width: 95px;height: 95px;}
+.jcarousel-skin-productZoomGallery .jcarousel-item-horizontal													{margin-right: 10px;}
+.jcarousel-skin-productZoomGallery .jcarousel-item-placeholder													{background: #fff;color: #000;}
+/*next-prew*/
+.jcarousel-skin-productZoomGallery .jcarousel-next-horizontal													{position:absolute; width:23px; height:25px; right:0; top:25px !important; background: url("//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButton.png") no-repeat -3px -30px;}
+.jcarousel-skin-productZoomGallery .jcarousel-next-horizontal:hover												{background:url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButton.png) no-repeat -35px -30px;}
+.jcarousel-skin-productZoomGallery .jcarousel-next-horizontal:active											{background:url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButton.png) no-repeat -67px -30px;}
+.jcarousel-skin-productZoomGallery .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-productZoomGallery .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-productZoomGallery .jcarousel-next-disabled-horizontal:active									{cursor: default;background-position:-99px -30px;}
+.jcarousel-skin-productZoomGallery .jcarousel-prev-horizontal													{position:absolute; width:23px; height:25px; left:0; top:25px !important; background: url("//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButton.png") no-repeat -3px -3px;}
+.jcarousel-skin-productZoomGallery .jcarousel-prev-horizontal:hover												{background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButton.png) no-repeat -35px -3px;}
+.jcarousel-skin-productZoomGallery .jcarousel-prev-horizontal:active											{background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButton.png) no-repeat -67px -3px;}
+.jcarousel-skin-productZoomGallery .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-productZoomGallery .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-productZoomGallery .jcarousel-prev-disabled-horizontal:active									{cursor: default;background-position: -99px -3px;}
+.jcarousel-skin-productZoomGallery .jcarousel-list																{z-index: 1;overflow: hidden;position: relative;top: 0;left: 0;margin: 0;padding: 0;}
+.jcarousel-skin-productZoomGallery .jcarousel-next																{z-index: 3;display: none;}
+.jcarousel-skin-productZoomGallery .jcarousel-prev																{z-index: 3;display: none;}
+/*static*/
+#thmbZoomGallery																								{overflow:hidden;width:960px; height:95px;}
+#thmbZoomGallery li																								{display:inline; float:left;width:82px; height:82px; background-color:#dfdfdf; position:relative;}
+#thmbZoomGallery li a																							{display:block;}
+.bigRotatorZoomGallery																							{width:500px; height:500px; float:left; overflow:hidden;}
+.bigRotatorZoomGallery a																						{position:absolute; z-index:inherit; top:0; left:0; width:500px; height:500px;}
+.h500																											{height:500px;}
+.w500																											{width:500px;}
+.h82																											{height:82px !important;}
+.ml50																											{margin-left:50px;}
+
+/* zoomGallerySkinProduct v0.03 */
+
+/* comment v2.43 */
+.YorumInnerContainer  .main								{margin: 0 20px;padding: 0;width: 960px;text-align: left;}
+.leftcolumn												{width:648px; display:block; float:left;background:url("//design.hepsiburada.net/hbv2/Design2010/Comment/comment_merged.png?v=0.13") repeat-x scroll 0 0 #F9F9F9;margin: 20px 13px 20px 0;border: 1px solid #F0F0F0;padding:15px;}
+.leftcolumn #best, .leftcolumn #worst					{display: block;float: left;width: 648px;margin-top: 5px;}
+.singlecolumn #week										{width: 925px !important;margin-top: 0 !important;}
+.leftcolumn #week										{background: none repeat scroll 0 0 white;border-left: 1px solid #F0F0F0;border-right: 1px solid #F0F0F0;border-top:1px solid #F0F0F0;padding-right: 13px;padding-top: 10px;display: block;float: left;width: 633px;margin-top: 0px !important;}
+.rightcolumn #week2										{background: none repeat scroll 0 0 white;border-left: 1px solid #F0F0F0;border-right: 1px solid #F0F0F0;border-top:1px solid #F0F0F0;padding-right: 13px;padding-top: 10px;display: block;float: left;width: 220px;margin-top: 0px !important;}
+.leftcolumn #week .rating								{float: right;font-size: 12px;font-weight: bold;margin-top: 5px;margin-right: 10px;}
+.leftcolumn #week .rating .txt							{float: left;line-height: 18px;}
+.leftcolumn #week .rating img							{float: left;}
+.leftcolumn .header										{font-size:12px;width:613px;display:block; float:left;background:url("//design.hepsiburada.net/hbv2/Design2010/Comment/comment_cloud.png") no-repeat scroll 0 0 transparent;color:#ffa23e;height: 30px;line-height: 24px;padding-left: 35px;font-weight:bold;font-size: 14px;text-align:left;}
+.leftcolumn #week .header								{height:auto !important;width: 315px !important;font-size: 16px;}
+.leftcolumn #week .header a								{font-size: 16px;}
+.leftcolumn #best .header								{background:url("//design.hepsiburada.net/hbv2/Design2010/Comment/comment_cloudp3.png?V=0.04") no-repeat scroll 0 0 transparent;}
+.leftcolumn #worst .header								{background:url("//design.hepsiburada.net/hbv2/Design2010/Comment/comment_cloud3.png?V=0.02") no-repeat scroll 0 0 transparent;}
+.leftcolumn .worst2 .header								{background:url("//design.hepsiburada.net/hbv2/Design2010/Comment/comment_cloud2.png?V=0.03") no-repeat scroll 0 0 transparent !important;}
+.rightcolumn .header									{font-size:12px; width:220px !important;background: url("//design.hepsiburada.net/hbv2/Design2010/Comment/comment_cloud.png") no-repeat scroll 0 0 transparent;color: #FFA23E;display: block;float: left;font-weight: bold;height: 30px;line-height: 24px;padding-left: 35px;}
+.rightcolumn .header img								{border:0;width:62px;height:13px;}
+.leftcolumn .box_week, .leftcolumn .box					{background:#fff;border-top: 1px solid #F0F0F0;border-right: 1px solid #F0F0F0;border-left: 1px solid #F0F0F0;width:646px;display:block; float:left;}
+.rightcolumn .box										{background:#fff;border-top: 1px solid #F0F0F0;border-right: 1px solid #F0F0F0;border-left: 1px solid #F0F0F0;width:233px;display:block; float:left;}
+.box_week .rating										{float:left;text-align:right;display:block; width:620px;margin:10px 13px 5px 13px;}
+.box_week .bottom, .box .bottom, #week 
+.bottom,	#week2 .bottom								{float:left;display:block; width:646px;height:3px;background:url("//design.hepsiburada.net/hbv2/Design2010/Comment/box_bottom.png") no-repeat scroll 0 0 transparent;margin-top: 10px;}
+.rightcolumn  .box .bottom, 
+.rightcolumn  #week2 .bottom							{width:233px;background:url("//design.hepsiburada.net/hbv2/Design2010/Comment/box_bottomr.png") no-repeat scroll 0 0 transparent;}
+#YorumEnIyi .comment_rpt, #YorumEnKotu 
+.comment_rpt, #week .comment_rpt						{display: block;float: left;width: 646px !important;font-size:11px;border-bottom: 1px dotted #DFDFDF;}
+#comment940 .comment_rpt								{display: block;float: left;width: 938px;font-size:11px;border-bottom: 1px dotted #DFDFDF;}
+.commentall .comment_rpt								{display: block;float: left;width: 938px;font-size:11px;border-bottom: 1px dotted #DFDFDF;}
+#YorumSonSag .comment_rpt								{display: block;float: left;border-bottom: 1px dotted #DFDFDF;}
+.leftcolumn .comment_header								{display: block;float: left;width: 620px;margin:13px 13px 0px;}
+.rightcolumn .comment_header							{display: block;float: left;width: 217px;margin:8px 8px 0px;}
+.comment_header .txt									{float:left;font-size:11px;font-weight:bold;}
+.comment_header .rating									{float:right;padding: 5px 0;}
+.comment_header .rating .txt							{font-size: 12px;font-weight:normal;float: left;line-height: 14px;margin-right: 5px;}
+.comment_header .rating .star							{border:0;width:16px;height:15px;float: left;}
+.comment												{font-size:11px;}
+.leftcolumn  .comment_snd, .leftcolumn  .comment_txt, 
+.leftcolumn  .truefalse									{float: left;margin:0 13px 0;width: 620px;font-size: 12px;}
+.rightcolumn  .comment_snd, .rightcolumn  
+.comment_txt, .rightcolumn  .truefalse					{float: left;width: 217px;margin:5px 8px ;font-size: 12px !important;}
+.comment_snd .title										{color:#333;font-weight:bold;}
+.truefalse .btn, .truefalse .txt						{float:left;display:block;}
+.truefalse .btn img										{border:0;width:46px;height:22px;float:left;display:block;margin-right: 7px;}
+.leftcolumn .truefalse .txt								{line-height: 18px;margin-right: 15px;}
+.rightcolumn .truefalse .txt							{margin-bottom: 7px;}
+.leftcolumn .comment_conc								{width:620px;color:#bbb;margin:0 13px 10px;border-bottom:1px dotted #999;padding-bottom: 15px;display: block;float: left;}
+.rightcolumn .comment_conc								{width:217px;color:#bbb;margin:5px 8px;border-bottom:1px dotted #999;padding-bottom: 15px;display: block;float: left;}
+.comment_conc .yesno									{display: block;float: left;width: 35px;}
+.comment_conc .number									{display: block;float: left;width: 40px;}
+.comment_conc .true, .comment_conc .false				{height: 20px;}
+.rightcolumn											{width:235px; display:block; float:left;background:url("//design.hepsiburada.net/hbv2/Design2010/Comment/comment_merged.png?v=0.13") repeat-x scroll 0 0 #F9F9F9;margin: 20px 0;border: 1px solid #F0F0F0;padding:15px;}
+.singlecolumn .box_week, .singlecolumn .box				{width:938px !important;}
+.singlecolumn .header									{width: 780px !important;}
+.singlecolumn .header img								{margin-top: 5px !important;}
+.singlecolumn .box_week .rating							{width:912px !important;font-size:12px;}
+.singlecolumn .commentContentBox						{width:360px !important;margin-bottom: 15px;}
+.singlecolumn .commentBoxTile							{width:335px !important;padding-top: 4px;}
+.singlecolumn .bottom									{width:938px !important;background: url("//design.hepsiburada.net/hbv2/Design2010/Comment/box_bottoms.png") no-repeat scroll 0 0 #f0f0f0 !important;}
+.singlecolumn .comment_header, .singlecolumn 
+.comment_snd, .singlecolumn .comment_txt, 
+.singlecolumn .truefalse, .singlecolumn 
+.comment_conc											{width:913px !important;}
+#comment940												{width:940px;float:left; display:block;margin-top: 5px;}
+.commentBoxTile .txt									{font-size:11px;}
+.commentBoxTile .even									{background:#fafafa;border-top:1px solid #E5E5E5;border-bottom:1px solid #F6F6F6;}
+.commentBoxTile .odd									{border-top:1px solid #E5E5E5;}
+.commentBoxTile .odd, .commentBoxTile .even				{padding:2px 7px;}
+.w960													{width:960px;}
+.commentContentBoxTop a:hover							{color: #F9A13A !important;text-decoration: none !important;}
+/*///////////////////POP-UP///////////////////////*/
+#pop_main												{width:940px; margin:0;padding:15px;font-size:11px;}
+#pop_main .leftcolumn									{width:344px;border:1px solid #ebe9e9;background:#F9F9F9;display:block; float:left;margin:15px;padding:12px;height: 415px;}
+#pop_main .rightcolumn									{width:444px;border:1px solid #ebe9e9;background:#F9F9F9;display:block; float:left;margin:15px 15px 15px 0;padding:12px 12px 12px 22px;height: 415px;}
+#pop_main .alarm .leftcolumn							{width:344px;border:1px solid #ebe9e9;background:#F9F9F9;display:block; float:left;margin:15px;padding:12px; height:375px;}
+#pop_main .alarm .rightcolumn							{width:444px;border:1px solid #ebe9e9;background:#F9F9F9;display:block; float:left;margin:15px 15px 15px 0;padding:12px 12px 12px 22px;height:375px;}
+#pop_main .addpicture .leftcolumn						{width:344px;border:1px solid #ebe9e9;background:#F9F9F9;display:block; float:left;margin:0 0 0 20px;padding:12px;height: 580px;}
+#pop_main .addpicture .rightcolumn						{width:444px;border:1px solid #ebe9e9;background:#F9F9F9;display:block; float:left;margin:0 0 0 20px;padding:12px 12px 12px 22px;height: 580px;}
+#pop_main .recommend									{width:332px;border:1px solid #ebe9e9;background:#F9F9F9;display:block; float:left;margin:15px;padding:12px 12px 12px 22px;}
+#pop_main .font12										{font-size:12px;}
+#pop_main .cOrange										{color:#ffa23e;}
+#pop_main .leftcolumn a:hover, 
+#pop_main .recommend a:hover							{text-decoration:underline;}
+#pop_main a												{color:#A36017;}
+#pop_main .underL										{text-decoration:underline;}
+#pop_main .txt											{display:block;float:left;margin-bottom: 5px;}
+#pop_main .btn											{float:left;display:block;width:410px;padding:10px 0;}
+#pop_main .btn img										{border:0;width:46px;height:22px;float:left;display:block;margin-right: 7px;}
+#pop_main .btn_snd										{float:left;display:block;width:354px;padding:10px 0;}
+#pop_main .btn_snd img									{border:0;width:82px;height:31px;float:left;display:block;margin-right: 10px;}
+#pop_main .inputCont									{margin-bottom: 10px;}
+#pop_main .inputCont input								{width:403px !important;}
+#pop_main .inputCont textarea							{width:400px;height: 115px;}
+#pop_main .notification									{width:18px;height: 14px;background: url("//design.hepsiburada.net/hbv2/Design2010/Comment/check.png") no-repeat scroll 0 0 #f0f0f0;}
+#pop_main .notification2								{width:14px;height: 14px;background: url("//design.hepsiburada.net/hbv2/Design2010/Comment/stop.png") no-repeat scroll 0 0 #f0f0f0;}
+#pop_main .recommend .Button03							{margin-bottom: 7px;}
+#pop_main .recommend .Button03 a.link-button-trans span	{color:#fff;}
+#pop_main .recommend .Button03 a.link-button-trans		{float:right !important;}
+/**/
+ul.switchersubTabs1                            			{float:left; width:auto;}
+ul.switchersubTabs1 li                                 	{float:left; height:30px; padding-left:15px;width:138px; background:url(//design.hepsiburada.net/hbv2/Design2010/Tab/switcherTabs_left.gif) no-repeat top left; font-family:Tahoma; font-size:12px;}
+ul.switchersubTabs1 li a                                {text-align:center; background-position:top right; outline:none; background:url(//design.hepsiburada.net/hbv2/Design2010/Tab/switcherTabs_right.gif) no-repeat top right; padding:6px 12px 6px 0px; display:block;  text-decoration:none; color:#666666;}
+ul.switchersubTabs1 li a:hover                          {text-decoration:underline;}
+ul.switchersubTabs1 li.selected                         {width:144px; background-image:url(//design.hepsiburada.net/hbv2/Design2010/Tab/switcherTabs_left.gif); text-align:center;}
+ul.switchersubTabs1 li.selected a                       {color:#f9a13a; background-image:url(//design.hepsiburada.net/hbv2/Design2010/Tab/switcherTabs_right.gif); text-align:center;}
+/**/
+.commentBoxLeft											{float:left; width:10px; height:116px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -85px -454px;}
+.commentBoxTile											{float:left; width:445px; height:116px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerGlobalTile.gif?v=2.20) repeat-x 0 -1754px;}
+.commentBoxTile .odd img, .commentBoxTile .even img		{float:left;}
+.commentBoxTile .yuzdeBarContainer						{ margin: 2px 10px 0 !important;}
+.commentBoxRight										{float:left; width:10px; height:116px; background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -98px -454px;}
+.commentContentBox										{width:621px; margin: 0 0 1px; float:left;}
+.commentContentBoxTop									{border-bottom:solid 1px #dfdfdf; float:left;float:left; position:relative;}
+div.commentInnerContent									{float:left; height:auto;margin:15px 0 0px 0px;}
+ul, ol													{list-style:none;margin:0; padding:0;}
+.colorf9a13a											{color:#f9a13a;}
+/*///////////////////ALL///////////////////////*/
+.singlecolumn											{width:940px !important;}
+.singlecolumn .header span								{width:150px; font-size:16px;}
+.singlecolumn .header .innerBandMenu					{float:right;display: block;width: 800px;}
+.singlecolumn .header .innerBandMenu ul					{float:right;display: block;width: 800px;}
+.singlecolumn .header .innerBandMenu ul li				{float:right;display: block;margin-left:10px;}
+.w972													{width:972px;}
+.w940													{width:940px;}
+/**/
+.leftcolumnSingle										{background: url("//design.hepsiburada.net/hbv2/Design2010/Comment/comment_merged.png?v=0.13") repeat-x scroll 0 0 #F9F9F9;border: 1px solid #F0F0F0;display: block;margin: 0 auto;padding: 15px;}
+.singlecolumn .box #pnlYorumSonSolAlt					{display: block;float: left;}
+.rightcolumn  .box .bottomviewall						{display: block;float: left;font-size: 12px;font-weight: bold;padding-right: 8px;text-align: right;width: 225px;}
+.singlecolumn .box .bottomviewall						{display: block;float: left;font-size: 12px;font-weight: bold;padding-right: 13px;text-align: right;width: 925px;}
+.bottomviewall a										{color:#FFA23E;}
+.box .bottomviewall a:hover								{text-decoration:underline;}
+.pnlyesno												{width:250px !important;}
+/*.pnlyesno a.link-button-trans span					{width: 70px;}			
+.pnlyesno a.link-button-trans 							{padding-left: 2px;}	*/		
+.truefalse iframe										{width:460px !important;}
+#pnlButtons												{margin-top:5px;}
+#pnlButtons .pnlQuest									{font-family: Arial;font-size: 11px;margin-top: 3px;width: 230px !important;}
+#comment940 .innerBandMenuBp li 						{margin: 0 10px 0 0 !important;}
+#comment940 .innerBandMenuBp ul 						{padding: 5px 0 0 5px !important;}
+#comment940 .pagerRight 								{margin-right: 20 !important;   margin-top:13px !important;}
+.commentall .innerBandMenu								{width:530px;margin-bottom: 5px;}
+.commentimg 											{border: 1px solid #dfdfdf;float: left;margin: 15px 15px 0 15px;}
+a.commentimg:hover										{border: 1px solid #ffa23e;}
+.even .txt span, .odd .txt span							{color:#FFA23E;text-decoration:underline;width: 53px; display: block; float:left; width:80px;}
+/**/
+.allCommentsIcn											{float:left; width:23px !important; height:24px !important; background: url("//design.hepsiburada.net/hbv2/Design2010/Comment/comment_cloud02.png") no-repeat 6px 3px !important;}
+.allCommentsTxt01										{font-size:12px; color:#ffa23e; font-weight:bold;}
+.allCommentsTxt02										{font-size:12px; color:#aaa9a9; font-weight:bold;}						
+.allCommentsTxt03										{font-size:11px; color:#aaa9a9; font-weight:normal !important;}
+/**/
+.even													{width:570px; height:29px; background-color:#efefef; border-top:1px solid #dfdfdf; border-bottom:1px solid #dfdfdf;}
+.odd													{width:570px; height:29px; background-color:#fff;}
+.Button03 a.link-button-trans							{background-position:0px -178px;height:24px;line-height:24px;margin:0px;padding-left:6px;display:block;float:left; text-decoration:none;cursor: pointer;}
+.Button03 a.link-button-trans span						{float:left;background-position:right -178px;padding:0 10px 0 5px;font-weight:bold;color:#333}
+.Button03 a.link-button-trans:hover						{background-position:0px -202px;text-decoration:none}
+.Button03 a.link-button-trans:hover span				{background-position:right -202px;color:#666}
+.Button03 .sprite img									{border:0;height: 14px;padding: 5px 0;width: 78px;}
+
+/*rooter*/
+.rooterContainer										{float:left;width:800px;height:37px;}
+.rooterItemLeft											{float:left;width:10px;height:37px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -205px -75px;}
+.rooterItemTile											{float:left;width:780px;height:37px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerGlobalTile.gif?v=2.20) repeat-x 0px -859px;}
+.rooterItemRight										{float:left;width:10px;height:37px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -219px -75px;}
+.innerBandMenu											{float:left; width:797px;height:auto;/*31072013border-right: 1px solid #EFFFFF;*/padding-right: 10px;}
+.innerBandMenu ul										{float:left; list-style-type:none;padding:0;margin:3px 0 0 -10px;}
+.innerBandMenu li										{float:left; display:inline;padding:0 0 0 15px;margin:0 0 0 12px;background:url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/InnerContentItem.png?v=0.01) no-repeat -261px -75px;}
+.innerBandMenu li a										{font-weight:bold;text-decoration:none;color:#666666;}
+.innerBandMenu li a:hover								{font-weight:bold;text-decoration:underline;}
+.innerBandMenu h1										{font-size:11px;}
+/*new rooter*/
+.w778                                               	{width:778px;}
+.w750                                               	{width:750px;}
+.w735                                               	{width:735px;}
+.h18                                                	{height:18px;}
+.h14                                                	{height:14px;}
+.h11                                                	{height:11px;}
+.font14                                             	{font-size:14px;}
+.mt13                                               	{margin-top:13px;}
+.listICN01                                          	{float:left; width:11px; height:11px; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/departIcn.gif?v=0.09') no-repeat 0 -268px;}
+.listICN02                                          	{float:left; width:11px; height:11px; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/departIcn.gif?v=0.09') no-repeat 0 -284px;}
+.listICN03                                          	{float:left; width:11px; height:11px; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/departIcn.gif?v=0.09') no-repeat 0 -300px;}
+.innerBandMenuBp li                                 	{background:none; margin:0 0 0 10px; padding:0;}
+.innerBandMenuBp li a                               	{background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/departIcn.gif?v=0.09') no-repeat 0 -311px; padding:0 0 0 15px;line-height:13px;float:left;}
+.innerBandMenuBp li a:hover                         	{color:#ffa23e; text-decoration:none; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/departIcn.gif?v=0.09') no-repeat 0 -334px;}
+/*pager*/
+.sprite-pager                                       	{background:transparent url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/pagerMerge.png?v=0.01') no-repeat top left; float:left;}
+a.link-button-pager                                 	{background-position:0px 0px; height:20px;line-height:20px; margin:0px; padding-left:6px;display:block;float:left; text-decoration:none;}
+a.link-button-pager span                            	{float:left;background-position:right 0px;padding:0 6px 0 0;color:#333; font-size:11px; height:20px;}
+a.link-button-pager:hover                           	{background-position:0px -20px;text-decoration:none}
+a.link-button-pager:hover span                      	{background-position:right -20px;color:#ffa23e}
+a.link-button-pager .pagerFirst                     	{/*width:6px;*/ height:7px; margin:6px 0; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/pagerIconMerged.png?v=0.01') no-repeat 0 0;}
+a.link-button-pager :hover .pagerFirst              	{background-position:0px -12px;}
+a.link-button-pager .pagerLast                      	{/*width:6px;*/ height:7px; margin:6px 0; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/pagerIconMerged.png?v=0.01') no-repeat -32px 0;}
+a.link-button-pager :hover .pagerLast               	{background-position:-32px -12px;}
+a.link-button-pager .pagerNext                      	{/*width:6px;*/ height:7px; margin:6px 0; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/pagerIconMerged.png?v=0.01') no-repeat -12px 0;}
+a.link-button-pager :hover .pagerNext               	{background-position:-12px -12px;}
+a.link-button-pager .pagerPrew                      	{/*width:6px;*/ height:7px; margin:6px 0; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/pagerIconMerged.png?v=0.01') no-repeat -22px 0;}
+a.link-button-pager :hover .pagerPrew               	{background-position:-22px -12px;}
+.PagerTxtPrNx                                       	{line-height:12px; float:left; margin:3px 3px;}
+.PagerTxt                                           	{line-height:12px; float:left; margin:3px 0;}
+/*Yellow*/
+a.link-button-pager-yellow                          	{background-position:0px -40px; height:20px;line-height:20px; margin:0px; padding-left:6px;display:block;float:left; text-decoration:none;}
+a.link-button-pager-yellow span                     	{float:left;background-position:right -40px;padding:0 6px 0 0;color:#333; font-size:11px; height:20px;}
+a.link-button-pager-yellow:hover                    	{background-position:0px -60px;text-decoration:none}
+a.link-button-pager-yellow:hover span               	{background-position:right -60px;color:#ffa23e}
+a.link-button-pager-yellow .pagerFirst              	{/*width:6px;*/ height:7px; margin:6px 0; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/pagerIconMerged.png?v=0.01') no-repeat 0 0;}
+a.link-button-pager-yellow :hover .pagerFirst       	{background-position:0px -12px;}
+a.link-button-pager-yellow .pagerLast               	{/*width:6px;*/ height:7px; margin:6px 0; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/pagerIconMerged.png?v=0.01') no-repeat -32px 0;}
+a.link-button-pager-yellow :hover .pagerLast        	{background-position:-32px -12px;}
+a.link-button-pager-yellow .pagerNext               	{/*width:6px;*/ height:7px; margin:6px 0; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/pagerIconMerged.png?v=0.01') no-repeat -12px 0;}
+a.link-button-pager-yellow :hover .pagerNext        	{background-position:-12px -12px;}
+a.link-button-pager-yellow .pagerPrew               	{/*width:6px;*/ height:7px; margin:6px 0; background:url('//design.hepsiburada.net/hbv2/Design2010/MergedImages/pagerIconMerged.png?v=0.01') no-repeat -22px 0;}
+a.link-button-pager-yellow :hover .pagerPrew        	{background-position:-22px -12px;}
+.ml15													{margin-left:15px !important;}
+.font18													{font-size: 18px !important;}
+.mb5													{margin-bottom: 5px;}
+.pagerRight												{margin: 0 20px 0 0;width: auto;}
+.font12													{font-size: 12px !important;}
+.ml10													{margin-left: 10px !important;}
+.commentall .comment_txt								{font-size:11px;}
+.commentcount											{color: #AAAAAA !important;float: right !important;text-decoration: none !important;}
+#pnlYorumEnIyi .comment_header							{padding-left: 20px;width: 600px;background: url("//design.hepsiburada.net/hbv2/Design2010/Comment/thmb_green.png?V=0.01") no-repeat scroll 0 0 transparent;}
+#YorumEnKotu .comment_header							{padding-left: 20px;width: 600px;background: url("//design.hepsiburada.net/hbv2/Design2010/Comment/thmb_red.png?V=0.01") no-repeat scroll 0 0 transparent;}
+.commentScore 											{border: 1px solid #DFDFDF;color: #444444;display: block;float: left;font-size: 32px;height: 77px;line-height: 35px;margin: 15px 15px 0;padding: 38px 25px 35px;text-align: center;width: 100px;}
+.colorV4												{color: Maroon !important;}
+.mt11													{margin-top: 11px !important;}
+.colorV2												{color: #FFA23E;}
+.lblTeslimatIadeLnk{font-weight: bold; float: left; display: block; font-size: 12px; padding: 10px 0px;}
+.variantTableLnk{float: left;font-size: 10px;line-height: 22px;margin-left: 8px;}
+
+/* comment v2.43 */
+
+/* productSmallCarouselSkin v0.75 */
+/**/
+#productGallerySmall .jcarousel-container										{position: relative;}
+#productGallerySmall .jcarousel-clip											{z-index: 2;padding: 0;margin: 0;overflow: hidden;position: relative;}
+#productGallerySmall .jcarousel-list											{z-index: 1;overflow: hidden;position: relative;top: 0;left: 0;margin: 0;padding: 0;}
+#productGallerySmall .jcarousel-list li, .jcarousel-item						{float: left;list-style: none; width: 95px; height:115px;}
+#productGallerySmall .jcarousel-next											{z-index: 3;display: none;}
+#productGallerySmall .jcarousel-prev											{z-index: 3;display: none;}
+/**/
+.jcarousel-skin-tangoProductSmall .jcarousel-container							{}
+.jcarousel-skin-tangoProductSmall .jcarousel-container-horizontal				{width:368px;padding: 10px 25px; margin:0 auto;}
+.jcarousel-skin-tangoProductSmall .jcarousel-container-vertical					{width:75px;height: 245px;padding: 40px 20px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-clip-horizontal					{width:368px;height:115px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-clip-vertical						{width:75px;height: 245px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-item								{width:95px;height:115px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-item-horizontal					{margin-right: 10px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-item-vertical						{margin-bottom: 10px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-item-placeholder					{background: #fff;color: #000;}
+/*Horizontal Buttons*/
+.jcarousel-skin-tangoProductSmall .jcarousel-next-horizontal					{position:absolute; width:23px; height:25px; right:0; top:40px !important; background: url("//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButtonV2.jpg?v=0.01") no-repeat -3px -30px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-next-horizontal:hover				{background:url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButtonV2.jpg?v=0.01) no-repeat -35px -30px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-next-horizontal:active				{background:url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButtonV2.jpg?v=0.01) no-repeat -67px -30px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-tangoProductSmall .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-tangoProductSmall .jcarousel-next-disabled-horizontal:active	{cursor: default;background-position:-99px -30px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-prev-horizontal					{position:absolute; width:23px; height:25px; left:0; top:40px !important; background: url("//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButtonV2.jpg?v=0.01") no-repeat -3px -3px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-prev-horizontal:hover				{background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButtonV2.jpg?v=0.01) no-repeat -35px -3px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-prev-horizontal:active				{background: transparent url(//design.hepsiburada.com/hbv2/Design2010/MergedImages/smallRotarorButtonV2.jpg?v=0.01) no-repeat -67px -3px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-tangoProductSmall .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-tangoProductSmall .jcarousel-prev-disabled-horizontal:active	{cursor: default;background-position: -99px -3px;}
+.jcarousel-skin-tangoProductSmall .jcarousel-list								{z-index: 1;overflow: hidden;position: relative;top: 0;left: 0;margin: 0;padding: 0;}
+.jcarousel-skin-tangoProductSmall .jcarousel-next								{z-index: 3;display: none;}
+.jcarousel-skin-tangoProductSmall .jcarousel-prev								{z-index: 3;display: none;}
+/**/
+#productGallerySmall .content													{margin:0 auto; padding:0 0 20px 0;/*22072013width:305px;*/width:auto;}
+#productGallerySmall #galleryshow												{padding:35px 0 0 0;}
+#productGallerySmall #theshow img												{display: block;}
+#productGallerySmall #pictures_nav												{overflow:hidden;width:368px; height:115px;}
+#productGallerySmall #pictures_nav li											{display:inline; float:left;width:82px;}
+#productGallerySmall #pictures_nav li a											{border:1px solid #dfdfdf;}
+.w418																			{width:418px !important;}
+.mt7																			{margin-top:7px;}
+.mb7																			{margin-bottom:7px;}
+.borderTopBB																	{border-top: 1px dotted #DFDFDF; border-bottom: 1px dotted #DFDFDF;}
+.h135																			{height:135px;}
+.h100																			{height:100px;}
+/* productSmallCarouselSkin v0.75 */
+
+/* PREVIOUS-NEXT BUTTONS */
+.divPrevNext{float: right; font-weight: bold; border-left: 1px solid #DDDDDD;}
+.PreviousProduct{cursor:pointer;float: left; display: block; color: #666; padding: 5px 0px 5px 7px;}
+.NextProduct{cursor:pointer;float: left; display: block; padding: 5px 0px 5px 7px; color: #666;}
+.PreviousProduct:hover{color:#FFA23E;}
+.NextProduct:hover{color: #FFA23E;}
+.PreviousProductIcn{display: block; float: left; height: 13px; background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/carouselArrowNw.png) no-repeat scroll -25px -2px transparent; width: 9px;}
+.NextProductIcn{display: block; height: 13px; width: 9px; float: right; background: url(//design.hepsiburada.net/hbv2/Design2010/MergedImages/carouselArrowNw.png) no-repeat scroll -4px -2px transparent;}
+/* PREVIOUS-NEXT BUTTONS */

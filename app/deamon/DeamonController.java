@@ -118,7 +118,15 @@ public class DeamonController
 	  
 	  
 	  
+<<<<<<< HEAD
 	  /***************Deprecated code here*************
+=======
+<<<<<<< HEAD
+	  /**************Deprecated code here*************
+=======
+	  /***************Deprecated code here*************
+>>>>>>> 51b6fb6b43d6ed7700708953ba6ac903f5fc4214
+>>>>>>> 943cc4d9add0482f7825990ba89dd5a8850a64c0
 	  
 		public void singularDeamon()
 		{

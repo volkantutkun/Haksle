@@ -1,0 +1,162 @@
+﻿.textBox , .textArea
+{
+	background-position: bottom;
+	font-family: Arial;
+	font-size: 11px;
+	border: solid 1px silver;
+	width: 100%;
+	padding: 2px;
+	background-image: url('/Images/textBackGround.png');
+	background-repeat: repeat-x;
+}
+
+.textArea
+{
+	background-image: url('/Images/textAreaBackGround.png');
+}
+
+.gText
+{
+	font-family: Arial;
+	font-size: 11px;
+	line-height:13px;
+}
+
+.sText
+{
+	font-family: Arial;
+	font-size: 9px;
+	color:#777777
+}
+
+
+A.gText
+{
+	font-family: Arial;
+	font-size: 11px;
+	line-height:13px;
+	text-decoration:none;
+	color : #333399;
+}
+
+A.gText : Hover
+{
+	font-family: Arial;
+	font-size: 11px;
+	line-height:13px;
+	color : Maroon;
+}
+
+.bText
+{
+	font-family: Arial;
+	font-size: 11px;
+	line-height:13px;
+	font-weight:bold;
+}
+
+div.closeButton
+{
+	position:relative;
+	float:right;
+	right:0px;
+	top:0px;
+	cursor:pointer;
+	color:Silver;
+	font-family: Arial;
+	font-size: 11px;
+	line-height:13px;
+}
+
+.grBackgrounded, div.messageBox , .error , .topicHeader
+{
+	background-image:url(/Images/textBackground.png);
+	background-repeat : repeat-x;
+	background-position :bottom;
+}
+
+.grBackgroundedTop
+{
+	background-position:top;
+	background-repeat:repeat-x;
+	background-image:url('/images/rowLargeBackground.png');
+}
+
+div.messageBox , .error
+{
+	padding :10px;
+	border : solid 1px silver;
+	font-family: Arial;
+	font-size : 12px;
+	color : #050505;
+}
+
+.error
+{
+	font-size : 12px;
+	color : Maroon;
+}
+
+.topicHeader
+{
+	
+	border : solid 1px silver;
+	font-family: Arial;
+	width:100%;
+	height:60px;
+}
+
+div.complain
+{
+	float : right;
+	right : 2px;
+	top : 2px;
+}
+
+
+.forumText
+{
+	line-height : 15px;
+	font-family: Arial;
+	font-size: 11px;
+}
+
+.button
+{
+	border:solid 1px #58a4d8;
+	background-color:#deedf4;
+	font-family: Arial;
+	font-size: 10px;
+}
+
+.looseButton
+{
+	border:solid 0px #58a4d8;
+	background-color: Transparent;
+	font-family: Arial;
+	font-size: 10px;
+	cursor:pointer;
+	color:silver;
+}
+
+.hoverDIV
+{
+	background-color : #dfdfdf;
+}
+
+.borderDIV
+{
+	float:left;
+	padding:5px;
+	margin-left:5px;
+	border:solid 1px #dedede;
+}
+
+.selectedDIV
+{
+	float:left;
+	padding:5px;
+	margin-left:5px;
+	border:solid 1px #dedede;
+	background-color : #efefef;
+}

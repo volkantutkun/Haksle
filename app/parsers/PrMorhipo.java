@@ -14,6 +14,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import play.Logger;
+
 public class PrMorhipo{
 	
 	public static void getContentPrices(String preurl, List<Product> receivedProducts)
@@ -26,8 +28,10 @@ public class PrMorhipo{
 			Iterator<Product> it = receivedProducts.iterator();
 	    	while (it.hasNext()) 
 	    	{
+	    		
 	    		Product parsedProduct = it.next();
 	    		String prodPrice = "NOTFOUND";
+	    		boolean isDeleted = false;
 	    		
 	    		String posturl=parsedProduct.getPostUrl();
 	    		Document doc;
@@ -35,12 +39,24 @@ public class PrMorhipo{
 	    		String url=preurl+posturl;
 	    		
 	    		_conn.url(url);
-	    		doc = _conn.timeout(10*1000).get();
+	    		doc = _conn.timeout(60*1000).get();
 
     			Elements spanIds = doc.select("span[class]");
-    			Elements pIds = doc.select("p[class]");
-    				
-    			// TODO: product aktifligi kontrol
+    			Elements pIds = doc.select("div[class]");
+    			
+    			
+    			// product aktifligi kontrol
+    			for (Element pId : pIds) 
+    			{
+    				if(pId.attr("class").equals("product-saled"))
+    				{
+    					parsedProduct.delete();
+    					isDeleted = true;
+    				}
+    			}
+    					
+    			if (isDeleted)
+    				continue;
     			
     			for (Element spanId : spanIds) 
     			{	
@@ -91,12 +107,16 @@ public class PrMorhipo{
 		try {
 			// need http protocol
 			doc = Jsoup.connect(receivedURL).timeout(10*1000).get();
-		 
-			// TODO: product aktifligi kontrol
-			
-			
-			Elements spanIds = doc.select("span[class]");
-				
+		
+			Elements spanIds = doc.select("span[class]");	
+			Elements pIds = doc.select("div[class]");
+						
+			// product aktifligi kontrol
+			for (Element pId : pIds) 
+			{
+				if(pId.attr("class").equals("product-saled"))
+					return null;
+			}
 			for (Element spanId : spanIds) {
 
 				if(spanId.attr("class").equals("price-sale")){
@@ -110,7 +130,7 @@ public class PrMorhipo{
 			
 			parsedProduct.title = prodName;
 			
-			double price = Double.parseDouble(trimPrice(prodPrice));
+			double price = Double.parseDouble(prodPrice);
 			parsedProduct.initialprice = price;
 			parsedProduct.currentprice = price;
 			

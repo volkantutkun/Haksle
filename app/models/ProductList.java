@@ -67,7 +67,7 @@ public class ProductList extends Model{
   	public static Map<Integer,String> selectpidsbymail(String emailStr) {
   		Map<Integer,String> tempMap = new HashMap<Integer,String>();
   		
-  		String sql = "select listid, listname, email, pid, desireddiscount from product_list";  
+  		String sql = "select listid, listname, email, pid from product_list";  
 
   		RawSql rawSql = RawSqlBuilder.parse(sql).create();  
 
@@ -81,11 +81,11 @@ public class ProductList extends Model{
   		return tempMap;
 	}
  
-	public static void create(ProductList prodList) {
+	public void create(ProductList prodList) {
 		prodList.save();
 	}
 
-	public static void delete(Integer listid) {
+	public void delete(Integer listid) {
 	  find.ref(listid).delete();
 	}
 	

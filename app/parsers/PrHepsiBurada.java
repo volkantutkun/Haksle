@@ -21,6 +21,7 @@ public class PrHepsiBurada{
 
 		try {
 
+			
 			Connection _conn = Jsoup.connect(preurl);
 
 			Iterator<Product> it = receivedProducts.iterator();
@@ -35,7 +36,7 @@ public class PrHepsiBurada{
 	    		String url=preurl+posturl;
 	    		
 	    		_conn.url(url);
-	    		doc = _conn.timeout(10*1000).get();
+	    		doc = _conn.timeout(60*1000).get();
 
     			Elements spanIds = doc.select("span[class]");
     			Elements pIds = doc.select("p[class]");
@@ -113,7 +114,7 @@ public class PrHepsiBurada{
 			
 			parsedProduct.title = prodName;
 			
-			double price = Double.parseDouble(trimPrice(prodPrice));
+			double price = Double.parseDouble(prodPrice);
 			parsedProduct.initialprice = price;
 			parsedProduct.currentprice = price;
 			

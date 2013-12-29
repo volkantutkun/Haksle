@@ -130,12 +130,14 @@ public class Product extends Model{
   		return (List<Product>) find.where().eq("pid", pid).findList();
     }
   	
-  	public static List<ProductWithListInfo> allbypidlist(Map<Integer,String> receivedMap) {
+  	public static List<ProductWithListInfo> allbypidlist(Map<Integer,String> receivedMap) 
+  	{
   		List<ProductWithListInfo> tempList = new ArrayList<ProductWithListInfo>();
   		
   		Iterator iter = receivedMap.entrySet().iterator();
   		
-  		while (iter.hasNext()) {
+  		while (iter.hasNext()) 
+  		{
   			Map.Entry mEntry = (Map.Entry) iter.next();
   			
   			ProductWithListInfo tempProdWList = new ProductWithListInfo();
@@ -153,6 +155,10 @@ public class Product extends Model{
   			tempProdWList.picture = tempProd.picture;
   			
   			tempProdWList.listname = (String)mEntry.getValue();
+  			
+  			ProductList prlist = new ProductList();
+  			tempProdWList.desireddiscount = prlist.selectbypid(tempProd.pid).get(0).desireddiscount;
+  			tempProdWList.desiredbasket = prlist.selectbypid(tempProd.pid).get(0).isinbasket;
   			
   			tempList.add(tempProdWList);
   		}

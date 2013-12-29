@@ -1,5 +1,6 @@
 package models;
 
+
 public class ProductWithListInfo {
 	
 	public int pid;	
@@ -13,6 +14,10 @@ public class ProductWithListInfo {
 	public String picture;	
 	public String listname;	
 	public int listid;
+	public int desireddiscount;
+	public boolean desiredbasket;
+	
+
 
 }
 

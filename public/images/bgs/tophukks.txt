@@ -1,0 +1,5 @@
+.top_hukks{
+  background: url('../img/footer_bg.png') repeat;
+  padding-top: 65px;
+  padding-bottom: 85px;
+}

@@ -282,7 +282,7 @@ public class Deamon {
    
     public ActorRef getOrCreateSupervisor(String name)
     {
-    	Duration timeout = Duration.create("10 seconds");
+    	Duration timeout = Duration.create("30 seconds");
     	ActorRef actor_candidate = system.actorFor("/user/root/"+name);
     	ActorRef actor = null;
     	ArrayList<Object> actorProp = new ArrayList<Object>();
@@ -294,7 +294,7 @@ public class Deamon {
     	{
     		try {
                                               
-    			actor = (ActorRef) Await.result(ask(root, actorProp, 10000), timeout);                                      
+    			actor = (ActorRef) Await.result(ask(root, actorProp, 30000), timeout);                                      
     			Logger.info(actor.toString() + " created.");
     			return actor;
     			
@@ -312,7 +312,7 @@ public class Deamon {
     @SuppressWarnings("unchecked")
 	public ActorRef getOrCreateWorker(String node, String name, ActorRef parent, @SuppressWarnings("rawtypes") Class ActorClass)
     {
-    	Duration timeout = Duration.create("10 seconds");
+    	Duration timeout = Duration.create("30 seconds");
     	ActorRef actor_candidate = system.actorFor("/user/root/"+node+"/"+name);
     	ActorRef actor = null;
     	ArrayList<Object> actorProp = new ArrayList<Object>();
@@ -322,7 +322,7 @@ public class Deamon {
     	if (actor_candidate.isTerminated())
     	{
     		try {
-    			actor = (ActorRef) Await.result(ask(parent, actorProp, 10000), timeout);                                                
+    			actor = (ActorRef) Await.result(ask(parent, actorProp, 30000), timeout);                                                
     			Logger.info(actor.toString() + " created.");
     			return actor;
     		} catch (Exception e) {
@@ -359,7 +359,6 @@ public class Deamon {
     	ActorRef worker= getOrCreateWorker(supChar, itemsCodeStr, supervisor, HukkActorExtended.class);
     	if(worker!=null)
     	{
-    
     		worker.tell(new HukkExtended(site, preurl, items), worker);
     		worker.tell(akka.actor.PoisonPill.getInstance(), worker);
     	}
@@ -399,7 +398,7 @@ public class Deamon {
     
     
     
-    //**************Deprecated code here************
+    /**************Deprecated code here************
     @SuppressWarnings("serial")
    	public static class Hukk implements Serializable
        {
@@ -439,7 +438,7 @@ public class Deamon {
                   
        	@Override
            public void preStart() {
-       		getContext().system().scheduler().schedule(Duration.create(1, "second"), Duration.create(120, "second"),getSelf(), TICK, getContext().dispatcher());
+       		getContext().system().scheduler().schedule(Duration.create(1, "second"), Duration.create(120, "second"),getSelf(), TICK, getContext().dispatcher(),getSelf());
        	}
        	
        	@Override
@@ -577,5 +576,5 @@ public class Deamon {
    	    	}
 
        }
- 
+ */
 }

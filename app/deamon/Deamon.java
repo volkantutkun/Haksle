@@ -282,7 +282,7 @@ public class Deamon {
    
     public ActorRef getOrCreateSupervisor(String name)
     {
-    	Duration timeout = Duration.create("10 seconds");
+    	Duration timeout = Duration.create("30 seconds");
     	ActorRef actor_candidate = system.actorFor("/user/root/"+name);
     	ActorRef actor = null;
     	ArrayList<Object> actorProp = new ArrayList<Object>();
@@ -294,7 +294,7 @@ public class Deamon {
     	{
     		try {
                                               
-    			actor = (ActorRef) Await.result(ask(root, actorProp, 10000), timeout);                                      
+    			actor = (ActorRef) Await.result(ask(root, actorProp, 30000), timeout);                                      
     			Logger.info(actor.toString() + " created.");
     			return actor;
     			
@@ -312,7 +312,7 @@ public class Deamon {
     @SuppressWarnings("unchecked")
 	public ActorRef getOrCreateWorker(String node, String name, ActorRef parent, @SuppressWarnings("rawtypes") Class ActorClass)
     {
-    	Duration timeout = Duration.create("10 seconds");
+    	Duration timeout = Duration.create("30 seconds");
     	ActorRef actor_candidate = system.actorFor("/user/root/"+node+"/"+name);
     	ActorRef actor = null;
     	ArrayList<Object> actorProp = new ArrayList<Object>();
@@ -322,7 +322,7 @@ public class Deamon {
     	if (actor_candidate.isTerminated())
     	{
     		try {
-    			actor = (ActorRef) Await.result(ask(parent, actorProp, 10000), timeout);                                                
+    			actor = (ActorRef) Await.result(ask(parent, actorProp, 30000), timeout);                                                
     			Logger.info(actor.toString() + " created.");
     			return actor;
     		} catch (Exception e) {
@@ -359,7 +359,6 @@ public class Deamon {
     	ActorRef worker= getOrCreateWorker(supChar, itemsCodeStr, supervisor, HukkActorExtended.class);
     	if(worker!=null)
     	{
-    
     		worker.tell(new HukkExtended(site, preurl, items), worker);
     		worker.tell(akka.actor.PoisonPill.getInstance(), worker);
     	}
@@ -578,9 +577,22 @@ public class Deamon {
 
 <<<<<<< HEAD
        }
+<<<<<<< HEAD
  
 =======
        }
  
 >>>>>>> 51b6fb6b43d6ed7700708953ba6ac903f5fc4214*/
+=======
+ */
+=======
+<<<<<<< HEAD
+       }*/
+ 
+=======
+       }
+ */
+>>>>>>> 51b6fb6b43d6ed7700708953ba6ac903f5fc4214
+>>>>>>> 943cc4d9add0482f7825990ba89dd5a8850a64c0
+>>>>>>> e46e753eaef9dc81ab08210d04560a21be0aa29a
 }

@@ -29,7 +29,7 @@ public class DeamonController
 
 			    		String site = siteIterator.next();
 			    	 	
-			    		//List<Product> productList = products.all(400); 
+			    		//List<Product> productList = products.all(50); 
 			    		List<Product> productList = products.all_4parserdeamon(site); 
 			    	 	
 			    		String preurl = productList.get(0).getPreUrl();
@@ -118,10 +118,18 @@ public class DeamonController
 	  
 	  
 	  
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	  /***************Deprecated code here*************
+=======
+<<<<<<< HEAD
+>>>>>>> e46e753eaef9dc81ab08210d04560a21be0aa29a
 	  /**************Deprecated code here*************
 =======
 	  /***************Deprecated code here*************
 >>>>>>> 51b6fb6b43d6ed7700708953ba6ac903f5fc4214
+>>>>>>> 943cc4d9add0482f7825990ba89dd5a8850a64c0
 	  
 		public void singularDeamon()
 		{

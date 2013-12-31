@@ -36,7 +36,7 @@ public class PrHepsiBurada{
 	    		String url=preurl+posturl;
 	    		
 	    		_conn.url(url);
-	    		doc = _conn.timeout(10*1000).get();
+	    		doc = _conn.timeout(60*1000).get();
 
     			Elements spanIds = doc.select("span[class]");
     			Elements pIds = doc.select("p[class]");

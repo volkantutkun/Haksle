@@ -1,0 +1,7 @@
+.account header {
+    background: url("https://blue-bottle-coffee.storage.googleapis.com/production/assets/bg_textured-light-grey-ef169719f6aa05d34f7c213598d26d5a.png") repeat scroll left top transparent;
+    border-bottom: 1px solid rgb(238, 238, 238);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(238, 238, 238);
+}

@@ -118,7 +118,6 @@ public class DeamonController
 	  
 	  
 	  
-<<<<<<< HEAD
 	  /**************Deprecated code here*************
 =======
 	  /***************Deprecated code here*************

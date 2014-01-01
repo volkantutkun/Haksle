@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                           controllers.Application.index()
+GET     /topkaps                    controllers.Application.topkaps()
 
 GET     /newcustomer				controllers.Application.newcustomer()
 POST    /newcustomer				controllers.Application.addCustomer()
@@ -11,7 +12,7 @@ GET     /customerlogin				controllers.Application.customerlogin()
 POST    /customerlogin				controllers.Application.checkCustomer()
 
 GET 	/parseEmAll					controllers.Application.parseEmAll()
-GET 	/informEmAll					controllers.Application.informEmAll()
+GET 	/informEmAll				controllers.Application.informEmAll()
 
 GET     /haksle						controllers.Application.haksle(email: String)
 POST    /haksle						controllers.Application.addProduct()

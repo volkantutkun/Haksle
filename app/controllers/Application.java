@@ -38,10 +38,10 @@ public class Application extends Controller {
     	return ok(views.html.customerlogin.render(""));
      }
     
-    /*public static Result topkaps() {
+    public static Result topkaps() {
     	return ok(views.html.topkaps.render(""));
-     }
-    */
+    }
+    
     public static Result haksle(String emailStr) {
     	return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, ""));
     }

@@ -115,7 +115,22 @@ public class DeamonController
 		    }
 	 }
 	  
+<<<<<<< HEAD
 
+=======
+	  
+	  
+	  
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	  /***************Deprecated code here*************
+=======
+<<<<<<< HEAD
+>>>>>>> e46e753eaef9dc81ab08210d04560a21be0aa29a
+	  /**************Deprecated code here*************
+=======
+>>>>>>> 892f56877fa6efa9f5c1e77b4eafb8ad3c0b8cab
 	  /***************Deprecated code here*************
 
 	  

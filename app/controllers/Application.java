@@ -39,7 +39,7 @@ public class Application extends Controller {
      }
     
     public static Result topkaps() {
-    	return ok(views.html.topkaps.render(""));
+    	return ok(views.html.topkaps.render(Product.all(),Product.allUnder(100),Product.allOver(100),""));
     }
     
     public static Result haksle(String emailStr) {

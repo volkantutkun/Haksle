@@ -23,7 +23,6 @@ public class ProductList extends Model{
 	
 	public String listname;
 		
-
     public Customer customer;
 	public String email;
 	

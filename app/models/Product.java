@@ -69,6 +69,8 @@ public class Product extends Model{
 	  	  return resultList;
 	}
 	
+
+	
 	public String calcPreUrl(String source)
 	{
 		return source.substring(0,source.indexOf(".com/"))+".com";
@@ -129,6 +131,17 @@ public class Product extends Model{
   	public static List<Product> allbypid(int pid) {
   		return (List<Product>) find.where().eq("pid", pid).findList();
     }
+  	
+	public static List<Product> allOver(double amount)
+	{
+		List<Product> tempList = find.where().le("currentprice", amount).findList();	
+	    return tempList;
+	}
+	public static List<Product> allUnder(double amount)
+	{
+		List<Product> tempList = find.where().ge("currentprice", amount).findList();
+	    return tempList;
+	}
   	
   	public static List<ProductWithListInfo> allbypidlist(Map<Integer,String> receivedMap) 
   	{

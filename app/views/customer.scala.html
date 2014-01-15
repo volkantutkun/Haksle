@@ -1,8 +1,10 @@
-@(products: List[Product], products100minus: List[Product], products100plus: List[Product], messageStr: String)
+@(products: List[ProductWithListInfo], listitems: List[ProductList], emailStr: String, messageStr: String)
 
 @import helper._
 
-@main("Top Kaps") {
+@main("Kapslarım") {
+
+
 
 <body class="fume2">
  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -63,8 +65,8 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h1 class="page-header fontr hbord">Top Kaps
-                    <small>En gözde Kapslar...</small>
+                <h1 class="page-header fontr hbord">Kapslarım
+                    <small>Bi' indirim olsun hele...</small>
                 </h1>
             </div>
 
@@ -76,23 +78,26 @@
         <div class="container">
 
                 <li>
-
-                    <select id="selector" class="chosen-select">
-                        <option selected value="all">Hepsi</option>
-                        <option value="100plus">100 TL altı</option>
-                        <option value="100minus">100 TL üstü</option>
-                    </select>
-
+                	<select id="selector" class="chosen-select">
+                    <option selected value="Hepsi">Hepsi</option>
+					@for(item <- listitems) {
+						<option value="@item.listname">@item.listname</option>
+                    }
+					</select>
                 </li>
 
             <!--/ul-->
         </div>
 
 
-
-    <div id="all" class="container">
+	
+    <div id="all" class="container">   	
         <div class="row">
+
+	@for(list <- listitems) {
+		<div id="@list.listname">
         @for(item <- products) {
+			@if(item.listname == list.listname){
             <div class="col-sm-6 col-md-3 col-xs-12">
                 <div class="item-box">
                     <div class="img-box">
@@ -116,95 +121,52 @@
                         </div>
                     </div>
                 </div>
+   
             </div>
+           }
        }
+      </div>
+    }
        </div>
      </div>
-       
-       <div id="100minus" class="container">
-        <div class="row">
-        @for(item <- products100minus) {
-            <div class="col-sm-6 col-md-3 col-xs-12">
-                <div class="item-box">
-                    <div class="img-box">
-                            <img class="img-responsive" src="@item.picture" onerror="this.src='http://www.hukkster.com/static/img/hukk_default_image.png'">
-                    </div>                                                                                                            
-                    <div class="caption capm">
-                        <h3>@item.title</h3>
-                        <div class="iprice">
-                            <p>
-                            	@if(item.initialprice!=item.currentprice){
-                                	<del>@item.initialprice TL</del>
-                                }
-                                <span class="fprice">@item.currentprice TL</span>
-                            </p>
-                        </div>
-                        <div class="kap_btn">
-                            <a href="javascript:void(0);" onclick="hukksterEmbed.hukkIt(this,'');" alt="http://www.jcrew.com/womens_category/outerwear/woolpufferjackets/PRDOVR~49360/49360.jsp" class="btn btn-medium btn-block redb">KAP BUNU!</a>
-                        </div>
-                        <div class="share-hukk">
-                            <a href="/hukk/8p3HASAR4E" class="share_hukk">+SHARE</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-       }
-      </div>
-     </div>
-       
-        <div id="100plus" class="container">
-        <div class="row">
-        @for(item <- products100plus) {
-            <div class="col-sm-6 col-md-3 col-xs-12">
-                <div class="item-box">
-                    <div class="img-box">
-                            <img class="img-responsive" src="@item.picture" onerror="this.src='http://www.hukkster.com/static/img/hukk_default_image.png'">
-                    </div>                                                                                                            
-                    <div class="caption capm">
-                        <h3>@item.title</h3>
-                        <div class="iprice">
-                            <p>
-                            	@if(item.initialprice!=item.currentprice){
-                                	<del>@item.initialprice TL</del>
-                                }
-                                <span class="fprice">@item.currentprice TL</span>
-                            </p>
-                        </div>
-                        <div class="kap_btn">
-                            <a href="javascript:void(0);" onclick="hukksterEmbed.hukkIt(this,'');" alt="http://www.jcrew.com/womens_category/outerwear/woolpufferjackets/PRDOVR~49360/49360.jsp" class="btn btn-medium btn-block redb">KAP BUNU!</a>
-                        </div>
-                        <div class="share-hukk">
-                            <a href="/hukk/8p3HASAR4E" class="share_hukk">+SHARE</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-       }
-      </div>
-     </div>  
-
-
     
-    <script>
-    
-    	$(".chosen-select").chosen({width: "150px"}); 
-    	
-    	$("#100minus").hide();
-    	$("#100plus").hide();
+<script>
 
-    	$("#selector").on('change', function()
-    	{
-    		var selected = $("#selector").chosen().val();
-        	$("#100minus").hide();
-        	$("#100plus").hide();
-        	$("#all").hide();
-        	$("#"+selected).show();
-        	
-    	});
-    	
-    </script>
-    
-    </body>
+	    $(".chosen-select").chosen({width: "150px"}); 
+	
+		$("#selector").on('change', function()
+		{
+			selected = $("#selector").chosen().val();
+	
+			if (selected.indexOf("Hepsi")==1)
+			{
+				$("#selector option").each(function()
+				{
+					var val = $(this).val();
+					$("#" + val).show();
+				});
+			}
+			else
+			{
+				$("#selector option").each(function()
+				{
+					var val = $(this).val();
+					$("#" + val).hide();
+					if (val.indexOf(selected)==-1)
+						$("#" + val).show();
+	
+				});
+			}
+			
+
+			
+		});
+		
+	
+
+</script>
+
+</body>
     
     
 

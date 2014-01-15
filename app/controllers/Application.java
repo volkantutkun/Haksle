@@ -42,6 +42,11 @@ public class Application extends Controller {
     	return ok(views.html.topkaps.render(Product.all(),Product.allUnder(100),Product.allOver(100),""));
     }
     
+    public static Result customer() {
+    	String emailStr = "hakangurel84@gmail.com";
+    	return ok(views.html.customer.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), emailStr, ""));
+     }
+    
     public static Result haksle(String emailStr) {
     	return ok(views.html.haksle.render(Product.allbypidlist(ProductList.selectpidsbymail(emailStr)), ProductList.selectlistbymail(emailStr), productForm, emailStr, ""));
     }

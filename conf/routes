@@ -6,6 +6,7 @@
 GET     /                           controllers.Application.index()
 GET     /topkaps                    controllers.Application.topkaps()
 GET     /customer					controllers.Application.customer()
+GET     /signin						controllers.Application.signin()
 
 GET     /newcustomer				controllers.Application.newcustomer()
 POST    /newcustomer				controllers.Application.addCustomer()

@@ -34,6 +34,10 @@ public class Application extends Controller {
     	return ok(views.html.newcustomer.render(""));
      }
     
+    public static Result signin() {
+    	return ok(views.html.signin.render(""));
+     }
+    
     public static Result customerlogin() {
     	return ok(views.html.customerlogin.render(""));
      }

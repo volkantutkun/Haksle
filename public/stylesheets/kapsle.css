@@ -53,10 +53,10 @@ background-image: url("../assets/img/bgs/bg-ocean-tile.png");
 
 .headpic {
   display: table;
-  height: 100%;
+  height: 700px;
   width: 100%;
   position: relative;
-  background: url(../assets/img/highres2.JPG) no-repeat center center fixed; 
+  background: url("/assets/images/highres2.JPG") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

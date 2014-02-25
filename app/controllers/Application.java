@@ -92,7 +92,8 @@ public class Application extends Controller {
     	  }
      }
     
-    public static Result addProduct() {
+    public static Result addProduct() 
+    {
     	Form<Product> filledProdForm = productForm.bindFromRequest();
 
     	  if(filledProdForm.hasErrors()) {
@@ -239,5 +240,7 @@ public class Application extends Controller {
     	dc.informerDeamon();
     	return ok(views.html.index.render("Informing ended"));
     }
+    
+
   
 }

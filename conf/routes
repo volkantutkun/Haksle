@@ -22,9 +22,5 @@ POST    /haksle/:id/delete			controllers.Application.deleteProduct(id: Integer, 
 
 
 # Map static resources from the /public folder to the /assets URL path
-<<<<<<< HEAD
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
-=======
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
->>>>>>> aeed1a8a0efab1d03ec8c2a6c856b6a639f8349a
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

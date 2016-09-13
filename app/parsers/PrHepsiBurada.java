@@ -150,7 +150,7 @@ public class PrHepsiBurada{
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("Price is:[" + getContentPrice("http://www.hepsiburada.com/liste/life-zigon-sehpa-beyaz-/productDetails.aspx?productId=mbmdllifeb&categoryId=18021617&navq=categoryid%3d18021617%26fh_view_size%3d12%26fh_sort_by%3d-order_stock_attribute_pl%252c-ranking_cocktail_bestseller%26fh_maxdisplaynrvalues_brand%3d-1%26fh_secondid%3dmbmdllifeb%26fh_lister_pos%3d1%26fh_location%3d%252f%252fcatalog01%252ftr_TR%252fbrand%253d%257bmobetto%257d%252fcategories%253c%257bcatalog01_60002028%257d%252fcategories%253c%257bcatalog01_60002028_2147483614%257d%252fcategories%253c%257bcatalog01_60002028_2147483614_18021299%257d%252fcategories%253c%257bcatalog01_60002028_2147483614_18021299_18021303%257d%252fcategories%253c%257bcatalog01_60002028_2147483614_18021299_18021303_18021332%257d%252fcategories%253c%257bcatalog01_60002028_2147483614_18021299_18021303_18021332_18021617%257d%26fh_refview%3dlister") + "]");
+		System.out.println("Price is:[" + getContentPrice("http://www.hepsiburada.com/seiko-sndg55p-erkek-kol-saati-p-SAAYDNSNDG55P") + "]");
 	}
 
 }
